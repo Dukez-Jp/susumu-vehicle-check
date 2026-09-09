@@ -1,5 +1,7 @@
 # SUSUMU VEHICLE CHECK
 
+**Fase atual — 10/09/2026:** por orientação de Wagner, somente esboço, cenários de teste e revisão documental, sem nova programação. O [esboço completo do piloto de um tablet](docs/esboco/2026-09-10/ESBOCO_COMPLETO.md) e a [matriz de testes/subtestes](docs/esboco/2026-09-10/TESTES_E_SUBTESTES.md) são a pauta vigente. A implementação descrita abaixo é a V1 anterior, preservada como referência; seus comandos não constituem autorização para executá-los nesta fase.
+
 Inspeções de veículos na oficina, com aplicativo Android que salva o trabalho no tablet e sincroniza com o servidor quando a conexão volta. O escritório acompanha a frota, administra checklists e consulta relatórios em um painel web.
 
 **V1 implementada para avaliação DEV.** O Galaxy Tab Active5 Pro Wi-Fi já foi comprado e ainda está a caminho. A compilação do APK e os testes automatizados não substituem a aceitação física de câmera, S Pen, reinício e rede intermitente. O código está no [repositório privado do projeto](https://github.com/Dukez-Jp/susumu-vehicle-check); nenhum servidor de produção foi implantado por esta tarefa.

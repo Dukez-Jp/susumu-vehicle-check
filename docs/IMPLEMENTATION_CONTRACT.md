@@ -1,5 +1,7 @@
 # V1 implementation contract
 
+**Current phase, 2026-09-10:** Wagner now requests documentation-only sketch and test/subtest planning, with no new programming. The implementation authority in the historical baseline below is superseded for this phase. Preserve the V1; follow the current instruction in `AGENTS.md` and `docs/esboco/2026-09-10/`. Proposed business choices require confirmation and are not new implementation requirements yet.
+
 Status: implementation baseline, 2026-09-09. User authorizes autonomous delivery of the complete project and private GitHub commit/push. No production deployment. The purchased tablet is pending delivery. This contract narrows unspecified business choices without substituting production readiness for test evidence.
 
 ## Architecture and ownership
