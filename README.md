@@ -21,10 +21,10 @@ Fotos originais permanecem separadas das cópias anotadas. Inspeções finalizad
 
 ## Abrir neste computador Windows
 
-O checkout de desenvolvimento fica em `C:\Dev\SusumuVehicleCheck`, fora do OneDrive. O toolchain portátil desta máquina está em `C:\Dev\tools`; ele não é uma dependência dos builds Linux/CI.
+O checkout de desenvolvimento fica em `C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT`, no OneDrive por escolha explícita de Wagner. O toolchain portátil desta máquina está em `C:\Dev\tools`; ele não é uma dependência dos builds Linux/CI.
 
 ```powershell
-Set-Location C:\Dev\SusumuVehicleCheck
+Set-Location 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT'
 ./scripts/start-local.ps1
 ```
 

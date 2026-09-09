@@ -10,9 +10,13 @@ Set-StrictMode -Version Latest
 $rootPath = (Resolve-Path -LiteralPath $Root).ProviderPath
 $currentSid = [Security.Principal.WindowsIdentity]::GetCurrent().User
 $allowedSids = @($currentSid.Value, 'S-1-5-18', 'S-1-5-32-544')
+. (Join-Path $PSScriptRoot 'private-reparse.ps1')
 function Assert-RegularItem([IO.FileSystemInfo]$Item) {
     if (($Item.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) {
-        throw "Private storage must not contain a junction or symbolic link: $($Item.FullName)"
+        $tag = [SusumuPrivateReparse]::ReadTag($Item.FullName)
+        if (-not [SusumuPrivateReparse]::IsCloud($tag)) {
+            throw "Private storage must not contain a junction, symbolic link or unknown reparse point: $($Item.FullName)"
+        }
     }
 }
 function Set-PrivateAcl([IO.FileSystemInfo]$Item, [bool]$Protected) {

@@ -7,7 +7,7 @@ Wagner, comece pelo painel no computador. O aplicativo Android será validado no
 No PowerShell deste computador:
 
 ```powershell
-Set-Location C:\Dev\SusumuVehicleCheck
+Set-Location 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT'
 .\scripts\start-local.ps1
 ```
 
@@ -29,7 +29,7 @@ No login, use os valores dos campos `adminUsername` e `adminPassword`. Feche o a
 Para encerrar a demonstração:
 
 ```powershell
-Set-Location C:\Dev\SusumuVehicleCheck
+Set-Location 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT'
 .\scripts\stop-local.ps1
 ```
 
@@ -40,7 +40,7 @@ O script preserva banco, fotos e credenciais. Se houver erro ao iniciar, registr
 O APK de avaliação está em:
 
 ```text
-C:\Dev\SusumuVehicleCheck\mobile\build\app\outputs\flutter-apk\app-debug.apk
+C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\mobile\build\app\outputs\flutter-apk\app-debug.apk
 ```
 
 Transfira esse APK para o tablet e instale pelo procedimento de teste autorizado. O aplicativo se chama **SUSUMU Check**. Esse APK é DEV; distribuição corporativa assinada é uma etapa separada.

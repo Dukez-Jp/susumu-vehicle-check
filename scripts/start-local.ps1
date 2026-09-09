@@ -52,7 +52,10 @@ try {
     if ($LASTEXITCODE -ne 0) {
         if (Test-SusumuPort 55432) { throw 'Port 55432 is occupied by an unrelated PostgreSQL/process; preserved.' }
         $pgArgs = @('start','-D',('"'+$data+'"'),'-l',('"'+(Join-Path $logs 'postgresql.log')+'"'),'-o','"-h 127.0.0.1 -p 55432"','-w','-t','60')
-        $launcher = Start-Process -FilePath $pgControl -ArgumentList $pgArgs -WindowStyle Hidden -PassThru -Wait
+        # Start-Process -Wait also waits for postgres descendants on Windows.
+        # Only pg_ctl must exit; the server intentionally stays alive.
+        $launcher = Start-Process -FilePath $pgControl -ArgumentList $pgArgs -WindowStyle Hidden -PassThru
+        if (-not $launcher.WaitForExit(60000)) { throw 'PostgreSQL launcher timed out; inspect .local/logs/postgresql.log before retrying.' }
         if ($launcher.ExitCode -ne 0) { throw 'Managed PostgreSQL failed to start; inspect .local/logs/postgresql.log.' }
         $postmasterId = [int](Get-Content -LiteralPath (Join-Path $data 'postmaster.pid') -TotalCount 1)
         $state.database = Get-SusumuProcessRecord (Get-Process -Id $postmasterId) 'database' $postgres $data

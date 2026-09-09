@@ -1,5 +1,9 @@
 # SUSUMU VEHICLE CHECK — shared engineering rules
 
+## Canonical workspace — explicit relocation by Wagner, 2026-09-10
+
+The only project root on this PC is `C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT`. Wagner explicitly requested moving 100% of the project (including private DEV files and Git history) into this OneDrive folder and removing the previous `C:\Dev\SusumuVehicleCheck` directory, with no junction, alias or fallback there. Deletion is currently blocked by automatic tool policy; the old copies still exist and must not receive new work. This overrides historical guidance to develop outside OneDrive. Always use the new root, quote paths, and derive runtime paths from the repository. Shared SDK installations in `C:\Dev\tools` are external prerequisites, not part of the project directory. On another PC locate the synced root and install the documented toolchain. Never run the same PostgreSQL data directory on two PCs; keep services stopped while transferring its synced copy. Local placement/pinning does not establish completed cloud synchronization.
+
 ## Current user instruction — 2026-09-10: local browser demonstration
 
 Wagner explicitly authorized building and testing a local Windows/Chrome demonstration of the Tenken tablet flow with mouse controls, in collaboration with real Claude Code. This supersedes the documentation-only restriction ONLY for this demonstration and its tests, documentation and local launcher. Preserve Android/backend implementation; no production deployment or production data. Use synthetic fixtures and clearly identify simulated server actions. The Android product and physical tablet pilot remain separate and are not newly authorized for development. Root owns demo UI/integration; Claude owns demo domain model and domain tests as assigned. No worker commits or switches branches.

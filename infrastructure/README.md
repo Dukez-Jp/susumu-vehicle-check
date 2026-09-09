@@ -46,7 +46,7 @@ Use Python 3.11+ and PostgreSQL 18 client utilities. Set `PGHOST`, `PGPORT`, `PG
 2. Run the backup, choosing a new output directory outside photo storage:
 
 ```powershell
-./scripts/backup.ps1 -Photos 'C:\Dev\SusumuVehicleCheck\.local\photos' -OutputDirectory 'C:\Dev\SusumuVehicleCheck\backups\dev-20260909' -Environment Development -WritersStopped
+./scripts/backup.ps1 -Photos 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\.local\photos' -OutputDirectory 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\backups\dev-20260909' -Environment Development -WritersStopped
 ```
 
 ```bash
@@ -58,7 +58,7 @@ bash scripts/backup.sh --photos /srv/susumu-dev/photos --output /srv/susumu-dev/
 5. For a restore drill, use an explicit **new** database and a **nonexistent** photo directory in Development, Test or RestoreValidation. Existing targets are rejected; there is no drop, `--clean`, or production shortcut:
 
 ```powershell
-./scripts/restore.ps1 -Bundle 'C:\Dev\SusumuVehicleCheck\backups\dev-20260909' -TargetDatabase 'susumu_restore_20260909' -TargetPhotos 'C:\Dev\SusumuVehicleCheck\.local\restore-20260909\photos' -Environment RestoreValidation
+./scripts/restore.ps1 -Bundle 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\backups\dev-20260909' -TargetDatabase 'susumu_restore_20260909' -TargetPhotos 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\.local\restore-20260909\photos' -Environment RestoreValidation
 ```
 
 ```bash

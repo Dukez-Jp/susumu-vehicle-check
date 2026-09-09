@@ -6,12 +6,12 @@ Data: 10/09/2026. Autorização: Wagner pediu uma demonstração navegável, com
 
 Neste computador: **http://127.0.0.1:5174/demo.html**.
 
-Para iniciar novamente, dê duplo clique em `C:\Dev\SusumuVehicleCheck\ABRIR_DEMO_TENKEN.cmd`. O lançador inicia somente o servidor local da demonstração e abre o Google Chrome. Não é necessário login ou senha. Mantenha o endereço e o mesmo perfil do Chrome para retomar os dados salvos.
+Para iniciar novamente, dê duplo clique em `C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\ABRIR_DEMO_TENKEN.cmd`. O lançador inicia somente o servidor local da demonstração e abre o Google Chrome. Não é necessário login ou senha. Mantenha o endereço e o mesmo perfil do Chrome para retomar os dados salvos.
 
 Alternativa pelo PowerShell:
 
 ```powershell
-Set-Location C:\Dev\SusumuVehicleCheck
+Set-Location 'C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT'
 .\scripts\start-tenken-demo.ps1
 ```
 

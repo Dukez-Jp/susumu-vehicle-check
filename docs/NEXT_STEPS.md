@@ -1,6 +1,6 @@
 # Continuidade — SUSUMU VEHICLE CHECK
 
-Atualizado durante a implementação de 2026-09-09. A fonte de verdade é o checkout `C:\Dev\SusumuVehicleCheck` e o [repositório privado](https://github.com/Dukez-Jp/susumu-vehicle-check). A pasta antiga do OneDrive contém o ponteiro de continuidade; o desenvolvimento não deve voltar para ela.
+Atualizado durante a implementação de 2026-09-09. A fonte de verdade é o checkout `C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT` e o [repositório privado](https://github.com/Dukez-Jp/susumu-vehicle-check). O projeto foi transferido integralmente para este novo diretório do OneDrive por solicitação de Wagner; veja MUDANCA_ONEDRIVE.md.
 
 ## O que já foi construído
 
@@ -10,7 +10,7 @@ O Claude Code real participou da implementação do backend e das revisões, por
 
 ## Abrir e avaliar
 
-Siga [PRIMEIRO_USO](PRIMEIRO_USO.md). No PowerShell, execute `C:\Dev\SusumuVehicleCheck\scripts\start-local.ps1`; acesse o painel em `http://127.0.0.1:5173`. Credenciais DEV são consultadas somente no arquivo local indicado pelo guia. O APK está em `mobile\build\app\outputs\flutter-apk\app-debug.apk` após o build; é uma distribuição de avaliação.
+Siga [PRIMEIRO_USO](PRIMEIRO_USO.md). No PowerShell, execute `C:\Users\Pc Forex 2025\OneDrive - 株式会社ススム\Particular\CODEX\_GPT\scripts\start-local.ps1`; acesse o painel em `http://127.0.0.1:5173`. Credenciais DEV são consultadas somente no arquivo local indicado pelo guia. O APK está em `mobile\build\app\outputs\flutter-apk\app-debug.apk` após o build; é uma distribuição de avaliação.
 
 ## O que depende da chegada do tablet
 
