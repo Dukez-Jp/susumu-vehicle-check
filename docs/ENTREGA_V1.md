@@ -1,12 +1,12 @@
 # Entrega técnica V1 — SUSUMU VEHICLE CHECK
 
-Snapshot de validação local em2026-09-09, antes da publicação. **V1 implementada para avaliação DEV; aceite operacional no Galaxy e implantação de produção permanecem pendentes.** A versão contém aplicativo Android, API, painel, cadastros, checklist configurável/versionado, fotos/assinatura, offline/sync, histórico, auditoria, relatórios e ferramentas de operação.
+Snapshot de validação local iniciado em 2026-09-09 e atualizado em 2026-09-10 após as correções encontradas no primeiro CI. **V1 implementada para avaliação DEV; aceite operacional no Galaxy e implantação de produção permanecem pendentes.** A versão contém aplicativo Android, API, painel, cadastros, checklist configurável/versionado, fotos/assinatura, offline/sync, histórico, auditoria, relatórios e ferramentas de operação.
 
 ## Validação observada
 
 | Verificação | Resultado |
 |---|---|
-| Backend combinado |316 aprovados,0 falhas,0 pulados;8 casos reais PostgreSQL18 incluídos. Release sem avisos/erros. |
+| Backend combinado |324 aprovados, 0 falhas, 0 pulados; 9 casos reais PostgreSQL 18 incluídos. |
 | Schema |4 migrations; criação do zero e atualização/backfill conferidos no PostgreSQL; modelo EF sem alterações pendentes. |
 | Android |63 testes aprovados, análise e formatação limpas; APK debug compilado. |
 | Painel |47 testes em11 arquivos aprovados; lint, TypeScript, formatação e build de produção aprovados. |
@@ -32,6 +32,8 @@ Claude Code real, autenticado pela CLI, escreveu o backend e participou das revi
 Registros: [resolução backend](../backend/REVIEW_RESOLUTION.md), [imagens](../backend/IMAGE_REVIEW_RESOLUTION.md), [opções](../backend/CHECKLIST_OPTIONS_REVIEW.md), [lock administrativo](reviews/2026-09-09-admin-lock-followup.md), [catálogo](reviews/2026-09-09-vehicle-type-catalog.md), [anotação no E2E](reviews/2026-09-09-annotation-integration.md) e [consenso final Claude](reviews/2026-09-09-claude-consensus.md). O consenso final não encontrou bloqueios nas alterações revisadas. Revisões somente leitura são identificadas como tal; resultados executados são registrados separadamente.
 
 O primeiro fixture anterior à publicação foi preservado após a detecção de uma migration inicial regenerada durante a construção; [DEV_DATABASE_CONTINUITY](DEV_DATABASE_CONTINUITY.md) registra evidência e limites. Nenhum banco de produção foi alterado.
+
+O [primeiro CI Linux](reviews/2026-09-10-linux-ci-followup.md) encontrou uma janela de concorrência no replay e uma preparação de teste de câmera dependente do sistema operacional. A correção recebeu regressões determinísticas com falha antes e aprovação depois; os resultados locais acima incluem essas alterações. O PR registra a verificação Linux do commit final.
 
 ## GitHub e artefatos
 

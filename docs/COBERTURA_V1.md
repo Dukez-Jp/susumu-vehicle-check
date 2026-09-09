@@ -28,7 +28,7 @@ O fluxo principal possui implementação nos três componentes. **Isso ainda nã
 
 ## O que ainda impede chamar a V1 de aceita
 
-1. **Código e validação local concluídos:** catálogo/opções,316 testes backend,63 Android,47 painel,20 cenários HTTP e1 fluxo real Flutter/API passaram. Restore conferido no relatório.
+1. **Código e validação local concluídos:** catálogo/opções, 324 testes backend, 63 Android, 47 painel, 20 cenários HTTP e 1 fluxo real Flutter/API passaram. Restore conferido no relatório. O total backend inclui as regressões determinísticas após o primeiro CI Linux.
 2. **Observar CI verde e fechar a governança de merge:** validar jobs dos três componentes e containers Linux. A proteção automática de `main` tem a limitação documentada no ADR-005.
 3. **Aceitar o hardware:** Galaxy ainda não recebido/testado. Exercitar modo avião prolongado, fechamento/reinício, perda de rede no upload, troca de operador, câmera/QR/S Pen e preservação dos registros. Os renders em `docs/screenshots` são testes Flutter com dados sintéticos.
 4. **Preparar o piloto/produção:** validar checklist e responsabilidades da oficina, HTTPS alcançável, backup externo e restauração, contas, assinatura corporativa do APK, dispositivo/MDM e continuidade quando o único tablet estiver indisponível. Produção não foi implantada nem autorizada nesta tarefa.

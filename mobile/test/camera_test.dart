@@ -80,21 +80,40 @@ void main() {
     'missing entry advances once without shifting the UUID of a later write retry',
     () async {
       const captureId = '11111111-1111-4111-8111-111111111111';
-      final blocker = await File(
-        '${directory.path}/blocked',
-      ).writeAsString('target unavailable');
+      final blocker = File('${directory.path}/blocked');
       store = PhotoStore(Directory(blocker.path));
       final valid = await picture('valid.jpg', [255, 216, 255, 2]);
+      final missingPath = '${directory.path}/gone.jpg';
       await db.cache('camera', {
         'owner': 'A',
         'inspectionId': 'inspection-a',
         'itemId': 'item-a',
         'captureId': captureId,
-        'paths': ['${directory.path}/gone.jpg', valid.path],
+        'paths': [missingPath, valid.path],
       });
-      final service = CameraService(db, store, source: camera);
+      var blockFirstWrite = true;
+      final sourceReads = <String>[];
+      final service = CameraService(
+        db,
+        store,
+        source: camera,
+        readSource: (path) async {
+          sourceReads.add(path);
+          final bytes = await File(path).readAsBytes();
+          if (blockFirstWrite) {
+            blockFirstWrite = false;
+            // Fail the write only after findPreserved has checked for an
+            // existing original. A file at the root before that lookup gives
+            // ENOTDIR on Linux (not ENOENT), so recovery must stop before it can
+            // diagnose the missing source. Windows reports path-not-found.
+            await blocker.writeAsString('target unavailable');
+          }
+          return bytes;
+        },
+      );
       await expectLater(service.recover(), throwsStateError);
       expect((await db.cached('camera'))!['missingIndices'], [0]);
+      expect((await db.cached('camera'))!['paths'], [missingPath, valid.path]);
       await blocker.delete();
       final result = (await service.recover())!;
       expect(
@@ -105,6 +124,7 @@ void main() {
         ((await db.cached('camera-diagnostics|A'))!['entries'] as List).length,
         1,
       );
+      expect(sourceReads, [missingPath, valid.path, valid.path]);
       expect(await db.cached('camera'), isNull);
     },
   );

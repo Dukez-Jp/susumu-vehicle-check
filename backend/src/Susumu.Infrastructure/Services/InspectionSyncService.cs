@@ -57,6 +57,20 @@ public sealed class InspectionSyncService(SusumuDbContext db, IClock clock)
             {
                 // Another finalization for the same vehicle committed first. Re-read and re-apply.
             }
+            catch (AppException conflict) when (conflict.Status == 409)
+            {
+                // The receipt lookup can miss just before an identical request commits. A later
+                // inspection read then observes its new version/finalized state and rejects before
+                // SaveChanges, outside the database-conflict handlers below. ApplyOnceAsync has
+                // disposed its transaction here; re-read the committed receipt from a fresh view.
+                // Replay still verifies the original actor, device and exact canonical payload.
+                if (await TryReplayCommittedReceiptAsync(request, actor, deviceId, hash, ct) is { } replayed)
+                {
+                    return replayed;
+                }
+
+                throw;
+            }
         }
     }
 
