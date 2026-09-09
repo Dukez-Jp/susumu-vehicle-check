@@ -1,0 +1,20 @@
+# Deployment template only; never applied automatically.
+# Requires Docker Compose >= 2.24.4 for !override.
+# Use an independent project name and dedicated env file/volumes after operational review.
+services:
+  api:
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      Database__ApplyMigrationsAtStartup: 'false'
+      SUSUMU_DEV_SEED: 'false'
+      SUSUMU_BOOTSTRAP_ADMIN_PASSWORD: ''
+  web:
+    ports: !override
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    environment:
+      PUBLIC_HOST: ${PUBLIC_HOST:?Set the reviewed public hostname}
+      ACME_EMAIL: ${ACME_EMAIL:?Set the certificate contact email}
+    volumes:
+      - ./infrastructure/Caddyfile.https:/etc/caddy/Caddyfile:ro

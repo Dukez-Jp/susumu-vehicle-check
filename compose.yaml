@@ -1,0 +1,91 @@
+name: ${COMPOSE_PROJECT_NAME:-susumu-dev}
+
+services:
+  db:
+    image: postgres:18.6-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?Generate the DEV environment first}
+      POSTGRES_USER: ${POSTGRES_USER:?Set POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a random POSTGRES_PASSWORD}
+      POSTGRES_INITDB_ARGS: --data-checksums
+    volumes:
+      # PostgreSQL 18 uses versioned PGDATA below this parent mount.
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 5s
+      retries: 15
+    networks: [internal]
+
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/api.Dockerfile
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: '8080'
+      SUSUMU_DB_CONNECTION: Host=db;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      SUSUMU_JWT_SIGNING_KEY: ${JWT_SIGNING_KEY:?Set a random JWT_SIGNING_KEY}
+      SUSUMU_DB_PROVIDER: postgres
+      Database__ApplyMigrationsAtStartup: 'true'
+      SUSUMU_PHOTO_ROOT: /data/photos
+      SUSUMU_DEV_SEED: ${DEV_SEED_ENABLED:-false}
+      SUSUMU_BOOTSTRAP_ADMIN_USERNAME: admin
+      SUSUMU_BOOTSTRAP_ADMIN_PASSWORD: ${DEV_ADMIN_PASSWORD:-}
+      DevSeed__CredentialsFilePath: /data/dev-seed/credentials.json
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - photos:/data/photos
+      - dev-seed:/data/dev-seed
+    networks: [internal]
+
+  web:
+    build:
+      context: .
+      dockerfile: infrastructure/web.Dockerfile
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:${DEV_HTTP_PORT:-8080}:80'
+    depends_on: [api]
+    volumes:
+      - ./infrastructure/Caddyfile.dev:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks: [internal, edge]
+
+  backup:
+    profiles: [tools]
+    build:
+      context: .
+      dockerfile: infrastructure/backup.Dockerfile
+    environment:
+      PGHOST: db
+      PGPORT: '5432'
+      PGDATABASE: ${POSTGRES_DB}
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - photos:/photos:ro
+      - ./backups:/backups
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [internal]
+    command: [--help]
+
+volumes:
+  postgres-data:
+  photos:
+  dev-seed:
+  caddy-data:
+  caddy-config:
+
+networks:
+  internal:
+    internal: true
+  edge:

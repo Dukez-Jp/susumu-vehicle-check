@@ -1,0 +1,30 @@
+name: susumu_vehicle_check
+description: Inspeção de veículos offline para tablets da oficina.
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  drift: ^2.34.4
+  path_provider: ^2.1.5
+  path: ^1.9.1
+  # 11.0.0 requires SDK37 with a published Gradle target-name incompatibility.
+  flutter_secure_storage: 10.0.0
+  http: ^1.6.0
+  http_parser: ^4.1.2
+  uuid: ^4.5.2
+  crypto: ^3.0.7
+  image_picker: ^1.2.1
+  mobile_scanner: ^7.2.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  drift_dev: ^2.34.4
+  build_runner: ^2.10.5
+flutter:
+  uses-material-design: true

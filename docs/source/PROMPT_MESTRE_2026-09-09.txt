@@ -1,0 +1,1012 @@
+PROMPT MESTRE — SUSUMU VEHICLE CHECK
+Versão inicial: 2026-09-09
+
+======================================================================
+1. OBJETIVO DO PROJETO
+======================================================================
+
+Quero desenvolver um sistema empresarial completo de check-in, inspeção e manutenção
+de veículos/caminhões para uso em tablets Android dentro da oficina.
+
+O sistema deve nascer como um produto profissional, modular, seguro, auditável,
+offline-first e preparado para crescer para controle de manutenção, pneus, peças,
+custos, ordens de serviço e análises futuras com IA.
+
+O sistema será utilizado inicialmente em tablets Android com caneta, durante o
+check-in físico dos veículos.
+
+Fluxo principal esperado:
+
+1. Funcionário faz login.
+2. Identifica o veículo por QR Code, placa ou número interno.
+3. Informa/valida quilometragem.
+4. Abre o checklist correto para aquele tipo de veículo.
+5. Inspeciona item por item.
+6. Para cada item, registra:
+   - OK
+   - Atenção
+   - Reparar
+   - Crítico
+   - Não aplicável
+7. Pode registrar valores/medições.
+8. Pode escrever observações.
+9. Pode tirar fotos.
+10. Pode desenhar/anotar sobre uma cópia da foto com S Pen.
+11. O original da foto nunca deve ser alterado.
+12. Tudo é salvo localmente imediatamente.
+13. O app deve funcionar mesmo sem Wi-Fi.
+14. Quando a conexão voltar, deve sincronizar automaticamente com o servidor.
+15. O funcionário finaliza a inspeção.
+16. O sistema registra data, hora, usuário, veículo, local e dispositivo.
+17. O histórico do veículo deve permanecer disponível permanentemente.
+18. Itens problemáticos poderão gerar ordens de serviço.
+19. O escritório terá um painel web para visualizar a frota inteira.
+
+======================================================================
+2. PRINCÍPIOS NÃO NEGOCIÁVEIS
+======================================================================
+
+Este é um sistema empresarial crítico.
+
+NÃO desenvolver como uma simples página web dependente de conexão.
+
+O aplicativo Android deve ser OFFLINE-FIRST.
+
+Nunca perder uma inspeção por:
+- queda de Wi-Fi;
+- fechamento do aplicativo;
+- reinicialização do tablet;
+- queda de energia;
+- bateria;
+- timeout;
+- falha temporária do servidor.
+
+Nunca sobrescrever dados silenciosamente.
+
+Nunca apagar histórico de inspeção de produção.
+
+Inspeções finalizadas devem ser imutáveis ou versionadas.
+Correções devem gerar revisão/auditoria, não alteração invisível.
+
+Toda operação crítica deve registrar auditoria.
+
+Nunca armazenar senhas em texto puro.
+
+Nunca colocar secrets, senhas, tokens ou chaves privadas no Git.
+
+Nenhum agente de IA pode alterar diretamente o banco de produção.
+
+Toda alteração de schema deve usar migrations versionadas.
+
+Toda funcionalidade relevante deve vir acompanhada de testes.
+
+Nenhuma decisão arquitetônica importante deve ser trocada sem documentação ADR
+(Architecture Decision Record).
+
+======================================================================
+3. STACK TECNOLÓGICO OFICIAL
+======================================================================
+
+APP ANDROID / TABLET:
+- Flutter
+- Dart
+- Android
+- SQLite local
+- Drift para persistência local tipada
+- Arquitetura offline-first
+
+BACK-END:
+- C#
+- ASP.NET Core
+- .NET 10 LTS
+- Entity Framework Core
+- REST API
+- OpenAPI/Swagger
+- Autenticação segura com tokens e políticas de autorização
+
+BANCO CENTRAL:
+- PostgreSQL 18
+- Rodando na infraestrutura da empresa
+- Backups e migrations versionados
+
+PAINEL WEB:
+- React
+- TypeScript
+
+ARQUIVOS/FOTOS:
+- Não armazenar imagens grandes dentro do PostgreSQL.
+- Usar storage de arquivos/objetos separado.
+- O banco guarda metadados, IDs, caminhos, checksums e relacionamentos.
+- Preparar arquitetura para storage on-premises.
+
+INFRAESTRUTURA:
+- Linux Server / VM
+- Docker
+- Docker Compose inicialmente
+- HTTPS
+- VPN quando aplicável
+- Dev / Test / Staging / Production separados
+
+CONTROLE DE CÓDIGO:
+- Git
+- GitHub
+- Pull Requests
+- Branch protection
+- GitHub Actions
+- CI/CD
+
+AMBIENTE DE DESENVOLVIMENTO:
+- VS Code como ambiente principal
+- Android Studio como apoio para SDK/emulador Android
+- Flutter SDK
+- .NET 10 SDK
+- Node.js
+- Docker Desktop
+- PostgreSQL
+- DBeaver
+- Git / GitHub
+
+======================================================================
+4. HARDWARE ALVO INICIAL
+======================================================================
+
+Tablet-alvo principal:
+
+Samsung Galaxy Tab Active5 Pro 10.1" Wi-Fi 128 GB
+com S Pen.
+
+O app deve ser projetado para:
+- uso em oficina;
+- tela de aproximadamente 10";
+- toque;
+- S Pen/stylus;
+- botões grandes;
+- eventual uso com luvas;
+- câmera;
+- QR Code;
+- uso contínuo;
+- layout landscape e portrait quando fizer sentido.
+
+Planejar MDM/kiosk para produção, preferencialmente Android Enterprise / Samsung Knox.
+
+======================================================================
+5. ARQUITETURA DE ALTO NÍVEL
+======================================================================
+
+TABLET ANDROID
+    Flutter / Dart
+        |
+        +-- SQLite / Drift local
+        +-- Câmera
+        +-- QR Code
+        +-- S Pen / desenho
+        +-- Fila de sincronização
+        |
+        v
+HTTPS REST API
+    ASP.NET Core / C# / .NET 10
+        |
+        +-- regras de negócio
+        +-- autenticação
+        +-- autorização
+        +-- auditoria
+        +-- idempotência
+        +-- sincronização
+        |
+        v
+PostgreSQL 18
+        |
+        +-- dados relacionais
+        +-- histórico
+        +-- auditoria
+        +-- manutenção
+        |
+        +--> Storage separado para fotos/arquivos
+
+PAINEL WEB
+    React + TypeScript
+        |
+        v
+    Mesma API do back-end
+
+======================================================================
+6. REQUISITO CRÍTICO: SINCRONIZAÇÃO OFFLINE
+======================================================================
+
+A sincronização é uma das partes mais críticas deste produto.
+
+Projetar desde o início:
+
+- IDs UUID gerados no cliente para objetos criados offline.
+- Fila local de operações pendentes.
+- Idempotência no servidor.
+- Retry com backoff.
+- Estado de sincronização visível.
+- Upload resiliente de fotos.
+- Checksum de arquivos quando necessário.
+- Não duplicar inspeção por retry.
+- Não duplicar foto por retry.
+- Registrar data/hora local e data/hora recebida no servidor.
+- Resolver concorrência de forma explícita.
+- Nunca usar "last write wins" cegamente para dados críticos.
+- Definir claramente quais registros são append-only.
+- Definir política para dois tablets operando sobre o mesmo veículo.
+- Testar tablet offline por horas/dias e posterior sincronização.
+- Testar app encerrado no meio da operação.
+- Testar rede caindo durante upload.
+- Testar rede oscilando.
+
+Criar documento obrigatório:
+docs/OFFLINE_SYNC.md
+
+Antes de implementar sincronização, fazer revisão arquitetônica dedicada.
+
+======================================================================
+7. MÓDULOS DA V1
+======================================================================
+
+V1 deve incluir:
+
+- Login
+- Usuários
+- Perfis e permissões
+- Funcionários
+- Empresas/unidades
+- Veículos
+- Tipos de veículo
+- QR Code do veículo
+- Quilometragem
+- Templates de checklist
+- Versionamento de templates
+- Itens do checklist
+- Inspeções
+- Status por item:
+  OK / Atenção / Reparar / Crítico / N/A
+- Medições numéricas
+- Observações
+- Fotos
+- Foto original preservada
+- Cópia anotada/desenhada
+- S Pen
+- Assinatura quando aplicável
+- Banco local
+- Offline
+- Sincronização
+- Histórico do veículo
+- Auditoria
+- Dashboard básico
+- Relatório PDF
+- Exportação de dados
+- Administração do checklist pelo painel, sem recompilar o app
+
+======================================================================
+8. MÓDULOS FUTUROS
+======================================================================
+
+Não bloquear a arquitetura para futura inclusão de:
+
+- Ordens de serviço
+- Peças
+- Estoque
+- Consumo de peças
+- Pneus
+- Posição do pneu no veículo
+- Vida útil do pneu
+- Freios
+- Óleo
+- Baterias
+- Preventiva
+- Alertas
+- Custos
+- Fornecedores
+- Compras
+- Tempo de mão de obra
+- Custos por veículo
+- Custos por quilômetro
+- Relatórios avançados
+- BI
+- IA preditiva
+- Visão computacional em fotos
+
+Não implementar tudo na V1.
+Criar uma fundação que permita expansão sem reescrever o produto.
+
+======================================================================
+9. MODELO INICIAL DE DADOS
+======================================================================
+
+Considerar, no mínimo, entidades como:
+
+USERS
+ROLES
+PERMISSIONS
+EMPLOYEES
+COMPANIES
+LOCATIONS
+
+VEHICLES
+VEHICLE_TYPES
+
+CHECKLIST_TEMPLATES
+CHECKLIST_TEMPLATE_VERSIONS
+CHECKLIST_SECTIONS
+CHECKLIST_ITEMS
+
+INSPECTIONS
+INSPECTION_ITEMS
+MEASUREMENTS
+
+PHOTOS
+PHOTO_ANNOTATIONS
+SIGNATURES
+
+SYNC_OPERATIONS
+DEVICES
+
+AUDIT_LOG
+
+WORK_ORDERS
+WORK_ORDER_ITEMS
+
+PARTS
+PARTS_USED
+
+TIRES
+TIRE_INSPECTIONS
+
+MAINTENANCE_HISTORY
+
+A modelagem definitiva deve ser analisada antes de criar migrations de produção.
+
+======================================================================
+10. PAPÉIS DOS AGENTES DE IA
+======================================================================
+
+Vamos utilizar múltiplos agentes/modelos como uma equipe de engenharia.
+
+REGRA:
+GitHub + documentação versionada = fonte única da verdade.
+
+Nenhum agente deve confiar apenas no histórico do próprio chat.
+
+PAPEL 1 — GPT / ARQUITETO-CHEFE
+Responsabilidades:
+- entender requisitos do negócio;
+- decompor funcionalidades;
+- definir arquitetura;
+- revisar decisões;
+- escrever especificações;
+- avaliar riscos;
+- definir critérios de aceitação;
+- mediar conflitos entre propostas;
+- revisar segurança e consistência;
+- manter documentação coerente.
+
+PAPEL 2 — CODEX / ENGENHEIRO DE IMPLEMENTAÇÃO
+Responsabilidades:
+- implementar issues aprovadas;
+- escrever código;
+- escrever migrations;
+- escrever testes;
+- rodar testes;
+- corrigir bugs;
+- refatorar dentro dos limites definidos;
+- abrir/atualizar PRs;
+- atualizar documentação afetada.
+
+PAPEL 3 — CLAUDE CODE / REVISOR ADVERSARIAL
+Responsabilidades:
+- revisar arquitetura e PRs;
+- procurar bugs;
+- procurar condições de corrida;
+- procurar perda de dados;
+- procurar falhas de sincronização;
+- procurar vulnerabilidades;
+- procurar edge cases;
+- avaliar manutenção;
+- desafiar decisões fracas;
+- sugerir testes faltantes.
+
+Os papéis podem ser invertidos em tarefas específicas para obter revisão independente.
+
+======================================================================
+11. REGRA DE REVISÃO CRUZADA
+======================================================================
+
+Não aceitar:
+
+"Veja se o código está bom."
+
+Usar revisão adversarial:
+
+"Tente quebrar esta implementação.
+Procure perda de dados, inconsistências, race conditions, duplicação,
+problemas de sincronização offline, falhas de autenticação/autorização,
+problemas de segurança, regressões, edge cases, falta de testes,
+problemas de manutenção e violações da arquitetura documentada."
+
+Fluxo padrão:
+
+ISSUE
+  ->
+ESPECIFICAÇÃO
+  ->
+BRANCH
+  ->
+IMPLEMENTAÇÃO
+  ->
+TESTES
+  ->
+PULL REQUEST
+  ->
+CI
+  ->
+REVISÃO ADVERSARIAL
+  ->
+CORREÇÕES
+  ->
+NOVA EXECUÇÃO DOS TESTES
+  ->
+APROVAÇÃO
+  ->
+MERGE
+
+======================================================================
+12. DOCUMENTAÇÃO OBRIGATÓRIA DO REPOSITÓRIO
+======================================================================
+
+Criar:
+
+README.md
+
+docs/
+  PRODUCT_REQUIREMENTS.md
+  ARCHITECTURE.md
+  DATABASE.md
+  API.md
+  SECURITY.md
+  OFFLINE_SYNC.md
+  UI_UX.md
+  TESTING.md
+  DEPLOYMENT.md
+  OPERATIONS.md
+
+decisions/
+  ADR-001-technology-stack.md
+  ADR-002-offline-first.md
+  ADR-003-database.md
+  ADR-004-file-storage.md
+  ...
+
+Criar também instruções específicas para os agentes quando suportado pela ferramenta,
+mantendo as regras centrais consistentes entre todos.
+
+======================================================================
+13. ESTRUTURA DO REPOSITÓRIO
+======================================================================
+
+susumu-vehicle-check/
+|
+|-- mobile/
+|     Flutter / Dart
+|
+|-- backend/
+|     ASP.NET Core / C#
+|
+|-- admin-web/
+|     React / TypeScript
+|
+|-- database/
+|
+|-- infrastructure/
+|     Docker / deployment
+|
+|-- docs/
+|
+|-- decisions/
+|
+|-- tests/
+|
+|-- scripts/
+|
+|-- .github/
+|     workflows/
+|     pull_request_template/
+|     issue_templates/
+
+Preferir monorepo inicialmente para manter contrato, documentação,
+API e versões coordenados.
+
+======================================================================
+14. GIT / GITHUB
+======================================================================
+
+Branch principal:
+main
+
+main protegida.
+
+Proibir push direto em main.
+
+Toda mudança relevante via Pull Request.
+
+Exigir:
+- CI verde
+- lint
+- build
+- testes
+- revisão
+- migrations válidas quando houver mudança de banco
+
+Branches:
+feature/...
+fix/...
+chore/...
+docs/...
+
+Commits claros.
+
+PR deve explicar:
+- problema;
+- solução;
+- arquivos alterados;
+- impacto no banco;
+- impacto na API;
+- impacto no offline;
+- riscos;
+- testes executados;
+- screenshots quando UI mudar.
+
+======================================================================
+15. TESTES OBRIGATÓRIOS
+======================================================================
+
+Criar estratégia desde o início:
+
+APP:
+- unit tests
+- widget tests
+- integration tests
+
+BACK-END:
+- unit tests
+- integration tests
+- API tests
+
+BANCO:
+- migration tests
+- constraints
+- rollback/restore testado quando aplicável
+
+END-TO-END:
+- tablet -> API -> PostgreSQL -> retorno
+
+TESTES DE FALHA:
+- sem internet
+- conexão cai
+- conexão volta
+- API indisponível
+- servidor reinicia
+- app fecha
+- tablet reinicia
+- upload de foto interrompido
+- mesma operação reenviada
+- dois tablets
+- conflito
+- usuário sem permissão
+- token expirado
+- dados inválidos
+- quilometragem inconsistente
+- inspeção duplicada
+
+SEGURANÇA:
+- autorização por perfil
+- acesso indevido a veículo/inspeção
+- validação de upload
+- inputs maliciosos
+- segredo exposto
+- endpoints administrativos
+
+======================================================================
+16. AMBIENTES
+======================================================================
+
+Manter separação clara:
+
+DEV
+TEST
+STAGING
+PRODUCTION
+
+PRODUCTION não deve ser usado para desenvolvimento.
+
+Dados reais não devem ser copiados para ambientes de IA/desenvolvimento sem política
+de anonimização e autorização.
+
+======================================================================
+17. SEGURANÇA
+======================================================================
+
+Aplicar princípio de menor privilégio.
+
+HTTPS obrigatório.
+
+Autenticação e autorização separadas.
+
+Perfis iniciais sugeridos:
+- Inspetor
+- Mecânico
+- Supervisor
+- Escritório
+- Administrador
+
+Registrar auditoria para:
+- login;
+- criação;
+- alteração;
+- finalização;
+- revisão;
+- operações administrativas;
+- alterações de checklist;
+- mudanças de permissões.
+
+Secrets:
+- nunca no código;
+- nunca no Git;
+- usar gestão de secrets por ambiente.
+
+Uploads:
+- validar tipo;
+- validar tamanho;
+- gerar nome interno seguro;
+- não confiar no nome enviado pelo usuário.
+
+======================================================================
+18. UX DO TABLET
+======================================================================
+
+Objetivo: funcionário usar rapidamente na oficina.
+
+Regras:
+- botões grandes;
+- pouco texto;
+- alto contraste;
+- feedback visual claro;
+- status facilmente identificáveis;
+- toque e S Pen;
+- fluxo linear;
+- autosave;
+- não exigir ações repetitivas desnecessárias;
+- minimizar teclado;
+- mostrar estado offline/sincronização sem atrapalhar o trabalho;
+- permitir retomar inspeção interrompida.
+
+Tela inicial:
+- login
+- novo check-in
+- continuar check-in
+- pesquisar veículo
+
+Durante check-in:
+- identificação do veículo
+- quilometragem
+- seção atual
+- progresso
+- itens
+- foto
+- observação
+- medição
+- status
+- próximo
+
+Finalização:
+- resumo de problemas
+- pendências obrigatórias
+- confirmação
+- assinatura se configurada
+- status de sincronização
+
+======================================================================
+19. CHECKLIST CONFIGURÁVEL
+======================================================================
+
+NUNCA hardcode o checklist inteiro dentro do app.
+
+O painel administrativo deve permitir:
+- criar template;
+- criar seções;
+- criar itens;
+- alterar ordem;
+- tornar item obrigatório;
+- definir tipo de resposta;
+- configurar opções;
+- configurar limites;
+- ativar/desativar;
+- publicar nova versão.
+
+Uma inspeção deve guardar a versão exata do template utilizada,
+para preservar a história mesmo que o template mude depois.
+
+======================================================================
+20. FOTOS E ANOTAÇÕES
+======================================================================
+
+Ao tirar foto:
+
+1. Salvar original.
+2. Gerar ID.
+3. Registrar metadados.
+4. Se usuário desenhar, salvar anotação/cópia separadamente.
+5. Nunca modificar o original.
+6. Sincronizar de forma resiliente.
+7. Não duplicar em retry.
+8. Registrar checksum quando necessário.
+
+======================================================================
+21. PRIMEIRA META TÉCNICA
+======================================================================
+
+NÃO começar tentando construir o sistema inteiro.
+
+Primeiro criar o menor fluxo vertical possível.
+
+META 0 — FOUNDATION:
+- repositório;
+- documentação;
+- CI;
+- estrutura de pastas;
+- ambientes;
+- Docker local.
+
+META 1 — VERTICAL SLICE:
+1. Flutter abre no Android.
+2. Usuário visualiza tela simples.
+3. Digita/seleciona veículo "714".
+4. Flutter chama API ASP.NET Core.
+5. API acessa PostgreSQL.
+6. Banco retorna veículo.
+7. API responde.
+8. Tablet exibe os dados.
+9. Teste automatizado cobre o fluxo principal.
+
+Somente depois seguir para checklist.
+
+======================================================================
+22. ORDEM DE DESENVOLVIMENTO
+======================================================================
+
+FASE 0
+- requisitos
+- documentação
+- arquitetura
+- ADRs
+- protótipo de fluxo
+
+FASE 1
+- monorepo
+- CI
+- Docker local
+- PostgreSQL
+- API base
+- Flutter base
+- React base
+
+FASE 2
+- autenticação
+- usuários
+- permissões
+- veículos
+
+FASE 3
+- templates de checklist
+- versionamento
+- inspeções
+
+FASE 4
+- SQLite/Drift
+- autosave
+- offline
+
+FASE 5
+- sincronização robusta
+- idempotência
+- conflitos
+
+FASE 6
+- câmera
+- fotos
+- storage
+- S Pen
+- anotações
+
+FASE 7
+- dashboard web
+- pesquisa
+- histórico
+- relatórios
+
+FASE 8
+- auditoria
+- hardening de segurança
+- observabilidade
+- backup
+- restore test
+
+FASE 9
+- piloto com poucos veículos/tablets
+- feedback da oficina
+- correções
+
+FASE 10
+- produção
+- MDM/kiosk
+- expansão gradual
+
+======================================================================
+23. CRITÉRIOS DE ACEITAÇÃO DA V1
+======================================================================
+
+A V1 não está pronta enquanto não demonstrar:
+
+- login seguro;
+- veículo identificável;
+- checklist versionado;
+- inspeção salva;
+- fotos salvas;
+- anotações salvas;
+- app funcionando offline;
+- inspeção sobrevivendo a reinício;
+- sincronização após reconexão;
+- retry sem duplicação;
+- histórico no servidor;
+- auditoria;
+- permissões;
+- dashboard;
+- backup;
+- restauração testada;
+- CI;
+- testes automatizados;
+- documentação de instalação.
+
+======================================================================
+24. REGRAS PARA QUALQUER AGENTE QUE RECEBER ESTE PROMPT
+======================================================================
+
+Antes de codificar:
+
+1. Leia este documento inteiro.
+2. Não altere a stack oficial sem ADR aprovado.
+3. Não implemente recursos além da tarefa atual sem justificar.
+4. Não faça mudanças massivas sem plano.
+5. Verifique documentação existente.
+6. Verifique decisões ADR.
+7. Identifique riscos da tarefa.
+8. Defina critérios de aceitação.
+9. Proponha testes.
+10. Só então implemente.
+
+Depois de implementar:
+
+1. Rode lint.
+2. Rode build.
+3. Rode testes.
+4. Atualize documentação.
+5. Liste migrations.
+6. Liste riscos residuais.
+7. Explique como reproduzir/testar.
+8. Não declare "pronto" se testes falharem.
+
+Se encontrar uma decisão ruim:
+- não altere silenciosamente;
+- escreva proposta;
+- explique trade-offs;
+- crie/atualize ADR;
+- aguarde decisão arquitetônica quando necessário.
+
+======================================================================
+25. PRIMEIRA ORDEM PARA O AGENTE
+======================================================================
+
+Você é o engenheiro responsável por iniciar o projeto SUSUMU VEHICLE CHECK.
+
+NÃO implemente ainda todas as funcionalidades.
+
+Sua primeira missão é construir a FOUNDATION do projeto.
+
+Faça nesta ordem:
+
+1. Analise este prompt.
+2. Produza um resumo das decisões arquitetônicas.
+3. Liste dúvidas realmente bloqueantes, mas evite perguntas desnecessárias.
+4. Proponha a estrutura final do monorepo.
+5. Crie o README.md inicial.
+6. Crie os arquivos em docs/.
+7. Crie os ADRs iniciais.
+8. Inicialize:
+   - mobile Flutter;
+   - backend ASP.NET Core .NET 10;
+   - admin-web React + TypeScript.
+9. Configure PostgreSQL local via Docker.
+10. Configure variáveis de ambiente de desenvolvimento sem secrets reais.
+11. Configure lint/format.
+12. Configure testes mínimos.
+13. Configure GitHub Actions para build/test dos três componentes.
+14. Crie o primeiro vertical slice:
+    Flutter -> API -> PostgreSQL -> resposta.
+15. Não implementar checklist completo ainda.
+16. Entregue relatório do que foi criado, comandos para executar e testes realizados.
+
+Ao concluir, solicite uma REVISÃO ADVERSARIAL de outro agente antes do merge.
+
+======================================================================
+26. PROMPT PARA REVISOR ADVERSARIAL
+======================================================================
+
+Você está atuando como revisor sênior independente do projeto SUSUMU VEHICLE CHECK.
+
+Não presuma que a implementação está correta.
+
+Tente encontrar falhas reais.
+
+Analise:
+- aderência à arquitetura;
+- perda de dados;
+- concorrência;
+- offline/sync;
+- idempotência;
+- banco;
+- migrations;
+- segurança;
+- autenticação;
+- autorização;
+- secrets;
+- API;
+- validação;
+- UX crítica;
+- performance;
+- testabilidade;
+- manutenção;
+- duplicação;
+- cobertura de testes;
+- cenários de falha;
+- documentação.
+
+Classifique achados:
+BLOCKER
+HIGH
+MEDIUM
+LOW
+
+Para cada achado forneça:
+1. problema;
+2. impacto;
+3. como reproduzir;
+4. correção recomendada;
+5. teste que impediria regressão.
+
+Não aprove o PR apenas porque compila.
+
+======================================================================
+27. RESULTADO ESPERADO
+======================================================================
+
+O objetivo não é "gerar código rápido".
+
+O objetivo é construir um sistema empresarial confiável que possa operar por muitos
+anos e se tornar a plataforma central de check-in e manutenção da frota.
+
+Prioridades, nesta ordem:
+
+1. Integridade dos dados
+2. Segurança
+3. Funcionamento offline
+4. Confiabilidade
+5. Auditabilidade
+6. Simplicidade para o mecânico
+7. Manutenibilidade
+8. Testabilidade
+9. Performance
+10. Velocidade de desenvolvimento
+
+FIM DO PROMPT MESTRE
+
