@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Susumu.Api/Susumu.Api.csproj" />
+    <Project Path="src/Susumu.Domain/Susumu.Domain.csproj" />
+    <Project Path="src/Susumu.Infrastructure/Susumu.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Susumu.Api.Tests/Susumu.Api.Tests.csproj" />
+  </Folder>
+</Solution>

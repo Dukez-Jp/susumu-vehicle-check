@@ -1,0 +1,36 @@
+name: Defect
+description: Report a reproducible problem without personal data or credentials.
+title: '[Bug] '
+labels: [bug]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: Include the affected screen or API operation.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Use synthetic records and remove tokens, passwords, personal data and real photos.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and evidence
+      description: App version, Android/browser version, online/offline state and sanitized logs.
+    validations:
+      required: true
+  - type: dropdown
+    id: durability
+    attributes:
+      label: Data preservation impact
+      options:
+        - No observed loss or overwrite
+        - Pending work inaccessible
+        - Suspected loss or overwrite
+    validations:
+      required: true

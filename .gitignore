@@ -1,0 +1,40 @@
+# Secrets and local state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.keystore
+*.jks
+!*.example
+.local/
+.worktrees/
+.superpowers/
+artifacts/
+uploads/
+backups/
+logs/
+*.log
+*.db
+*.db-shm
+*.db-wal
+# .NET
+**/bin/
+**/obj/
+TestResults/
+# Node
+**/node_modules/
+**/dist/
+**/coverage/
+# Flutter / Android
+**/.dart_tool/
+**/.flutter-plugins*
+**/build/
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/ios/Pods/
+.DS_Store
+.idea/
+.vscode/

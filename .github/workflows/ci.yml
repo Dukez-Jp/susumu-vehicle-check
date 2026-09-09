@@ -1,0 +1,162 @@
+name: V1 checks
+
+on:
+  push:
+    branches: [main, 'feature/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend and real PostgreSQL integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:18.6-bookworm
+        env:
+          POSTGRES_DB: susumu_ci
+          POSTGRES_USER: postgres
+          # Ephemeral isolated GitHub runner only. Deployment Compose always requires a random password.
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d susumu_ci"
+          --health-interval 5s --health-timeout 5s --health-retries 15
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          dotnet-version: 10.0.401
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      - name: Infrastructure safety tests
+        run: bash scripts/check.sh infrastructure
+      - name: Create separate disposable PostgreSQL test database
+        run: docker exec "$POSTGRES_SERVICE_ID" createdb -U postgres susumu_ci_tests
+        env:
+          POSTGRES_SERVICE_ID: ${{ job.services.postgres.id }}
+      - name: Restore, compile and run unit plus PostgreSQL-specific tests
+        run: bash scripts/check.sh backend
+        env:
+          # Destructive schema tests may reset this isolated database only.
+          TEST_DATABASE_URL: Host=127.0.0.1;Port=5432;Database=susumu_ci_tests;Username=postgres
+          SUSUMU_ALLOW_DESTRUCTIVE_TEST_DB: 'true'
+      - name: Mandatory API flow against PostgreSQL 18
+        run: python3 -B scripts/ci_api_smoke.py
+        env:
+          # Keep the smoke database fresh and independent of schema-reset tests.
+          SUSUMU_DB_CONNECTION: Host=127.0.0.1;Port=5432;Database=susumu_ci;Username=postgres
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: backend-test-reports
+          path: |
+            artifacts/test-results/backend/**/*.trx
+            artifacts/api-smoke.json
+          if-no-files-found: error
+          retention-days: 14
+
+  web:
+    name: Admin web lint, tests and production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: admin-web/package-lock.json
+      - run: bash scripts/check.sh web
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: admin-web-production-build
+          path: admin-web/dist
+          if-no-files-found: error
+          retention-days: 14
+
+  mobile:
+    name: Android analysis, tests and DEV APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          flutter-version: 3.47.2
+          channel: stable
+          cache: true
+      - name: Analyze, test and build debug APK with explicit DEV HTTP
+        run: bash scripts/check.sh mobile
+        env:
+          BUILD_DEV_APK: 'true'
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: SUSUMU-VEHICLE-CHECK-DEV-debug-APK-NOT-PRODUCTION
+          path: mobile/build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+
+  containers:
+    name: Linux Compose build and same-origin PostgreSQL flow
+    needs: [backend, web]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      COMPOSE_PROJECT_NAME: susumu-ci-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      - name: Generate unique DEV secrets without printing values
+        run: python3 -B scripts/generate_dev_env.py
+      - name: Validate configuration and build Linux containers
+        run: |
+          docker compose config --quiet
+          docker compose build --pull
+      - name: Start isolated persistent stack
+        run: docker compose up -d --wait --wait-timeout 120
+      - name: Verify admin and authenticated API through Caddy
+        run: python3 -B scripts/compose_ci_smoke.py
+      - name: Recreate CI containers while preserving volumes
+        run: |
+          docker compose down
+          docker compose up -d --wait --wait-timeout 120
+      - name: Verify finalized history and original photo bytes survived recreation
+        run: python3 -B scripts/compose_ci_smoke.py --verify-existing
+      - name: Upload container integration evidence
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: compose-postgresql-caddy-integration
+          path: artifacts/api-smoke.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Clean only this job's disposable CI project and volumes
+        if: always()
+        shell: bash
+        run: |
+          if [[ ! "$COMPOSE_PROJECT_NAME" =~ ^susumu-ci-[0-9]+-[0-9]+$ ]]; then
+            printf 'Refusing cleanup outside a CI-owned project\n' >&2
+            exit 1
+          fi
+          if [[ -f .env ]]; then
+            docker compose --project-name "$COMPOSE_PROJECT_NAME" down --volumes --remove-orphans
+          fi
