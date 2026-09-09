@@ -1,6 +1,10 @@
 # SUSUMU VEHICLE CHECK — shared engineering rules
 
-## Current user instruction — 2026-09-10: documentation only
+## Current user instruction — 2026-09-10: local browser demonstration
+
+Wagner explicitly authorized building and testing a local Windows/Chrome demonstration of the Tenken tablet flow with mouse controls, in collaboration with real Claude Code. This supersedes the documentation-only restriction ONLY for this demonstration and its tests, documentation and local launcher. Preserve Android/backend implementation; no production deployment or production data. Use synthetic fixtures and clearly identify simulated server actions. The Android product and physical tablet pilot remain separate and are not newly authorized for development. Root owns demo UI/integration; Claude owns demo domain model and domain tests as assigned. No worker commits or switches branches.
+
+## Previous user instruction — documentation-only sketch
 
 Wagner explicitly requested that Codex and Claude Code work only on the complete sketch, with tests and subtests, and **not program anything yet**. This supersedes the earlier implementation authorization below for the current phase. Preserve the existing V1. Write/review design documents, screen sketches, conceptual scenarios and acceptance criteria only. Do not change application source, executable tests, dependencies, schemas, infrastructure configuration or runtime; do not execute builds, migrations, application tests or deployments. The pilot uses one purchased Galaxy Tab Active5 Pro Wi-Fi. New implementation requires a new explicit user instruction. Record test scenarios as planned, never as executed or passed in this design phase.
 

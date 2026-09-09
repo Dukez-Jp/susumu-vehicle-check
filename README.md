@@ -1,6 +1,6 @@
 # SUSUMU VEHICLE CHECK
 
-**Fase atual — 10/09/2026:** por orientação de Wagner, somente esboço, cenários de teste e revisão documental, sem nova programação. O [esboço completo do piloto de um tablet](docs/esboco/2026-09-10/ESBOCO_COMPLETO.md) e a [matriz de testes/subtestes](docs/esboco/2026-09-10/TESTES_E_SUBTESTES.md) são a pauta vigente. A implementação descrita abaixo é a V1 anterior, preservada como referência; seus comandos não constituem autorização para executá-los nesta fase.
+**Fase atual — 10/09/2026:** Wagner autorizou uma **demonstração local do Tenken no Windows/Chrome**, com mouse, desenvolvida e revisada em conjunto com Claude Code. Abra `http://127.0.0.1:5174/demo.html` ou execute `ABRIR_DEMO_TENKEN.cmd`. Veja o [guia da demonstração](docs/DEMONSTRACAO_TENKEN.md). O [esboço do piloto de um tablet](docs/esboco/2026-09-10/ESBOCO_COMPLETO.md) e a [matriz de 91 subtestes planejados](docs/esboco/2026-09-10/TESTES_E_SUBTESTES.md) continuam como referência: esta demonstração não executa nem aprova essa matriz. A autorização nova cobre a demonstração, não desenvolvimento Android ou produção.
 
 Inspeções de veículos na oficina, com aplicativo Android que salva o trabalho no tablet e sincroniza com o servidor quando a conexão volta. O escritório acompanha a frota, administra checklists e consulta relatórios em um painel web.
 
