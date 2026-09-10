@@ -6,6 +6,8 @@
   "engines": { "node": ">=24.0.0" },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
+    "demo": "vite --config vite.demo.config.ts",
+    "build:demo": "tsc -b && vite build --config vite.demo.config.ts",
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
     "lint": "eslint . --max-warnings 0",

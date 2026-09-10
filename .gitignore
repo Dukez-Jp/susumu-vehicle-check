@@ -26,6 +26,7 @@ TestResults/
 # Node
 **/node_modules/
 **/dist/
+**/dist-demo/
 **/coverage/
 # Flutter / Android
 **/.dart_tool/
