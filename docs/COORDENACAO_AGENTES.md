@@ -1,5 +1,30 @@
 # Coordenação atual — 10/09/2026
 
+## Pasta ativa do projeto — mudou em 10/09/2026, fim da tarde
+
+**A raiz do código passou a ser `C:\Dev\susumu-vehicle-check`.** É um clone
+completo do repositório privado, com `backend/` (120 arquivos) e `mobile/`
+(64 arquivos) íntegros. Todo agente — Claude Code, GPTCodex, Codex auxiliar —
+deve trabalhar somente nessa pasta a partir de agora.
+
+**O OneDrive não recebe mais alterações de código.** A pasta antiga foi renomeada
+para `Particular\CODEX\_GPT_ARQUIVO_ANTIGO_2026-09-10` e é cópia de segurança
+somente leitura: não editar, não rodar a demonstração e não commitar a partir
+dela. Qualquer trecho deste documento que aponte o OneDrive como raiz do código
+é registro histórico e está superado por esta seção.
+
+Motivo: aquela pasta não era um repositório git — o `.git` existia, mas estava
+vazio — e a sincronização do OneDrive nunca terminou, faltando 261 dos 315
+arquivos da `main`. Commitar a partir dela teria registrado 261 remoções e o
+push apagaria o backend .NET e o aplicativo Flutter do GitHub.
+
+`.local/` continua fora do Git, com a senha do Postgres e demais segredos. Não
+foi copiado para `C:\Dev` e não deve ser; seus 291 arquivos seguem preservados
+na pasta de arquivo do OneDrive.
+
+Instruções de retomada, comandos e regras de publicação: `CONTINUAR_PROJETO.md`
+na raiz do repositório.
+
 ## Idioma na primeira página — 10/09/2026, tarde
 
 Pedido de Wagner: colocar a escolha de idioma na primeira página, com bandeiras
@@ -146,6 +171,11 @@ Não houve alteração da implementação nesta rodada. A demonstração anterio
 rodando em `http://127.0.0.1:5174/demo.html`. O projeto está nesta pasta do OneDrive;
 o restante da sincronização e o `.git` ainda não foram validados neste notebook.
 
+> **Superado em 10/09/2026, fim da tarde.** A dúvida acima foi resolvida: a
+> sincronização estava incompleta e o `.git` estava vazio. A raiz do código é
+> agora `C:\Dev\susumu-vehicle-check`. Ver a seção "Pasta ativa do projeto" no
+> alto deste documento.
+
 ## Resultado histórico do inventário e alinhamento
 
 - Requisito consolidado em `docs/REQUISITOS_FORMULARIOS_JA_PT.md`; originais,
@@ -210,6 +240,10 @@ Código e requisitos foram conferidos em
 O canal de contato usado por Claude nesta rodada fica em
 `Particular\CODEX_GPT\TableSusumuSabisu\.local\agent-bridge`; isso não muda a raiz
 do código. Não reconstruir o aplicativo nem duplicar requisitos na pasta antiga.
+
+> **Superado em 10/09/2026, fim da tarde.** O caminho do OneDrive citado acima
+> deixou de ser a raiz do código e foi renomeado para
+> `_GPT_ARQUIVO_ANTIGO_2026-09-10`. A raiz é `C:\Dev\susumu-vehicle-check`.
 
 ### Responsabilidade por arquivos, relativa à raiz do código
 
