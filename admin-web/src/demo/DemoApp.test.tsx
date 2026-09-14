@@ -141,33 +141,29 @@ describe("Tenken browser demonstration", () => {
       screen.getByText(/Comunique a ocorrência ao responsável/),
     ).toBeInTheDocument();
   });
-  it("runs the same inspection from Oficina 2 without the transition API", () => {
-    // A segunda oficina existe so para experimentar as transicoes. Ela precisa
-    // abrir exatamente a mesma inspecao — e o navegador de teste nao tem
-    // startViewTransition, que e justamente o caminho de quem nao tem a API.
+  it("runs the inspection without the transition API", () => {
+    // O navegador de teste nao tem startViewTransition, que e justamente o
+    // caminho de quem nao tem a API: a tela troca seca e a inspecao corre
+    // igual.
     expect(
       (document as Document & { startViewTransition?: unknown })
         .startViewTransition,
     ).toBeUndefined();
     render(<DemoApp />);
-    fireEvent.click(screen.getByRole("button", { name: /Minha oficina 2/ }));
-    expect(screen.getByText("Oficina 2 · transições")).toBeInTheDocument();
+    expect(screen.getByText("Piloto · 1 tablet")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Inspecionar 714/ }));
     fireEvent.click(screen.getByRole("button", { name: "Iniciar Tenken" }));
     expect(screen.getByText("0 de 12 respondidos")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "OK" }));
     expect(screen.getByText("1 de 12 respondidos")).toBeInTheDocument();
-    // A volta reconhece de onde a inspecao saiu.
     fireEvent.click(screen.getByRole("button", { name: /Voltar à oficina/ }));
-    expect(screen.getByText("Oficina 2 · transições")).toBeInTheDocument();
+    expect(screen.getByText("Piloto · 1 tablet")).toBeInTheDocument();
   });
-  it("runs the same inspection from Oficina 3 and walks the items", () => {
-    // A terceira oficina acrescenta movimento, nao comportamento: os 12 itens
+  it("walks the items one by one in both directions", () => {
+    // O movimento acrescenta aparencia, nao comportamento: os 12 itens
     // continuam sendo percorridos um a um pelo mecanico, e o sentido nunca
     // fica preso no documento depois da troca.
     render(<DemoApp />);
-    fireEvent.click(screen.getByRole("button", { name: /Minha oficina 3/ }));
-    expect(screen.getByText("Oficina 3 · movimento")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Inspecionar 208/ }));
     fireEvent.click(screen.getByRole("button", { name: "Iniciar Tenken" }));
     expect(screen.getByText("Item 1 / 12")).toBeInTheDocument();
@@ -177,7 +173,7 @@ describe("Tenken browser demonstration", () => {
     expect(screen.getByText("Item 1 / 12")).toBeInTheDocument();
     expect(document.documentElement.dataset.sentido).toBeUndefined();
     fireEvent.click(screen.getByRole("button", { name: /Voltar à oficina/ }));
-    expect(screen.getByText("Oficina 3 · movimento")).toBeInTheDocument();
+    expect(screen.getByText("Piloto · 1 tablet")).toBeInTheDocument();
   });
   it("deletes only the chosen draft and never a finalized record", () => {
     const rascunho = newInspection("v-714", 182450, "Teste");

@@ -13,13 +13,11 @@ import {
   Home,
   Search,
   ShieldAlert,
-  Sparkles,
   Trash2,
   Truck,
   Wifi,
   WifiOff,
   X,
-  Zap,
 } from "lucide-react";
 import {
   emptyState,
@@ -62,8 +60,6 @@ import usePointerGlow from "./pointerGlow";
 
 type Page =
   | "home"
-  | "home2"
-  | "home3"
   | "setup"
   | "checklist"
   | "review"
@@ -164,19 +160,12 @@ export default function DemoApp() {
     document.documentElement.lang = language;
   }, [language]);
   usePointerGlow();
-  /* Na Oficina 3 a lista de itens anda para um lado ou para o outro conforme
-     a direcao escolhida: e o que diz, sem texto, se voce avancou ou voltou
-     dentro dos 12 pontos. O sentido vai no proprio documento porque quem le
-     ele e o CSS da transicao. */
-  function telaDeOrigem(): Page {
-    return movimento === "cheio"
-      ? "home3"
-      : movimento === "suave"
-        ? "home2"
-        : "home";
-  }
+  /* A lista de itens anda para um lado ou para o outro conforme a direcao
+     escolhida: e o que diz, sem texto, se voce avancou ou voltou dentro dos
+     12 pontos. O sentido vai no proprio documento porque quem le ele e o CSS
+     da transicao. */
   function irParaItem(proximo: number) {
-    if (movimento !== "cheio" || paradoOuSemApi()) {
+    if (paradoOuSemApi()) {
       setItemIndex(proximo);
       return;
     }
@@ -189,11 +178,6 @@ export default function DemoApp() {
       delete document.documentElement.dataset.sentido;
     });
   }
-  /* "Oficina 2" e a mesma tela inicial com as transicoes ligadas. O modo
-     acompanha a inspecao depois que ela comeca, senao a volta para a lista
-     sairia de um jeito e a ida de outro. */
-  const [movimento, setMovimento] = useState<"" | "suave" | "cheio">("");
-  const fluxoSuave = movimento !== "";
   /* Onde a API nao existe, a tela troca seca, como sempre foi. Quem pediu
      menos movimento ao sistema tambem cai aqui. */
   function paradoOuSemApi() {
@@ -202,12 +186,8 @@ export default function DemoApp() {
       !document.startViewTransition
     );
   }
-  function comTransicao(
-    acao: () => void,
-    numero?: HTMLElement | null,
-    ligado = fluxoSuave,
-  ) {
-    if (!ligado || paradoOuSemApi()) {
+  function comTransicao(acao: () => void, numero?: HTMLElement | null) {
+    if (paradoOuSemApi()) {
       acao();
       return;
     }
@@ -535,7 +515,7 @@ export default function DemoApp() {
         }
       >
         <aside
-          className={`sidebar rail${movimento ? ` ${movimento}` : ""}`}
+          className="sidebar rail"
           inert={Boolean(drawingSignature || annotation || preview)}
         >
           <a className="brand" href="/demo.html">
@@ -567,66 +547,14 @@ export default function DemoApp() {
               aria-label={t.navHome}
               className={
                 page === "home" ||
-                (movimento === "" &&
-                  ["setup", "checklist", "review"].includes(page))
+                ["setup", "checklist", "review"].includes(page)
                   ? "selected"
                   : ""
               }
-              onClick={() =>
-                comTransicao(() => {
-                  setMovimento("");
-                  setPage("home");
-                })
-              }
+              onClick={() => comTransicao(() => setPage("home"))}
             >
               <Home size={22} />
               <span>{t.railHome}</span>
-            </button>
-            <button
-              aria-label={t.navHome2}
-              className={
-                page === "home2" ||
-                (movimento === "suave" &&
-                  ["setup", "checklist", "review"].includes(page))
-                  ? "selected"
-                  : ""
-              }
-              onClick={() =>
-                comTransicao(
-                  () => {
-                    setMovimento("suave");
-                    setPage("home2");
-                  },
-                  null,
-                  movimento === "cheio",
-                )
-              }
-            >
-              <Sparkles size={22} />
-              <span>{t.railHome2}</span>
-            </button>
-            <button
-              aria-label={t.navHome3}
-              className={
-                page === "home3" ||
-                (movimento === "cheio" &&
-                  ["setup", "checklist", "review"].includes(page))
-                  ? "selected"
-                  : ""
-              }
-              onClick={() =>
-                comTransicao(
-                  () => {
-                    setMovimento("cheio");
-                    setPage("home3");
-                  },
-                  null,
-                  movimento === "cheio",
-                )
-              }
-            >
-              <Zap size={22} />
-              <span>{t.railHome3}</span>
             </button>
             <button
               aria-label={t.navQueue}
@@ -655,7 +583,7 @@ export default function DemoApp() {
           </div>
         </aside>
         <div
-          className={`workspace${movimento ? ` ${movimento}` : ""}`}
+          className="workspace"
           inert={Boolean(drawingSignature || annotation || preview)}
         >
           <header className="topbar">
@@ -711,20 +639,14 @@ export default function DemoApp() {
                 </button>
               </div>
             )}
-            {(page === "home" || page === "home2" || page === "home3") && (
+            {page === "home" && (
               <>
                 <div className="page-heading">
                   <div>
                     <h1>{t.homeTitle}</h1>
                     <p>{t.homeSubtitle}</p>
                   </div>
-                  <span className="date-label">
-                    {page === "home2"
-                      ? t.home2Tag
-                      : page === "home3"
-                        ? t.home3Tag
-                        : t.pilotLabel}
-                  </span>
+                  <span className="date-label">{t.pilotLabel}</span>
                 </div>
                 {/* Painel bento: os números do dia, a lista de veículos e o
                     rascunho aberto cabem na primeira tela, sem rolagem. */}
@@ -932,7 +854,7 @@ export default function DemoApp() {
               <>
                 <button
                   className="back"
-                  onClick={() => comTransicao(() => setPage(telaDeOrigem()))}
+                  onClick={() => comTransicao(() => setPage("home"))}
                 >
                   <ArrowLeft size={17} />
                   {t.backToVehicles}
@@ -1003,7 +925,7 @@ export default function DemoApp() {
                     <button
                       className="back"
                       onClick={() =>
-                        comTransicao(() => setPage(telaDeOrigem()))
+                        comTransicao(() => setPage("home"))
                       }
                     >
                       <ArrowLeft size={16} />
