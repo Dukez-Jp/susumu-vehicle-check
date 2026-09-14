@@ -1,7 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import DemoApp from "./DemoApp";
-import { STORAGE_KEY, items, newInspection, saveState } from "./model";
+import {
+  STORAGE_KEY,
+  finalizeInspection,
+  items,
+  newInspection,
+  saveState,
+} from "./model";
 import { LANGUAGE_STORAGE_KEY } from "./language";
 
 describe("Tenken browser demonstration", () => {
@@ -172,6 +178,59 @@ describe("Tenken browser demonstration", () => {
     expect(document.documentElement.dataset.sentido).toBeUndefined();
     fireEvent.click(screen.getByRole("button", { name: /Voltar à oficina/ }));
     expect(screen.getByText("Oficina 3 · movimento")).toBeInTheDocument();
+  });
+  it("deletes only the chosen draft and never a finalized record", () => {
+    const rascunho = newInspection("v-714", 182450, "Teste");
+    const outro = newInspection("v-431", 254870, "Teste");
+    const pronto = finalizeInspection(
+      (() => {
+        const i = newInspection("v-208", 96310, "Teste");
+        items.forEach((it) => {
+          i.answers[it.id] = {
+            status: "OK",
+            value: it.unit ? "5" : "",
+            notes: "",
+            photos: [],
+          };
+        });
+        i.signature = "data:image/png;base64,QUJDRA==";
+        return i;
+      })(),
+    );
+    saveState(localStorage, {
+      version: 1,
+      inspections: [rascunho, outro, pronto],
+    });
+    render(<DemoApp />);
+    // A lixeira nao apaga sozinha: o primeiro toque so abre a pergunta.
+    fireEvent.click(
+      screen.getByRole("button", { name: "Apagar rascunho 714" }),
+    );
+    expect(screen.getByText("Apagar este rascunho?")).toBeInTheDocument();
+    expect(
+      JSON.parse(localStorage.getItem(STORAGE_KEY)!).inspections,
+    ).toHaveLength(3);
+    fireEvent.click(screen.getByRole("button", { name: "Manter" }));
+    expect(screen.queryByText("Apagar este rascunho?")).not.toBeInTheDocument();
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Apagar rascunho 714" }),
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Apagar" }));
+    const gravado = JSON.parse(localStorage.getItem(STORAGE_KEY)!);
+    expect(gravado.inspections.map((i: { id: string }) => i.id)).toEqual([
+      outro.id,
+      pronto.id,
+    ]);
+    expect(
+      gravado.inspections.find((i: { id: string }) => i.id === pronto.id).state,
+    ).toBe("Finalized");
+    expect(
+      screen.queryByRole("button", { name: "Apagar rascunho 714" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Apagar rascunho 431" }),
+    ).toBeInTheDocument();
   });
   it("restores the draft after a page remount", () => {
     const view = render(<DemoApp />);

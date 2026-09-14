@@ -14,6 +14,7 @@ import {
   Search,
   ShieldAlert,
   Sparkles,
+  Trash2,
   Truck,
   Wifi,
   WifiOff,
@@ -217,6 +218,23 @@ export default function DemoApp() {
     transicao.finished.finally(() => {
       if (numero) numero.style.viewTransitionName = "";
     });
+  }
+  /* Rascunho apagado e trabalho descartado, entao a lixeira so marca qual
+     linha esta perguntando; quem apaga de fato e a confirmacao. Registro
+     finalizado nunca passa por aqui: a lista so mostra rascunhos, e a funcao
+     recusa qualquer outro estado. */
+  const [apagando, setApagando] = useState("");
+  function apagarRascunho(alvo: Inspection) {
+    if (alvo.state !== "Draft") return;
+    const proximo = {
+      ...dataRef.current,
+      inspections: dataRef.current.inspections.filter((i) => i.id !== alvo.id),
+    };
+    if (persist(proximo, false)) {
+      if (activeId === alvo.id) setActiveId("");
+      setNotice(t.draftDeleted);
+    }
+    setApagando("");
   }
   const [data, setData] = useState<DemoState>(initial.data);
   const dataRef = useRef(data);
@@ -802,32 +820,72 @@ export default function DemoApp() {
                     {drafts.length === 0 && (
                       <p className="bento-empty">{t.draftsEmpty}</p>
                     )}
-                    {drafts.map((i) => (
-                      <button
-                        className="draft-open"
-                        key={i.id}
-                        onClick={(e) =>
-                          comTransicao(
-                            () => open(i),
-                            e.currentTarget.querySelector<HTMLElement>("b"),
-                          )
-                        }
-                        aria-label={`${t.resumePrefix} ${vehicles.find((v) => v.id === i.vehicleId)!.number}`}
-                      >
-                        <b>
-                          {vehicles.find((v) => v.id === i.vehicleId)!.number}
-                        </b>
-                        <span>
-                          {
-                            items.filter((it) => i.answers[it.id]?.status)
-                              .length
-                          }
-                          /{items.length} {t.itemsWord} ·{" "}
-                          {time(i.startedAt, language)}
-                        </span>
-                        <ArrowRight size={18} />
-                      </button>
-                    ))}
+                    {drafts.map((i) => {
+                      const numero = vehicles.find(
+                        (v) => v.id === i.vehicleId,
+                      )!.number;
+                      const respondidos = items.filter(
+                        (it) => i.answers[it.id]?.status,
+                      ).length;
+                      /* Apagar um rascunho descarta trabalho, entao a lixeira
+                         nao apaga sozinha: ela abre a pergunta na propria
+                         linha, dizendo quanto se perde. */
+                      if (apagando === i.id)
+                        return (
+                          <div className="draft-confirm" key={i.id}>
+                            <p>
+                              <b>{t.deleteDraftAsk}</b> {numero} ·{" "}
+                              {respondidos === 0
+                                ? t.deleteDraftNone
+                                : `${respondidos} ${
+                                    respondidos === 1
+                                      ? t.deleteDraftLossOne
+                                      : t.deleteDraftLoss
+                                  }`}
+                            </p>
+                            <div>
+                              <button
+                                className="danger"
+                                onClick={() => apagarRascunho(i)}
+                              >
+                                <Trash2 size={17} />
+                                {t.deleteConfirm}
+                              </button>
+                              <button onClick={() => setApagando("")}>
+                                {t.deleteCancel}
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      return (
+                        <div className="draft-line" key={i.id}>
+                          <button
+                            className="draft-open"
+                            onClick={(e) =>
+                              comTransicao(
+                                () => open(i),
+                                e.currentTarget.querySelector<HTMLElement>("b"),
+                              )
+                            }
+                            aria-label={`${t.resumePrefix} ${numero}`}
+                          >
+                            <b>{numero}</b>
+                            <span>
+                              {respondidos}/{items.length} {t.itemsWord} ·{" "}
+                              {time(i.startedAt, language)}
+                            </span>
+                            <ArrowRight size={18} />
+                          </button>
+                          <button
+                            className="draft-delete"
+                            aria-label={`${t.deleteDraft} ${numero}`}
+                            onClick={() => setApagando(i.id)}
+                          >
+                            <Trash2 size={17} />
+                          </button>
+                        </div>
+                      );
+                    })}
                   </section>
 
                   <section className="card launcher">
@@ -874,9 +932,7 @@ export default function DemoApp() {
               <>
                 <button
                   className="back"
-                  onClick={() =>
-                    comTransicao(() => setPage(telaDeOrigem()))
-                  }
+                  onClick={() => comTransicao(() => setPage(telaDeOrigem()))}
                 >
                   <ArrowLeft size={17} />
                   {t.backToVehicles}
