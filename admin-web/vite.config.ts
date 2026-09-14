@@ -19,6 +19,10 @@ export default defineConfig(({ mode }) => {
       environment: "jsdom",
       setupFiles: ["./src/test/setup.ts"],
       clearMocks: true,
+      // Os testes de e2e/ rodam no Chrome pelo Playwright, não no jsdom.
+      // Sem esta exclusão o vitest os recolhe e falha em `test is not a
+      // function`, com uma mensagem que não explica nada.
+      exclude: ["**/node_modules/**", "**/dist/**", "**/dist-demo/**", "e2e/**"],
     },
   };
 });

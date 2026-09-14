@@ -39,3 +39,8 @@ TestResults/
 .DS_Store
 .idea/
 .vscode/
+
+# Playwright: relatorios, traces e capturas das execucoes locais
+admin-web/test-results/
+admin-web/playwright-report/
+admin-web/blob-report/
