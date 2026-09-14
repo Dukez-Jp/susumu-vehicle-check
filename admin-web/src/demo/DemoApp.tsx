@@ -91,33 +91,33 @@ function TruckDrawing({ label }: { label: string }) {
       role="img"
       aria-label={label}
     >
-      <path d="M15 154H420" stroke="#b6c7ca" strokeWidth="2" />
+      <path d="M15 154H420" stroke="#9fadbe" strokeWidth="2" />
       <rect
         x="48"
         y="27"
         width="226"
         height="107"
         rx="5"
-        fill="#dce8e8"
-        stroke="#709698"
+        fill="#d2dbe6"
+        stroke="#66768c"
         strokeWidth="3"
       />
       <path
         d="M67 45H255M67 66H255M67 87H255M67 108H255"
-        stroke="#b7cecf"
+        stroke="#bcc8d6"
         strokeWidth="2"
       />
-      <path d="M280 65H334L375 108V138H280Z" fill="#267079" />
-      <path d="M293 77H329L352 104H293Z" fill="#e9f4f4" />
-      <path d="M282 118H368" stroke="#bde2dc" strokeWidth="3" />
-      <rect x="40" y="133" width="341" height="13" rx="3" fill="#214b52" />
-      <circle cx="109" cy="144" r="23" fill="#263f48" />
-      <circle cx="109" cy="144" r="10" fill="#cad7da" />
-      <circle cx="232" cy="144" r="23" fill="#263f48" />
-      <circle cx="232" cy="144" r="10" fill="#cad7da" />
-      <circle cx="332" cy="144" r="23" fill="#263f48" />
-      <circle cx="332" cy="144" r="10" fill="#cad7da" />
-      <text x="91" y="77" fontSize="21" fontWeight="700" fill="#3e7378">
+      <path d="M280 65H334L375 108V138H280Z" fill="#344257" />
+      <path d="M293 77H329L352 104H293Z" fill="#e9eef4" />
+      <path d="M282 118H368" stroke="#a3cdb0" strokeWidth="3" />
+      <rect x="40" y="133" width="341" height="13" rx="3" fill="#253246" />
+      <circle cx="109" cy="144" r="23" fill="#253246" />
+      <circle cx="109" cy="144" r="10" fill="#bcc8d6" />
+      <circle cx="232" cy="144" r="23" fill="#253246" />
+      <circle cx="232" cy="144" r="10" fill="#bcc8d6" />
+      <circle cx="332" cy="144" r="23" fill="#253246" />
+      <circle cx="332" cy="144" r="10" fill="#bcc8d6" />
+      <text x="91" y="77" fontSize="21" fontWeight="700" fill="#44536a">
         ススム
       </text>
     </svg>
@@ -455,7 +455,7 @@ export default function DemoApp() {
         }
       >
         <aside
-          className="sidebar"
+          className="sidebar rail"
           inert={Boolean(drawingSignature || annotation || preview)}
         >
           <a className="brand" href="/demo.html">
@@ -466,19 +466,25 @@ export default function DemoApp() {
             <span>{t.workshopSub}</span>
           </div>
           <nav aria-label={t.navMain}>
-            <button onClick={openMeasurements}>
-              <ClipboardCheck size={20} />
-              {t.navMeasurements}
+            {/* Trilho de ícones: o rótulo visível é curto, mas o nome acessível
+                continua sendo o nome completo do destino. */}
+            <button aria-label={t.navMeasurements} onClick={openMeasurements}>
+              <ClipboardCheck size={22} />
+              <span>{t.railMeasure}</span>
             </button>
-            <button onClick={openPdfPreview}>
-              <ClipboardCheck size={20} />
-              {t.navPdf}
-            </button>
-            <button onClick={() => setPage("capture")}>
-              <Truck size={20} />
-              {t.navCapture}
+            <button aria-label={t.navPdf} onClick={openPdfPreview}>
+              <FileCheck2 size={22} />
+              <span>{t.railPdf}</span>
             </button>
             <button
+              aria-label={t.navCapture}
+              onClick={() => setPage("capture")}
+            >
+              <Truck size={22} />
+              <span>{t.railCapture}</span>
+            </button>
+            <button
+              aria-label={t.navHome}
               className={
                 ["home", "setup", "checklist", "review"].includes(page)
                   ? "selected"
@@ -486,23 +492,25 @@ export default function DemoApp() {
               }
               onClick={() => setPage("home")}
             >
-              <Home size={20} />
-              {t.navHome}
+              <Home size={22} />
+              <span>{t.railHome}</span>
             </button>
             <button
+              aria-label={t.navQueue}
               className={page === "queue" ? "selected" : ""}
               onClick={() => setPage("queue")}
             >
-              <Clock3 size={20} />
-              {t.navQueue}
+              <Clock3 size={22} />
+              <span>{t.railQueue}</span>
               <span className="nav-count">{pending.length}</span>
             </button>
             <button
+              aria-label={t.navHistory}
               className={["history", "report"].includes(page) ? "selected" : ""}
               onClick={() => setPage("history")}
             >
-              <History size={20} />
-              {t.navHistory}
+              <History size={22} />
+              <span>{t.railHistory}</span>
             </button>
           </nav>
           <div className="sidebar-bottom">
@@ -579,56 +587,94 @@ export default function DemoApp() {
                   </div>
                   <span className="date-label">{t.pilotLabel}</span>
                 </div>
-                <section className="pdf-launcher">
-                  <div>
-                    <h2>{t.measureCardTitle}</h2>
-                    <p>{t.measureCardText}</p>
-                  </div>
-                  <button className="primary" onClick={openMeasurements}>
-                    <ClipboardCheck size={20} />
-                    {t.measureCardButton}
-                  </button>
-                </section>
-                <section className="pdf-launcher">
-                  <div>
-                    <h2>{t.pdfCardTitle}</h2>
-                    <p>{t.pdfCardText}</p>
-                  </div>
-                  <button className="primary" onClick={openPdfPreview}>
-                    <FileCheck2 size={20} />
-                    {t.pdfCardButton}
-                  </button>
-                </section>
-                <section className="welcome-panel">
-                  <div>
-                    <span className="small-label">{t.benchLabel}</span>
-                    <h2>
-                      {t.benchTitleLine1}
-                      <br />
-                      {t.benchTitleLine2}
-                    </h2>
-                    <p>{t.benchText}</p>
-                    <div className="welcome-stats">
-                      <span>
-                        <strong>{drafts.length}</strong> {t.statInProgress}
-                      </span>
-                      <span>
-                        <strong>{finalized.length}</strong> {t.statFinalized}
-                      </span>
-                      <span>
-                        <strong>{pending.length}</strong> {t.statQueue}
-                      </span>
+                {/* Painel bento: os números do dia, a lista de veículos e o
+                    rascunho aberto cabem na primeira tela, sem rolagem. */}
+                <div className="bento">
+                  <article className="card kpi accent">
+                    <span className="kpi-l">{t.statInProgress}</span>
+                    <b className="kpi-n">{drafts.length}</b>
+                  </article>
+                  <article className="card kpi">
+                    <span className="kpi-l">{t.statFinalized}</span>
+                    <b className="kpi-n">{finalized.length}</b>
+                  </article>
+                  <article className="card kpi">
+                    <span className="kpi-l">{t.statQueue}</span>
+                    <b className="kpi-n">{pending.length}</b>
+                  </article>
+                  <article className="card kpi">
+                    <span className="kpi-l">{t.statVehicles}</span>
+                    <b className="kpi-n">{vehicles.length}</b>
+                  </article>
+
+                  <section className="card bento-vehicles">
+                    <div className="section-heading">
+                      <div>
+                        <h2>{t.vehiclesTitle}</h2>
+                        <p>{t.vehiclesSubtitle}</p>
+                      </div>
+                      <label className="search">
+                        <Search size={19} />
+                        <input
+                          aria-label={t.searchVehicle}
+                          placeholder={t.searchPlaceholder}
+                          value={query}
+                          onChange={(e) => setQuery(e.target.value)}
+                        />
+                      </label>
                     </div>
-                  </div>
-                  <TruckDrawing label={t.truckAlt} />
-                </section>
-                {drafts.length > 0 && (
-                  <section className="draft-strip">
+                    <div className="vehicle-rows">
+                      {vehicles
+                        .filter((v) =>
+                          `${v.number} ${v.plate} ${v.description} ${v.descriptionJa}`
+                            .toLowerCase()
+                            .includes(query.toLowerCase()),
+                        )
+                        .map((v) => (
+                          <article className="vehicle-row" key={v.id}>
+                            <span className="vehicle-icon">
+                              <Truck size={24} />
+                            </span>
+                            <span className="vehicle-id">
+                              <b>{v.number}</b>
+                              <span className="plate">{v.plate}</span>
+                            </span>
+                            <span className="vehicle-desc">
+                              {vehicleDescription(v, language)}
+                              <small>
+                                {t.lastReading} {km(v.odometer, language)} km
+                              </small>
+                            </span>
+                            <button
+                              className="primary"
+                              aria-label={`${t.inspectPrefix} ${v.number}`}
+                              onClick={() => setup(v)}
+                            >
+                              {t.startInspection}
+                              <ArrowRight size={18} />
+                            </button>
+                          </article>
+                        ))}
+                      {vehicles.filter((v) =>
+                        `${v.number} ${v.plate} ${v.description} ${v.descriptionJa}`
+                          .toLowerCase()
+                          .includes(query.toLowerCase()),
+                      ).length === 0 && (
+                        <div className="empty">{t.noVehicles}</div>
+                      )}
+                    </div>
+                  </section>
+
+                  <section className="card bento-draft">
                     <h2>
-                      <Clock3 size={20} /> {t.resumeTitle}
+                      <Clock3 size={19} /> {t.resumeTitle}
                     </h2>
+                    {drafts.length === 0 && (
+                      <p className="bento-empty">{t.draftsEmpty}</p>
+                    )}
                     {drafts.map((i) => (
                       <button
+                        className="draft-open"
                         key={i.id}
                         onClick={() => open(i)}
                         aria-label={`${t.resumePrefix} ${vehicles.find((v) => v.id === i.vehicleId)!.number}`}
@@ -648,64 +694,42 @@ export default function DemoApp() {
                       </button>
                     ))}
                   </section>
-                )}
-                <div className="section-heading">
-                  <div>
-                    <h2>{t.vehiclesTitle}</h2>
-                    <p>{t.vehiclesSubtitle}</p>
-                  </div>
-                  <label className="search">
-                    <Search size={19} />
-                    <input
-                      aria-label={t.searchVehicle}
-                      placeholder={t.searchPlaceholder}
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                    />
-                  </label>
+
+                  <section className="card launcher">
+                    <div>
+                      <h2>{t.measureCardTitle}</h2>
+                      <p>{t.measureCardText}</p>
+                    </div>
+                    <button className="primary" onClick={openMeasurements}>
+                      <ClipboardCheck size={20} />
+                      {t.measureCardButton}
+                    </button>
+                  </section>
+
+                  <section className="card launcher">
+                    <div>
+                      <h2>{t.pdfCardTitle}</h2>
+                      <p>{t.pdfCardText}</p>
+                    </div>
+                    <button className="primary" onClick={openPdfPreview}>
+                      <FileCheck2 size={20} />
+                      {t.pdfCardButton}
+                    </button>
+                  </section>
+
+                  <section className="card welcome-panel">
+                    <div>
+                      <span className="small-label">{t.benchLabel}</span>
+                      <h2>
+                        {t.benchTitleLine1}
+                        <br />
+                        {t.benchTitleLine2}
+                      </h2>
+                      <p>{t.benchText}</p>
+                    </div>
+                    <TruckDrawing label={t.truckAlt} />
+                  </section>
                 </div>
-                <div className="vehicle-grid">
-                  {vehicles
-                    .filter((v) =>
-                      `${v.number} ${v.plate} ${v.description} ${v.descriptionJa}`
-                        .toLowerCase()
-                        .includes(query.toLowerCase()),
-                    )
-                    .map((v) => (
-                      <article className="vehicle-card" key={v.id}>
-                        <div className="vehicle-card-top">
-                          <span className="vehicle-icon">
-                            <Truck size={27} />
-                          </span>
-                          <span className="pill neutral">
-                            {t.testDataPill}
-                          </span>
-                        </div>
-                        <h3>{v.number}</h3>
-                        <p>{vehicleDescription(v, language)}</p>
-                        <div className="plate">{v.plate}</div>
-                        <div className="vehicle-meta">
-                          <span>{t.lastReading}</span>
-                          <b>{km(v.odometer, language)} km</b>
-                        </div>
-                        <button
-                          className="primary full"
-                          aria-label={`${t.inspectPrefix} ${v.number}`}
-                          onClick={() => setup(v)}
-                        >
-                          {t.startInspection}
-                          <ArrowRight size={18} />
-                        </button>
-                      </article>
-                    ))}
-                </div>
-                {vehicles.filter((v) =>
-                  `${v.number} ${v.plate} ${v.description} ${v.descriptionJa}`
-                    .toLowerCase()
-                    .includes(query.toLowerCase()),
-                ).length === 0 && (
-                  <div className="empty">{t.noVehicles}</div>
-                )}
                 <p className="footnote">
                   <ShieldAlert size={16} /> {t.footnote}
                 </p>

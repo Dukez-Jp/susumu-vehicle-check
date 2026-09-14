@@ -181,6 +181,14 @@ describe("Tenken browser demonstration", () => {
     expect(
       screen.getByRole("button", { name: "日本語" }),
     ).toHaveAttribute("aria-pressed", "true");
+    // The narrow layout hides the written name next to the flag, so the name
+    // has to survive on the button itself or the control becomes unlabelled.
+    for (const name of ["日本語", "Português"]) {
+      expect(screen.getByRole("button", { name })).toHaveAttribute(
+        "aria-label",
+        name,
+      );
+    }
 
     fireEvent.click(screen.getByRole("button", { name: "Português" }));
     expect(

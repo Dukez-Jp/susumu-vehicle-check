@@ -4,7 +4,8 @@ import "./language-switch.css";
 /**
  * Flags are drawn inline rather than loaded as files: the tablet works offline,
  * and a missing image would leave the mechanic with an unlabelled button. Each
- * flag is decorative; the name of the language next to it is what is announced.
+ * flag is decorative; the name of the language is what is announced. The name
+ * is also set as aria-label because the narrow layout hides the visible text.
  */
 function JapanFlag() {
   return (
@@ -76,6 +77,7 @@ export default function LanguageSwitch({
           type="button"
           key={option}
           lang={option}
+          aria-label={nativeName[option]}
           aria-pressed={language === option}
           onClick={() => onChange(option)}
         >

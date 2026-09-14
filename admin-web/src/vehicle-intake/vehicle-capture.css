@@ -1,23 +1,25 @@
 .vehicle-capture {
   min-height: 100vh;
-  background: #f1f5f5;
+  background: var(--surface-sunken, #f7f9fb);
 }
 .vehicle-capture[hidden] {
   display: none;
 }
 .capture-header {
-  background: #153f46;
+  background: var(--navy-deep, #12223e);
   padding: 18px max(24px, calc((100vw - 1080px) / 2));
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  color: #fff;
+  color: #fdfefe;
 }
-.capture-header button {
+/* Direct child only: the language switch keeps its own light surface, and the
+   white header colour would leave its unselected name invisible on it. */
+.capture-header > button {
   background: transparent;
-  color: #fff;
-  border-color: #6b9295;
+  color: #fdfefe;
+  border-color: #66768c;
 }
 /* The language control carries its own layout; only its placement is set here. */
 .capture-language {
@@ -34,7 +36,7 @@
   gap: 10px;
 }
 .capture-scope {
-  border-left: 3px solid #7aa3a4;
+  border-left: 3px solid #8090a4;
   padding: 6px 16px;
 }
 .capture-methods {
@@ -49,9 +51,9 @@
   padding: 18px;
 }
 .capture-methods .selected {
-  background: #dcece9;
-  border: 2px solid #24716f;
-  color: #164f51;
+  background: #d2e6d8;
+  border: 2px solid #344257;
+  color: #253246;
 }
 .capture-instructions {
   margin-bottom: 22px;
@@ -66,7 +68,7 @@
   margin: 8px 0;
 }
 .capture-instructions a {
-  color: #146e70;
+  color: #253246;
   text-decoration: underline;
 }
 .capture-nfc-note {
@@ -76,7 +78,7 @@
   max-width: 600px;
 }
 .capture-upload input {
-  background: #f4f8f8;
+  background: #f1f4f8;
   padding: 12px;
 }
 .capture-form,
@@ -91,28 +93,28 @@
 }
 .capture-fields small {
   font-weight: 400;
-  color: #62767e;
+  color: #55647a;
 }
 .capture-fields input[aria-invalid="true"] {
-  border-color: #a72736;
+  border-color: #a32c24;
 }
 .capture-fields .capture-field-error {
-  color: #a72736;
+  color: #a32c24;
 }
 .capture-review {
   flex-direction: row;
   align-items: center;
   margin: 28px 0 20px;
   padding: 18px;
-  background: #edf4f3;
-  border-radius: 8px;
+  background: #e7f2ea;
+  border-radius: 12px;
 }
 .capture-review input {
   width: 22px;
   height: 22px;
   min-height: 22px;
   flex-shrink: 0;
-  accent-color: #196f6e;
+  accent-color: #344257;
 }
 .capture-save {
   display: flex;
@@ -121,14 +123,14 @@
   align-items: center;
 }
 .capture-save span {
-  color: #705322;
+  color: #7d5d16;
 }
 .capture-clear,
 .capture-warnings {
   padding: 16px;
-  border: 1px solid #d4bf8c;
-  border-radius: 8px;
-  background: #fff9ec;
+  border: 1px solid #d8ae55;
+  border-radius: 12px;
+  background: #fbf2dc;
   margin-bottom: 22px;
 }
 .capture-original {
@@ -147,7 +149,7 @@
 }
 .capture-original dt {
   font-size: 12px;
-  color: #62767e;
+  color: #55647a;
 }
 .capture-original dd {
   margin: 0;
@@ -163,12 +165,12 @@
 .capture-history th,
 .capture-history td {
   padding: 14px 12px;
-  border-bottom: 1px solid #dce5e6;
+  border-bottom: 1px solid #d2dbe6;
   white-space: nowrap;
 }
 .capture-history th {
   font-size: 12px;
-  color: #62767e;
+  color: #55647a;
 }
 .capture-history button {
   font-size: 13px;

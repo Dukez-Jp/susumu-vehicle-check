@@ -835,13 +835,13 @@ export default function MeasurementStudio({
                     <svg viewBox={`0 0 360 ${drawnHeight}`} aria-hidden="true">
                       <path
                         d={`M135 90V${drawnHeight - 35}M225 90V${drawnHeight - 35}`}
-                        stroke="#91a4ad"
+                        stroke="#8090a4"
                         strokeWidth="9"
                       />
                       <path
                         d={`M145 95H215V${drawnHeight - 38}H145Z`}
-                        fill="#edf1f2"
-                        stroke="#d0dadd"
+                        fill="#e9eef4"
+                        stroke="#d2dbe6"
                       />
                       <rect
                         x="108"
@@ -849,43 +849,50 @@ export default function MeasurementStudio({
                         width="144"
                         height="86"
                         rx="21"
-                        fill="#d9e6e0"
-                        stroke="#739888"
+                        fill="#d2e6d8"
+                        stroke="#66768c"
                         strokeWidth="2"
                       />
                       <path
                         d="M121 35Q180 20 239 35L230 62H130Z"
-                        fill="#37586b"
+                        fill="#1e3a5f"
                       />
-                      <path d="M135 75H225" stroke="#739888" strokeWidth="3" />
-                      {Array.from({ length: draft.axleCount }, (_, i) => (
-                        <g key={i}>
-                          <path
-                            d={`M59 ${125 + i * 76}H301`}
-                            stroke="#6d8490"
-                            strokeWidth="7"
-                          />
-                          <rect
-                            x="164"
-                            y={113 + i * 76}
-                            width="32"
-                            height="24"
-                            rx="6"
-                            fill="#536e7d"
-                          />
-                          <text
-                            x="180"
-                            y={154 + i * 76}
-                            textAnchor="middle"
-                            fontSize="10"
-                            fill="#627985"
-                          >
-                            {language === "ja"
-                              ? `${i + 1}軸`
-                              : `${t.axle} ${i + 1}`}
-                          </text>
-                        </g>
-                      ))}
+                      <path d="M135 75H225" stroke="#66768c" strokeWidth="3" />
+                      {Array.from({ length: draft.axleCount }, (_, i) => {
+                        // The axle only reaches the outer tyres on an axle that
+                        // actually draws a dual pair for the metric on screen.
+                        const dualAxle = wheelPositions.some(
+                          (p) => p.axle === i + 1 && p.wheel !== "single",
+                        );
+                        return (
+                          <g key={i}>
+                            <path
+                              d={`M${dualAxle ? 34 : 44} ${125 + i * 76}H${dualAxle ? 326 : 316}`}
+                              stroke="#66768c"
+                              strokeWidth="7"
+                            />
+                            <rect
+                              x="164"
+                              y={113 + i * 76}
+                              width="32"
+                              height="24"
+                              rx="6"
+                              fill="#2e5482"
+                            />
+                            <text
+                              x="180"
+                              y={154 + i * 76}
+                              textAnchor="middle"
+                              fontSize="10"
+                              fill="#55647a"
+                            >
+                              {language === "ja"
+                                ? `${i + 1}軸`
+                                : `${t.axle} ${i + 1}`}
+                            </text>
+                          </g>
+                        );
+                      })}
                     </svg>
                     {wheelPositions.map((p) => {
                       const key = slotKey(metric, p);
@@ -897,13 +904,13 @@ export default function MeasurementStudio({
                           ? p.wheel === "single"
                             ? 64
                             : p.wheel === "inner"
-                              ? 84
-                              : 42
+                              ? 90
+                              : 36
                           : p.wheel === "single"
                             ? 296
                             : p.wheel === "inner"
-                              ? 276
-                              : 318;
+                              ? 270
+                              : 324;
                       return (
                         <button
                           type="button"

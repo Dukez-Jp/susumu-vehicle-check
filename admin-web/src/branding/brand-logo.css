@@ -5,8 +5,8 @@
   max-width: 100%;
   flex-shrink: 0;
   object-fit: contain;
-  background: #fff;
-  border: 6px solid #fff;
+  background: #fdfefe;
+  border: 6px solid #fdfefe;
   border-radius: 10px;
 }
 
@@ -31,7 +31,7 @@
 
 .susumu-brand-block > span {
   font-size: 13px;
-  color: #d1e1f1;
+  color: #d3e0ef;
 }
 
 .login-story .susumu-brand-block {
