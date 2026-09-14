@@ -54,6 +54,7 @@ import type { Language } from "./language";
 import { demoMessages, localeOf } from "./messages";
 import PdfPreview from "./pdf-preview/PdfPreview";
 import MeasurementStudio from "../measurements/MeasurementStudio";
+import usePointerGlow from "./pointerGlow";
 
 type Page =
   | "home"
@@ -156,6 +157,7 @@ export default function DemoApp() {
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+  usePointerGlow();
   const [data, setData] = useState<DemoState>(initial.data);
   const dataRef = useRef(data);
   const storedRef = useRef(initial.raw);
