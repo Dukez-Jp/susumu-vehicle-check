@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import {
   ArrowLeft,
   ArrowRight,
@@ -12,6 +13,7 @@ import {
   Home,
   Search,
   ShieldAlert,
+  Sparkles,
   Truck,
   Wifi,
   WifiOff,
@@ -58,6 +60,7 @@ import usePointerGlow from "./pointerGlow";
 
 type Page =
   | "home"
+  | "home2"
   | "setup"
   | "checklist"
   | "review"
@@ -158,6 +161,28 @@ export default function DemoApp() {
     document.documentElement.lang = language;
   }, [language]);
   usePointerGlow();
+  /* "Oficina 2" e a mesma tela inicial com as transicoes ligadas. O modo
+     acompanha a inspecao depois que ela comeca, senao a volta para a lista
+     sairia de um jeito e a ida de outro. */
+  const [fluxoSuave, setFluxoSuave] = useState(false);
+  function comTransicao(acao: () => void, numero?: HTMLElement | null) {
+    /* Onde a API nao existe, a tela troca seca, como sempre foi. Quem pediu
+       menos movimento ao sistema tambem cai aqui. */
+    const parado = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (!fluxoSuave || parado || !document.startViewTransition) {
+      acao();
+      return;
+    }
+    /* O numero do veiculo leva o mesmo nome nas duas telas: e isso que faz o
+       navegador entender que e o mesmo elemento e desenhar o percurso. */
+    if (numero) numero.style.viewTransitionName = "veiculo-numero";
+    const transicao = document.startViewTransition(() => flushSync(acao));
+    transicao.finished.finally(() => {
+      if (numero) numero.style.viewTransitionName = "";
+    });
+  }
   const [data, setData] = useState<DemoState>(initial.data);
   const dataRef = useRef(data);
   const storedRef = useRef(initial.raw);
@@ -488,14 +513,34 @@ export default function DemoApp() {
             <button
               aria-label={t.navHome}
               className={
-                ["home", "setup", "checklist", "review"].includes(page)
+                page === "home" ||
+                (!fluxoSuave && ["setup", "checklist", "review"].includes(page))
                   ? "selected"
                   : ""
               }
-              onClick={() => setPage("home")}
+              onClick={() => {
+                setFluxoSuave(false);
+                setPage("home");
+              }}
             >
               <Home size={22} />
               <span>{t.railHome}</span>
+            </button>
+            <button
+              aria-label={t.navHome2}
+              className={
+                page === "home2" ||
+                (fluxoSuave && ["setup", "checklist", "review"].includes(page))
+                  ? "selected"
+                  : ""
+              }
+              onClick={() => {
+                setFluxoSuave(true);
+                setPage("home2");
+              }}
+            >
+              <Sparkles size={22} />
+              <span>{t.railHome2}</span>
             </button>
             <button
               aria-label={t.navQueue}
@@ -524,7 +569,7 @@ export default function DemoApp() {
           </div>
         </aside>
         <div
-          className="workspace"
+          className={`workspace${fluxoSuave ? " suave" : ""}`}
           inert={Boolean(drawingSignature || annotation || preview)}
         >
           <header className="topbar">
@@ -580,14 +625,16 @@ export default function DemoApp() {
                 </button>
               </div>
             )}
-            {page === "home" && (
+            {(page === "home" || page === "home2") && (
               <>
                 <div className="page-heading">
                   <div>
                     <h1>{t.homeTitle}</h1>
                     <p>{t.homeSubtitle}</p>
                   </div>
-                  <span className="date-label">{t.pilotLabel}</span>
+                  <span className="date-label">
+                    {page === "home2" ? t.home2Tag : t.pilotLabel}
+                  </span>
                 </div>
                 {/* Painel bento: os números do dia, a lista de veículos e o
                     rascunho aberto cabem na primeira tela, sem rolagem. */}
@@ -650,7 +697,16 @@ export default function DemoApp() {
                             <button
                               className="primary"
                               aria-label={`${t.inspectPrefix} ${v.number}`}
-                              onClick={() => setup(v)}
+                              onClick={(e) =>
+                                comTransicao(
+                                  () => setup(v),
+                                  e.currentTarget
+                                    .closest(".vehicle-row")
+                                    ?.querySelector<HTMLElement>(
+                                      ".vehicle-id b",
+                                    ),
+                                )
+                              }
                             >
                               {t.startInspection}
                               <ArrowRight size={18} />
@@ -678,7 +734,12 @@ export default function DemoApp() {
                       <button
                         className="draft-open"
                         key={i.id}
-                        onClick={() => open(i)}
+                        onClick={(e) =>
+                          comTransicao(
+                            () => open(i),
+                            e.currentTarget.querySelector<HTMLElement>("b"),
+                          )
+                        }
                         aria-label={`${t.resumePrefix} ${vehicles.find((v) => v.id === i.vehicleId)!.number}`}
                       >
                         <b>
@@ -739,7 +800,12 @@ export default function DemoApp() {
             )}
             {page === "setup" && (
               <>
-                <button className="back" onClick={() => setPage("home")}>
+                <button
+                  className="back"
+                  onClick={() =>
+                    comTransicao(() => setPage(fluxoSuave ? "home2" : "home"))
+                  }
+                >
                   <ArrowLeft size={17} />
                   {t.backToVehicles}
                 </button>
@@ -753,7 +819,7 @@ export default function DemoApp() {
                   <section className="panel identity">
                     <TruckDrawing label={t.truckAlt} />
                     <h2>
-                      {t.vehicleWord} {vehicle.number}
+                      {t.vehicleWord} <span>{vehicle.number}</span>
                     </h2>
                     <p>{vehicleDescription(vehicle, language)}</p>
                     <div className="plate">{vehicle.plate}</div>
@@ -794,7 +860,7 @@ export default function DemoApp() {
                     <button
                       className="primary full"
                       disabled={unsaved}
-                      onClick={start}
+                      onClick={() => comTransicao(start)}
                     >
                       {t.startTenken}
                     </button>
@@ -806,7 +872,14 @@ export default function DemoApp() {
               <>
                 <div className="inspection-heading">
                   <div>
-                    <button className="back" onClick={() => setPage("home")}>
+                    <button
+                      className="back"
+                      onClick={() =>
+                        comTransicao(() =>
+                          setPage(fluxoSuave ? "home2" : "home"),
+                        )
+                      }
+                    >
                       <ArrowLeft size={16} />
                       {t.backToShop}
                     </button>

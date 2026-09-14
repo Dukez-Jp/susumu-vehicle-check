@@ -135,6 +135,26 @@ describe("Tenken browser demonstration", () => {
       screen.getByText(/Comunique a ocorrência ao responsável/),
     ).toBeInTheDocument();
   });
+  it("runs the same inspection from Oficina 2 without the transition API", () => {
+    // A segunda oficina existe so para experimentar as transicoes. Ela precisa
+    // abrir exatamente a mesma inspecao — e o navegador de teste nao tem
+    // startViewTransition, que e justamente o caminho de quem nao tem a API.
+    expect(
+      (document as Document & { startViewTransition?: unknown })
+        .startViewTransition,
+    ).toBeUndefined();
+    render(<DemoApp />);
+    fireEvent.click(screen.getByRole("button", { name: /Minha oficina 2/ }));
+    expect(screen.getByText("Oficina 2 · transições")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Inspecionar 714/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Iniciar Tenken" }));
+    expect(screen.getByText("0 de 12 respondidos")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "OK" }));
+    expect(screen.getByText("1 de 12 respondidos")).toBeInTheDocument();
+    // A volta reconhece de onde a inspecao saiu.
+    fireEvent.click(screen.getByRole("button", { name: /Voltar à oficina/ }));
+    expect(screen.getByText("Oficina 2 · transições")).toBeInTheDocument();
+  });
   it("restores the draft after a page remount", () => {
     const view = render(<DemoApp />);
     fireEvent.click(screen.getByRole("button", { name: /Inspecionar 714/ }));

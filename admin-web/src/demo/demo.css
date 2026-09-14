@@ -1973,3 +1973,65 @@ footer {
     transform: none;
   }
 }
+
+/* ---- Oficina 2: a tela conta de onde veio ---------------------------------
+   O numero do veiculo nao reaparece na tela seguinte: ele vai ate la. Sai da
+   linha da lista, atravessa e assenta no painel de identificacao; do painel
+   vai para o cabecalho da lista de itens. Quem trabalha de luva olha a tela
+   por segundos entre uma medicao e outra, e a pergunta e sempre "em qual
+   caminhao eu estou" — o percurso responde isso sem ninguem precisar ler.
+
+   Os nomes abaixo sao o que liga um elemento ao outro: dois elementos com o
+   mesmo nome em telas diferentes viram o mesmo elemento para o navegador. O
+   nome da origem entra no clique (DemoApp.tsx) porque so pode existir um de
+   cada nome por vez, e a lista tem tres veiculos.
+
+   Onde a API nao existir, nada disto acontece e a tela troca como sempre. */
+.identity h2 span {
+  view-transition-name: veiculo-numero;
+}
+.inspection-heading h1 span {
+  view-transition-name: veiculo-numero;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+}
+::view-transition-group(veiculo-numero) {
+  animation-duration: 0.34s;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* O gesto de verdade desta tela nao e passar o mouse: e tocar OK / Atencao /
+   Reparar cem vezes seguidas. O retorno precisa ser curto — 140ms — porque
+   longo vira obstaculo quando se repete tanto. A escolha em si nao muda:
+   continua sendo o mecanico quem avanca de item. */
+@keyframes confirma-toque {
+  from {
+    transform: scale(0.94);
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.workspace.suave .status-option.chosen {
+  animation: confirma-toque 0.14s ease-out;
+}
+.workspace.suave .status-option:active {
+  transform: scale(0.96);
+}
+@media (prefers-reduced-motion: reduce) {
+  .identity h2 span,
+  .inspection-heading h1 span {
+    view-transition-name: none;
+  }
+  .workspace.suave .status-option.chosen {
+    animation: none;
+  }
+  .workspace.suave .status-option:active {
+    transform: none;
+  }
+}
