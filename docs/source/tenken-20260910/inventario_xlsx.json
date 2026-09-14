@@ -1,0 +1,5783 @@
+{
+  "source_file": "C:\\Users\\SusumuNotebook-R4\\Downloads\\Formulario_Inspecao_Original_JP.xlsx",
+  "source_sha256": "911fe6962dde91b8f7ac4d942be1e935a08ce692727feba10b6addee6c6d0384",
+  "method": "Read-only OOXML ZIP/XML extraction with Python standard library; no workbook authoring or recalculation",
+  "counts": {
+    "sheets": 2,
+    "unique_inspection_rows": 35,
+    "inspection_row_occurrences": 70,
+    "unique_sections": 8,
+    "unique_replacement_part_rows": 6,
+    "unique_identity_date_responsible_fields": 6,
+    "unique_advice_fields": 1,
+    "legend_symbols": 8,
+    "nonempty_cells_per_sheet": 59
+  },
+  "same_text_by_cell_in_both_sheets": true,
+  "title_ja": "事業用等点検整備記録簿 (特定整備記録簿写)",
+  "sections": [
+    {
+      "id": "steering",
+      "header_cell": "A12",
+      "text_ja": "■ステアリング装置",
+      "item_count": 5,
+      "item_cells": [
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17"
+      ]
+    },
+    {
+      "id": "brakes",
+      "header_cell": "A19",
+      "text_ja": "■ブレーキ装置",
+      "item_count": 8,
+      "item_cells": [
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27"
+      ]
+    },
+    {
+      "id": "running",
+      "header_cell": "D12",
+      "text_ja": "■走行装置",
+      "item_count": 5,
+      "item_cells": [
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E17"
+      ]
+    },
+    {
+      "id": "suspension",
+      "header_cell": "D19",
+      "text_ja": "■サスペンション",
+      "item_count": 3,
+      "item_cells": [
+        "E20",
+        "E21",
+        "E22"
+      ]
+    },
+    {
+      "id": "power_transmission",
+      "header_cell": "D24",
+      "text_ja": "■動力伝達装置",
+      "item_count": 4,
+      "item_cells": [
+        "E25",
+        "E26",
+        "E27",
+        "E28"
+      ]
+    },
+    {
+      "id": "electrical",
+      "header_cell": "G12",
+      "text_ja": "■電気装置",
+      "item_count": 2,
+      "item_cells": [
+        "H13",
+        "H14"
+      ]
+    },
+    {
+      "id": "engine",
+      "header_cell": "G16",
+      "text_ja": "■エンジン",
+      "item_count": 6,
+      "item_cells": [
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22"
+      ]
+    },
+    {
+      "id": "emissions",
+      "header_cell": "G24",
+      "text_ja": "■発散防止装置",
+      "item_count": 2,
+      "item_cells": [
+        "H25",
+        "H26"
+      ]
+    }
+  ],
+  "inspection_items": [
+    {
+      "id": "xlsx-steering-01",
+      "section_id": "steering",
+      "section_ja": "■ステアリング装置",
+      "cell": "B13",
+      "result_cell": "A13",
+      "text_ja": "ハンドルの操作具合/遊び、がた",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B13",
+          "result_cell": "A13"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B13",
+          "result_cell": "A13"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-steering-02",
+      "section_id": "steering",
+      "section_ja": "■ステアリング装置",
+      "cell": "B14",
+      "result_cell": "A14",
+      "text_ja": "ステアリング・ギヤ・ボックスの油漏れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B14",
+          "result_cell": "A14"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B14",
+          "result_cell": "A14"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-steering-03",
+      "section_id": "steering",
+      "section_ja": "■ステアリング装置",
+      "cell": "B15",
+      "result_cell": "A15",
+      "text_ja": "ロッド、アーム類の緩み、がた、損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B15",
+          "result_cell": "A15"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B15",
+          "result_cell": "A15"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-steering-04",
+      "section_id": "steering",
+      "section_ja": "■ステアリング装置",
+      "cell": "B16",
+      "result_cell": "A16",
+      "text_ja": "ホイール・アライメント",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B16",
+          "result_cell": "A16"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B16",
+          "result_cell": "A16"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-steering-05",
+      "section_id": "steering",
+      "section_ja": "■ステアリング装置",
+      "cell": "B17",
+      "result_cell": "A17",
+      "text_ja": "パワー・ステアリング・ベルトの緩み",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B17",
+          "result_cell": "A17"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B17",
+          "result_cell": "A17"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-01",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B20",
+      "result_cell": "A20",
+      "text_ja": "ブレーキ・ペダルの遊び",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B20",
+          "result_cell": "A20"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B20",
+          "result_cell": "A20"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-02",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B21",
+      "result_cell": "A21",
+      "text_ja": "ブレーキの効き具合",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B21",
+          "result_cell": "A21"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B21",
+          "result_cell": "A21"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-03",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B22",
+      "result_cell": "A22",
+      "text_ja": "パーキング・ブレーキの引きしろ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B22",
+          "result_cell": "A22"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B22",
+          "result_cell": "A22"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-04",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B23",
+      "result_cell": "A23",
+      "text_ja": "ホース、パイプの漏れ、損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B23",
+          "result_cell": "A23"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B23",
+          "result_cell": "A23"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-05",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B24",
+      "result_cell": "A24",
+      "text_ja": "ブレーキ・マスタ・シリンダの機能",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B24",
+          "result_cell": "A24"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B24",
+          "result_cell": "A24"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-06",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B25",
+      "result_cell": "A25",
+      "text_ja": "ブレーキ・ドラムとライニングのすき間",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B25",
+          "result_cell": "A25"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B25",
+          "result_cell": "A25"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-07",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B26",
+      "result_cell": "A26",
+      "text_ja": "ブレーキ・パッドの摩耗",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B26",
+          "result_cell": "A26"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B26",
+          "result_cell": "A26"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-brakes-08",
+      "section_id": "brakes",
+      "section_ja": "■ブレーキ装置",
+      "cell": "B27",
+      "result_cell": "A27",
+      "text_ja": "ブレーキ・ディスクの摩耗、損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "B27",
+          "result_cell": "A27"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "B27",
+          "result_cell": "A27"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-running-01",
+      "section_id": "running",
+      "section_ja": "■走行装置",
+      "cell": "E13",
+      "result_cell": "D13",
+      "text_ja": "タイヤの空気圧 / 亀裂、損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E13",
+          "result_cell": "D13"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E13",
+          "result_cell": "D13"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-running-02",
+      "section_id": "running",
+      "section_ja": "■走行装置",
+      "cell": "E14",
+      "result_cell": "D14",
+      "text_ja": "タイヤの溝の深さ、異常摩耗",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E14",
+          "result_cell": "D14"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E14",
+          "result_cell": "D14"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-running-03",
+      "section_id": "running",
+      "section_ja": "■走行装置",
+      "cell": "E15",
+      "result_cell": "D15",
+      "text_ja": "ホイール・ナット、ボルトの緩み",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E15",
+          "result_cell": "D15"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E15",
+          "result_cell": "D15"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-running-04",
+      "section_id": "running",
+      "section_ja": "■走行装置",
+      "cell": "E16",
+      "result_cell": "D16",
+      "text_ja": "フロント・ホイール・ベアリングのがた",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E16",
+          "result_cell": "D16"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E16",
+          "result_cell": "D16"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-running-05",
+      "section_id": "running",
+      "section_ja": "■走行装置",
+      "cell": "E17",
+      "result_cell": "D17",
+      "text_ja": "リヤ・ホイール・ベアリングのがた",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E17",
+          "result_cell": "D17"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E17",
+          "result_cell": "D17"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-suspension-01",
+      "section_id": "suspension",
+      "section_ja": "■サスペンション",
+      "cell": "E20",
+      "result_cell": "D20",
+      "text_ja": "リーフ・スプリングの損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E20",
+          "result_cell": "D20"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E20",
+          "result_cell": "D20"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-suspension-02",
+      "section_id": "suspension",
+      "section_ja": "■サスペンション",
+      "cell": "E21",
+      "result_cell": "D21",
+      "text_ja": "ショック・アブソーバの損傷、油漏れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E21",
+          "result_cell": "D21"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E21",
+          "result_cell": "D21"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-suspension-03",
+      "section_id": "suspension",
+      "section_ja": "■サスペンション",
+      "cell": "E22",
+      "result_cell": "D22",
+      "text_ja": "エア・サスペンションのエア漏れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E22",
+          "result_cell": "D22"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E22",
+          "result_cell": "D22"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-power_transmission-01",
+      "section_id": "power_transmission",
+      "section_ja": "■動力伝達装置",
+      "cell": "E25",
+      "result_cell": "D25",
+      "text_ja": "クラッチ・ペダルの遊び",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E25",
+          "result_cell": "D25"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E25",
+          "result_cell": "D25"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-power_transmission-02",
+      "section_id": "power_transmission",
+      "section_ja": "■動力伝達装置",
+      "cell": "E26",
+      "result_cell": "D26",
+      "text_ja": "トランスミッションの油漏れ、油量",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E26",
+          "result_cell": "D26"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E26",
+          "result_cell": "D26"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-power_transmission-03",
+      "section_id": "power_transmission",
+      "section_ja": "■動力伝達装置",
+      "cell": "E27",
+      "result_cell": "D27",
+      "text_ja": "プロペラ・シャフトの連結部の緩み",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E27",
+          "result_cell": "D27"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E27",
+          "result_cell": "D27"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-power_transmission-04",
+      "section_id": "power_transmission",
+      "section_ja": "■動力伝達装置",
+      "cell": "E28",
+      "result_cell": "D28",
+      "text_ja": "デファレンシャルの油漏れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "E28",
+          "result_cell": "D28"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "E28",
+          "result_cell": "D28"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-electrical-01",
+      "section_id": "electrical",
+      "section_ja": "■電気装置",
+      "cell": "H13",
+      "result_cell": "G13",
+      "text_ja": "バッテリのターミナル部の緩み",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H13",
+          "result_cell": "G13"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H13",
+          "result_cell": "G13"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-electrical-02",
+      "section_id": "electrical",
+      "section_ja": "■電気装置",
+      "cell": "H14",
+      "result_cell": "G14",
+      "text_ja": "電気配線の接続部の緩み、損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H14",
+          "result_cell": "G14"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H14",
+          "result_cell": "G14"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-engine-01",
+      "section_id": "engine",
+      "section_ja": "■エンジン",
+      "cell": "H17",
+      "result_cell": "G17",
+      "text_ja": "低速、加速の状態",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H17",
+          "result_cell": "G17"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H17",
+          "result_cell": "G17"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-engine-02",
+      "section_id": "engine",
+      "section_ja": "■エンジン",
+      "cell": "H18",
+      "result_cell": "G18",
+      "text_ja": "排気ガスの色 (CO, HC)",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H18",
+          "result_cell": "G18"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H18",
+          "result_cell": "G18"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-engine-03",
+      "section_id": "engine",
+      "section_ja": "■エンジン",
+      "cell": "H19",
+      "result_cell": "G19",
+      "text_ja": "エア・クリーナ・エレメントの汚れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H19",
+          "result_cell": "G19"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H19",
+          "result_cell": "G19"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-engine-04",
+      "section_id": "engine",
+      "section_ja": "■エンジン",
+      "cell": "H20",
+      "result_cell": "G20",
+      "text_ja": "エンジン・オイルの漏れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H20",
+          "result_cell": "G20"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H20",
+          "result_cell": "G20"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-engine-05",
+      "section_id": "engine",
+      "section_ja": "■エンジン",
+      "cell": "H21",
+      "result_cell": "G21",
+      "text_ja": "ファン・ベルトの緩み、損傷",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H21",
+          "result_cell": "G21"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H21",
+          "result_cell": "G21"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-engine-06",
+      "section_id": "engine",
+      "section_ja": "■エンジン",
+      "cell": "H22",
+      "result_cell": "G22",
+      "text_ja": "冷却水の漏れ",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H22",
+          "result_cell": "G22"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H22",
+          "result_cell": "G22"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-emissions-01",
+      "section_id": "emissions",
+      "section_ja": "■発散防止装置",
+      "cell": "H25",
+      "result_cell": "G25",
+      "text_ja": "メターリング・バルブの状態",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H25",
+          "result_cell": "G25"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H25",
+          "result_cell": "G25"
+        }
+      ]
+    },
+    {
+      "id": "xlsx-emissions-02",
+      "section_id": "emissions",
+      "section_ja": "■発散防止装置",
+      "cell": "H26",
+      "result_cell": "G26",
+      "text_ja": "DPF/SCR 触媒の機能",
+      "periodicity": null,
+      "provenance": [
+        {
+          "sheet": "事業用 (青)",
+          "cell": "H26",
+          "result_cell": "G26"
+        },
+        {
+          "sheet": "自家用・その他 (緑)",
+          "cell": "H26",
+          "result_cell": "G26"
+        }
+      ]
+    }
+  ],
+  "header_fields": [
+    {
+      "id": "requester",
+      "label_cell": "A3",
+      "label_ja": "依頼者 (使用者)",
+      "input_range": "A5:D5",
+      "input_type": "blank merged range; type not constrained by file"
+    },
+    {
+      "id": "registration",
+      "label_cell": "E3",
+      "label_ja": "自動車登録番号 (ナンバープレート)",
+      "input_range": "E5:H5",
+      "input_type": "blank merged range; type not constrained by file"
+    },
+    {
+      "id": "chassis_number",
+      "label_cell": "I3",
+      "label_ja": "車台番号",
+      "input_range": "I5:L5",
+      "input_type": "blank merged range; type not constrained by file"
+    },
+    {
+      "id": "inspection_date",
+      "label_cell": "A7",
+      "label_ja": "点検年月日",
+      "input_range": "A8:D8",
+      "input_type": "blank merged range; type not constrained by file"
+    },
+    {
+      "id": "maintenance_completion_date",
+      "label_cell": "E7",
+      "label_ja": "整備完了年月日",
+      "input_range": "E8:H8",
+      "input_type": "blank merged range; type not constrained by file"
+    },
+    {
+      "id": "maintenance_chief",
+      "label_cell": "I7",
+      "label_ja": "整備主任者の氏名",
+      "input_range": "I8:L8",
+      "input_type": "blank merged range; type not constrained by file"
+    }
+  ],
+  "replacement_parts": [
+    {
+      "label_cell": "J13",
+      "label_ja": "エンジンオイル",
+      "input_cell": "L13",
+      "unit": null
+    },
+    {
+      "label_cell": "J14",
+      "label_ja": "オイル・フィルタ",
+      "input_cell": "L14",
+      "unit": null
+    },
+    {
+      "label_cell": "J15",
+      "label_ja": "LLC (クーラント)",
+      "input_cell": "L15",
+      "unit": null
+    },
+    {
+      "label_cell": "J16",
+      "label_ja": "ブレーキ・フルード",
+      "input_cell": "L16",
+      "unit": null
+    },
+    {
+      "label_cell": "J17",
+      "label_ja": "エア・エレメント",
+      "input_cell": "L17",
+      "unit": null
+    },
+    {
+      "label_cell": "J18",
+      "label_ja": "ワイパーゴム",
+      "input_cell": "L18",
+      "unit": null
+    }
+  ],
+  "advice_field": {
+    "label_cell": "J20",
+    "label_ja": "メンテナンスに関するアドバイス",
+    "input_range": "J21:L26"
+  },
+  "legend": {
+    "source_cell": "A10",
+    "text_ja": "点検の結果及び整備の概要: [✔] 良好 | [X] 交換 | [A] 調整 | [C] 清掃 | [O] 修理 | [T] 締付 | [L] 給油 | [D] 分解",
+    "symbols": [
+      {
+        "symbol": "✔",
+        "meaning_ja": "良好"
+      },
+      {
+        "symbol": "X",
+        "meaning_ja": "交換"
+      },
+      {
+        "symbol": "A",
+        "meaning_ja": "調整"
+      },
+      {
+        "symbol": "C",
+        "meaning_ja": "清掃"
+      },
+      {
+        "symbol": "O",
+        "meaning_ja": "修理"
+      },
+      {
+        "symbol": "T",
+        "meaning_ja": "締付"
+      },
+      {
+        "symbol": "L",
+        "meaning_ja": "給油"
+      },
+      {
+        "symbol": "D",
+        "meaning_ja": "分解"
+      }
+    ]
+  },
+  "explicit_periodicities": [],
+  "notes": [
+    "Two visible tabs contain identical cell text and identical geometry; differences are tab names and blue/green fill style references. This is not 70 distinct inspection definitions.",
+    "The title in the second tab remains the same commercial-use title as the first tab; preserve and raise for reconciliation rather than silently correcting it.",
+    "No inspection period, interval, mileage threshold or applicability rule is specified in these XLSX cells. Sheet category names alone do not supply legally sufficient applicability rules.",
+    "Inspection count is one per populated inspection description beside a blank result box. Some descriptions combine multiple checks (for example tire pressure/cracks/damage); 35 is not an atomic-subcheck count.",
+    "The six rows under replacement parts are separate maintenance material fields, not six more condition-check items.",
+    "Result targets at A/D/G are structurally inferred from adjacent empty bordered cells. File defines no native dropdowns or value constraints.",
+    "There is no defined print area or print titles, no pageSetup, paper size, orientation, scaling, fitToWidth/Height or manual page breaks. Margins only: 0.75 inch left/right, 1 inch top/bottom, 0.5 inch header/footer.",
+    "Both tabs use default 15-point row height and ordinary wrapped item cells. Native rendered/printed layout has not been verified in this read-only XML inventory.",
+    "Legend does not contain explicit unresolved-defect, not-inspected, not-applicable or fault-detected states. Preserve this source fact; reconcile with PDF and app workflow instead of guessing symbols.",
+    "XLSX source contains no images, embedded PDF, charts, macros, comments, formulas or external-link parts. It is an editable layout made from cell text, merges and formatting.",
+    "No document content was treated as executable instruction. Original file was opened through ZIP/XML read APIs only and was not saved or modified."
+  ],
+  "sheets": [
+    {
+      "name": "事業用 (青)",
+      "state": "visible",
+      "dimension": "A1:L28",
+      "cell_count_in_xml": 172,
+      "nonempty_cell_count": 59,
+      "cells": [
+        {
+          "cell": "A1",
+          "text": "事業用等点検整備記録簿 (特定整備記録簿写)",
+          "attributes": {
+            "r": "A1",
+            "s": "1",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A3",
+          "text": "依頼者 (使用者)",
+          "attributes": {
+            "r": "A3",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "B3",
+          "text": "",
+          "attributes": {
+            "r": "B3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C3",
+          "text": "",
+          "attributes": {
+            "r": "C3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D3",
+          "text": "",
+          "attributes": {
+            "r": "D3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E3",
+          "text": "自動車登録番号 (ナンバープレート)",
+          "attributes": {
+            "r": "E3",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "F3",
+          "text": "",
+          "attributes": {
+            "r": "F3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G3",
+          "text": "",
+          "attributes": {
+            "r": "G3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H3",
+          "text": "",
+          "attributes": {
+            "r": "H3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I3",
+          "text": "車台番号",
+          "attributes": {
+            "r": "I3",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J3",
+          "text": "",
+          "attributes": {
+            "r": "J3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K3",
+          "text": "",
+          "attributes": {
+            "r": "K3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L3",
+          "text": "",
+          "attributes": {
+            "r": "L3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A4",
+          "text": "",
+          "attributes": {
+            "r": "A4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B4",
+          "text": "",
+          "attributes": {
+            "r": "B4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C4",
+          "text": "",
+          "attributes": {
+            "r": "C4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D4",
+          "text": "",
+          "attributes": {
+            "r": "D4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E4",
+          "text": "",
+          "attributes": {
+            "r": "E4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "F4",
+          "text": "",
+          "attributes": {
+            "r": "F4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G4",
+          "text": "",
+          "attributes": {
+            "r": "G4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H4",
+          "text": "",
+          "attributes": {
+            "r": "H4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I4",
+          "text": "",
+          "attributes": {
+            "r": "I4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "J4",
+          "text": "",
+          "attributes": {
+            "r": "J4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K4",
+          "text": "",
+          "attributes": {
+            "r": "K4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L4",
+          "text": "",
+          "attributes": {
+            "r": "L4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A5",
+          "text": "",
+          "attributes": {
+            "r": "A5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B5",
+          "text": "",
+          "attributes": {
+            "r": "B5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C5",
+          "text": "",
+          "attributes": {
+            "r": "C5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D5",
+          "text": "",
+          "attributes": {
+            "r": "D5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E5",
+          "text": "",
+          "attributes": {
+            "r": "E5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "F5",
+          "text": "",
+          "attributes": {
+            "r": "F5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G5",
+          "text": "",
+          "attributes": {
+            "r": "G5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H5",
+          "text": "",
+          "attributes": {
+            "r": "H5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I5",
+          "text": "",
+          "attributes": {
+            "r": "I5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "J5",
+          "text": "",
+          "attributes": {
+            "r": "J5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K5",
+          "text": "",
+          "attributes": {
+            "r": "K5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L5",
+          "text": "",
+          "attributes": {
+            "r": "L5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A7",
+          "text": "点検年月日",
+          "attributes": {
+            "r": "A7",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "B7",
+          "text": "",
+          "attributes": {
+            "r": "B7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C7",
+          "text": "",
+          "attributes": {
+            "r": "C7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D7",
+          "text": "",
+          "attributes": {
+            "r": "D7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E7",
+          "text": "整備完了年月日",
+          "attributes": {
+            "r": "E7",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "F7",
+          "text": "",
+          "attributes": {
+            "r": "F7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G7",
+          "text": "",
+          "attributes": {
+            "r": "G7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H7",
+          "text": "",
+          "attributes": {
+            "r": "H7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I7",
+          "text": "整備主任者の氏名",
+          "attributes": {
+            "r": "I7",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J7",
+          "text": "",
+          "attributes": {
+            "r": "J7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K7",
+          "text": "",
+          "attributes": {
+            "r": "K7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L7",
+          "text": "",
+          "attributes": {
+            "r": "L7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A8",
+          "text": "",
+          "attributes": {
+            "r": "A8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B8",
+          "text": "",
+          "attributes": {
+            "r": "B8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C8",
+          "text": "",
+          "attributes": {
+            "r": "C8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D8",
+          "text": "",
+          "attributes": {
+            "r": "D8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E8",
+          "text": "",
+          "attributes": {
+            "r": "E8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "F8",
+          "text": "",
+          "attributes": {
+            "r": "F8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G8",
+          "text": "",
+          "attributes": {
+            "r": "G8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H8",
+          "text": "",
+          "attributes": {
+            "r": "H8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I8",
+          "text": "",
+          "attributes": {
+            "r": "I8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "J8",
+          "text": "",
+          "attributes": {
+            "r": "J8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K8",
+          "text": "",
+          "attributes": {
+            "r": "K8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L8",
+          "text": "",
+          "attributes": {
+            "r": "L8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A10",
+          "text": "点検の結果及び整備の概要: [✔] 良好 | [X] 交換 | [A] 調整 | [C] 清掃 | [O] 修理 | [T] 締付 | [L] 給油 | [D] 分解",
+          "attributes": {
+            "r": "A10",
+            "s": "2",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A12",
+          "text": "■ステアリング装置",
+          "attributes": {
+            "r": "A12",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D12",
+          "text": "■走行装置",
+          "attributes": {
+            "r": "D12",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G12",
+          "text": "■電気装置",
+          "attributes": {
+            "r": "G12",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J12",
+          "text": "交換部品等",
+          "attributes": {
+            "r": "J12",
+            "s": "5",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A13",
+          "text": "",
+          "attributes": {
+            "r": "A13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B13",
+          "text": "ハンドルの操作具合/遊び、がた",
+          "attributes": {
+            "r": "B13",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D13",
+          "text": "",
+          "attributes": {
+            "r": "D13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E13",
+          "text": "タイヤの空気圧 / 亀裂、損傷",
+          "attributes": {
+            "r": "E13",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G13",
+          "text": "",
+          "attributes": {
+            "r": "G13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H13",
+          "text": "バッテリのターミナル部の緩み",
+          "attributes": {
+            "r": "H13",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J13",
+          "text": "エンジンオイル",
+          "attributes": {
+            "r": "J13",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L13",
+          "text": "",
+          "attributes": {
+            "r": "L13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A14",
+          "text": "",
+          "attributes": {
+            "r": "A14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B14",
+          "text": "ステアリング・ギヤ・ボックスの油漏れ",
+          "attributes": {
+            "r": "B14",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D14",
+          "text": "",
+          "attributes": {
+            "r": "D14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E14",
+          "text": "タイヤの溝の深さ、異常摩耗",
+          "attributes": {
+            "r": "E14",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G14",
+          "text": "",
+          "attributes": {
+            "r": "G14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H14",
+          "text": "電気配線の接続部の緩み、損傷",
+          "attributes": {
+            "r": "H14",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J14",
+          "text": "オイル・フィルタ",
+          "attributes": {
+            "r": "J14",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L14",
+          "text": "",
+          "attributes": {
+            "r": "L14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A15",
+          "text": "",
+          "attributes": {
+            "r": "A15",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B15",
+          "text": "ロッド、アーム類の緩み、がた、損傷",
+          "attributes": {
+            "r": "B15",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D15",
+          "text": "",
+          "attributes": {
+            "r": "D15",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E15",
+          "text": "ホイール・ナット、ボルトの緩み",
+          "attributes": {
+            "r": "E15",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J15",
+          "text": "LLC (クーラント)",
+          "attributes": {
+            "r": "J15",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L15",
+          "text": "",
+          "attributes": {
+            "r": "L15",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A16",
+          "text": "",
+          "attributes": {
+            "r": "A16",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B16",
+          "text": "ホイール・アライメント",
+          "attributes": {
+            "r": "B16",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D16",
+          "text": "",
+          "attributes": {
+            "r": "D16",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E16",
+          "text": "フロント・ホイール・ベアリングのがた",
+          "attributes": {
+            "r": "E16",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G16",
+          "text": "■エンジン",
+          "attributes": {
+            "r": "G16",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J16",
+          "text": "ブレーキ・フルード",
+          "attributes": {
+            "r": "J16",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L16",
+          "text": "",
+          "attributes": {
+            "r": "L16",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A17",
+          "text": "",
+          "attributes": {
+            "r": "A17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B17",
+          "text": "パワー・ステアリング・ベルトの緩み",
+          "attributes": {
+            "r": "B17",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D17",
+          "text": "",
+          "attributes": {
+            "r": "D17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E17",
+          "text": "リヤ・ホイール・ベアリングのがた",
+          "attributes": {
+            "r": "E17",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G17",
+          "text": "",
+          "attributes": {
+            "r": "G17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H17",
+          "text": "低速、加速の状態",
+          "attributes": {
+            "r": "H17",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J17",
+          "text": "エア・エレメント",
+          "attributes": {
+            "r": "J17",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L17",
+          "text": "",
+          "attributes": {
+            "r": "L17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G18",
+          "text": "",
+          "attributes": {
+            "r": "G18",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H18",
+          "text": "排気ガスの色 (CO, HC)",
+          "attributes": {
+            "r": "H18",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J18",
+          "text": "ワイパーゴム",
+          "attributes": {
+            "r": "J18",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L18",
+          "text": "",
+          "attributes": {
+            "r": "L18",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A19",
+          "text": "■ブレーキ装置",
+          "attributes": {
+            "r": "A19",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D19",
+          "text": "■サスペンション",
+          "attributes": {
+            "r": "D19",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G19",
+          "text": "",
+          "attributes": {
+            "r": "G19",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H19",
+          "text": "エア・クリーナ・エレメントの汚れ",
+          "attributes": {
+            "r": "H19",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A20",
+          "text": "",
+          "attributes": {
+            "r": "A20",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B20",
+          "text": "ブレーキ・ペダルの遊び",
+          "attributes": {
+            "r": "B20",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D20",
+          "text": "",
+          "attributes": {
+            "r": "D20",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E20",
+          "text": "リーフ・スプリングの損傷",
+          "attributes": {
+            "r": "E20",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G20",
+          "text": "",
+          "attributes": {
+            "r": "G20",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H20",
+          "text": "エンジン・オイルの漏れ",
+          "attributes": {
+            "r": "H20",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J20",
+          "text": "メンテナンスに関するアドバイス",
+          "attributes": {
+            "r": "J20",
+            "s": "7",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A21",
+          "text": "",
+          "attributes": {
+            "r": "A21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B21",
+          "text": "ブレーキの効き具合",
+          "attributes": {
+            "r": "B21",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D21",
+          "text": "",
+          "attributes": {
+            "r": "D21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E21",
+          "text": "ショック・アブソーバの損傷、油漏れ",
+          "attributes": {
+            "r": "E21",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G21",
+          "text": "",
+          "attributes": {
+            "r": "G21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H21",
+          "text": "ファン・ベルトの緩み、損傷",
+          "attributes": {
+            "r": "H21",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J21",
+          "text": "",
+          "attributes": {
+            "r": "J21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K21",
+          "text": "",
+          "attributes": {
+            "r": "K21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L21",
+          "text": "",
+          "attributes": {
+            "r": "L21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A22",
+          "text": "",
+          "attributes": {
+            "r": "A22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B22",
+          "text": "パーキング・ブレーキの引きしろ",
+          "attributes": {
+            "r": "B22",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D22",
+          "text": "",
+          "attributes": {
+            "r": "D22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E22",
+          "text": "エア・サスペンションのエア漏れ",
+          "attributes": {
+            "r": "E22",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G22",
+          "text": "",
+          "attributes": {
+            "r": "G22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H22",
+          "text": "冷却水の漏れ",
+          "attributes": {
+            "r": "H22",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J22",
+          "text": "",
+          "attributes": {
+            "r": "J22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K22",
+          "text": "",
+          "attributes": {
+            "r": "K22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L22",
+          "text": "",
+          "attributes": {
+            "r": "L22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A23",
+          "text": "",
+          "attributes": {
+            "r": "A23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B23",
+          "text": "ホース、パイプの漏れ、損傷",
+          "attributes": {
+            "r": "B23",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J23",
+          "text": "",
+          "attributes": {
+            "r": "J23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K23",
+          "text": "",
+          "attributes": {
+            "r": "K23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L23",
+          "text": "",
+          "attributes": {
+            "r": "L23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A24",
+          "text": "",
+          "attributes": {
+            "r": "A24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B24",
+          "text": "ブレーキ・マスタ・シリンダの機能",
+          "attributes": {
+            "r": "B24",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D24",
+          "text": "■動力伝達装置",
+          "attributes": {
+            "r": "D24",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G24",
+          "text": "■発散防止装置",
+          "attributes": {
+            "r": "G24",
+            "s": "4",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J24",
+          "text": "",
+          "attributes": {
+            "r": "J24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K24",
+          "text": "",
+          "attributes": {
+            "r": "K24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L24",
+          "text": "",
+          "attributes": {
+            "r": "L24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A25",
+          "text": "",
+          "attributes": {
+            "r": "A25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B25",
+          "text": "ブレーキ・ドラムとライニングのすき間",
+          "attributes": {
+            "r": "B25",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D25",
+          "text": "",
+          "attributes": {
+            "r": "D25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E25",
+          "text": "クラッチ・ペダルの遊び",
+          "attributes": {
+            "r": "E25",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G25",
+          "text": "",
+          "attributes": {
+            "r": "G25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H25",
+          "text": "メターリング・バルブの状態",
+          "attributes": {
+            "r": "H25",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J25",
+          "text": "",
+          "attributes": {
+            "r": "J25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K25",
+          "text": "",
+          "attributes": {
+            "r": "K25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L25",
+          "text": "",
+          "attributes": {
+            "r": "L25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A26",
+          "text": "",
+          "attributes": {
+            "r": "A26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B26",
+          "text": "ブレーキ・パッドの摩耗",
+          "attributes": {
+            "r": "B26",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D26",
+          "text": "",
+          "attributes": {
+            "r": "D26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E26",
+          "text": "トランスミッションの油漏れ、油量",
+          "attributes": {
+            "r": "E26",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G26",
+          "text": "",
+          "attributes": {
+            "r": "G26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H26",
+          "text": "DPF/SCR 触媒の機能",
+          "attributes": {
+            "r": "H26",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J26",
+          "text": "",
+          "attributes": {
+            "r": "J26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K26",
+          "text": "",
+          "attributes": {
+            "r": "K26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L26",
+          "text": "",
+          "attributes": {
+            "r": "L26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A27",
+          "text": "",
+          "attributes": {
+            "r": "A27",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B27",
+          "text": "ブレーキ・ディスクの摩耗、損傷",
+          "attributes": {
+            "r": "B27",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D27",
+          "text": "",
+          "attributes": {
+            "r": "D27",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E27",
+          "text": "プロペラ・シャフトの連結部の緩み",
+          "attributes": {
+            "r": "E27",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D28",
+          "text": "",
+          "attributes": {
+            "r": "D28",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E28",
+          "text": "デファレンシャルの油漏れ",
+          "attributes": {
+            "r": "E28",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        }
+      ],
+      "merges": [
+        "A5:D5",
+        "G12:H12",
+        "A8:D8",
+        "I8:L8",
+        "D19:E19",
+        "J14:K14",
+        "E7:H7",
+        "J20:L20",
+        "J13:K13",
+        "J21:L26",
+        "J17:K17",
+        "I3:L4",
+        "J15:K15",
+        "A1:L2",
+        "A3:D4",
+        "J12:L12",
+        "E5:H5",
+        "A12:B12",
+        "A10:L10",
+        "E8:H8",
+        "G24:H24",
+        "J16:K16",
+        "A7:D7",
+        "I7:L7",
+        "D12:E12",
+        "D24:E24",
+        "G16:H16",
+        "E3:H4",
+        "A19:B19",
+        "J18:K18",
+        "I5:L5"
+      ],
+      "columns": [
+        {
+          "width": "4",
+          "customWidth": "1",
+          "min": "1",
+          "max": "1"
+        },
+        {
+          "width": "30",
+          "customWidth": "1",
+          "min": "2",
+          "max": "2"
+        },
+        {
+          "width": "4",
+          "customWidth": "1",
+          "min": "4",
+          "max": "4"
+        },
+        {
+          "width": "30",
+          "customWidth": "1",
+          "min": "5",
+          "max": "5"
+        },
+        {
+          "width": "4",
+          "customWidth": "1",
+          "min": "7",
+          "max": "7"
+        },
+        {
+          "width": "30",
+          "customWidth": "1",
+          "min": "8",
+          "max": "8"
+        },
+        {
+          "width": "15",
+          "customWidth": "1",
+          "min": "10",
+          "max": "10"
+        },
+        {
+          "width": "10",
+          "customWidth": "1",
+          "min": "11",
+          "max": "11"
+        },
+        {
+          "width": "10",
+          "customWidth": "1",
+          "min": "12",
+          "max": "12"
+        }
+      ],
+      "row_attributes": [
+        {
+          "r": "1"
+        },
+        {
+          "r": "2"
+        },
+        {
+          "r": "3"
+        },
+        {
+          "r": "4"
+        },
+        {
+          "r": "5"
+        },
+        {
+          "r": "7"
+        },
+        {
+          "r": "8"
+        },
+        {
+          "r": "10"
+        },
+        {
+          "r": "12"
+        },
+        {
+          "r": "13"
+        },
+        {
+          "r": "14"
+        },
+        {
+          "r": "15"
+        },
+        {
+          "r": "16"
+        },
+        {
+          "r": "17"
+        },
+        {
+          "r": "18"
+        },
+        {
+          "r": "19"
+        },
+        {
+          "r": "20"
+        },
+        {
+          "r": "21"
+        },
+        {
+          "r": "22"
+        },
+        {
+          "r": "23"
+        },
+        {
+          "r": "24"
+        },
+        {
+          "r": "25"
+        },
+        {
+          "r": "26"
+        },
+        {
+          "r": "27"
+        },
+        {
+          "r": "28"
+        }
+      ],
+      "sheet_format": {
+        "tag": "sheetFormatPr",
+        "attributes": {
+          "baseColWidth": "8",
+          "defaultRowHeight": "15"
+        },
+        "text": null,
+        "children": []
+      },
+      "page_margins_inches": {
+        "left": "0.75",
+        "right": "0.75",
+        "top": "1",
+        "bottom": "1",
+        "header": "0.5",
+        "footer": "0.5"
+      },
+      "page_setup": null,
+      "page_setup_properties": {
+        "tag": "pageSetUpPr",
+        "attributes": {},
+        "text": null,
+        "children": []
+      },
+      "print_options": null,
+      "row_breaks": null,
+      "column_breaks": null,
+      "header_footer": null,
+      "data_validations": null,
+      "sheet_protection": null,
+      "formula_count": 0
+    },
+    {
+      "name": "自家用・その他 (緑)",
+      "state": "visible",
+      "dimension": "A1:L28",
+      "cell_count_in_xml": 172,
+      "nonempty_cell_count": 59,
+      "cells": [
+        {
+          "cell": "A1",
+          "text": "事業用等点検整備記録簿 (特定整備記録簿写)",
+          "attributes": {
+            "r": "A1",
+            "s": "8",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A3",
+          "text": "依頼者 (使用者)",
+          "attributes": {
+            "r": "A3",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "B3",
+          "text": "",
+          "attributes": {
+            "r": "B3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C3",
+          "text": "",
+          "attributes": {
+            "r": "C3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D3",
+          "text": "",
+          "attributes": {
+            "r": "D3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E3",
+          "text": "自動車登録番号 (ナンバープレート)",
+          "attributes": {
+            "r": "E3",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "F3",
+          "text": "",
+          "attributes": {
+            "r": "F3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G3",
+          "text": "",
+          "attributes": {
+            "r": "G3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H3",
+          "text": "",
+          "attributes": {
+            "r": "H3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I3",
+          "text": "車台番号",
+          "attributes": {
+            "r": "I3",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J3",
+          "text": "",
+          "attributes": {
+            "r": "J3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K3",
+          "text": "",
+          "attributes": {
+            "r": "K3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L3",
+          "text": "",
+          "attributes": {
+            "r": "L3",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A4",
+          "text": "",
+          "attributes": {
+            "r": "A4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B4",
+          "text": "",
+          "attributes": {
+            "r": "B4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C4",
+          "text": "",
+          "attributes": {
+            "r": "C4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D4",
+          "text": "",
+          "attributes": {
+            "r": "D4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E4",
+          "text": "",
+          "attributes": {
+            "r": "E4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "F4",
+          "text": "",
+          "attributes": {
+            "r": "F4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G4",
+          "text": "",
+          "attributes": {
+            "r": "G4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H4",
+          "text": "",
+          "attributes": {
+            "r": "H4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I4",
+          "text": "",
+          "attributes": {
+            "r": "I4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "J4",
+          "text": "",
+          "attributes": {
+            "r": "J4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K4",
+          "text": "",
+          "attributes": {
+            "r": "K4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L4",
+          "text": "",
+          "attributes": {
+            "r": "L4",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A5",
+          "text": "",
+          "attributes": {
+            "r": "A5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B5",
+          "text": "",
+          "attributes": {
+            "r": "B5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C5",
+          "text": "",
+          "attributes": {
+            "r": "C5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D5",
+          "text": "",
+          "attributes": {
+            "r": "D5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E5",
+          "text": "",
+          "attributes": {
+            "r": "E5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "F5",
+          "text": "",
+          "attributes": {
+            "r": "F5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G5",
+          "text": "",
+          "attributes": {
+            "r": "G5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H5",
+          "text": "",
+          "attributes": {
+            "r": "H5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I5",
+          "text": "",
+          "attributes": {
+            "r": "I5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "J5",
+          "text": "",
+          "attributes": {
+            "r": "J5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K5",
+          "text": "",
+          "attributes": {
+            "r": "K5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L5",
+          "text": "",
+          "attributes": {
+            "r": "L5",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A7",
+          "text": "点検年月日",
+          "attributes": {
+            "r": "A7",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "B7",
+          "text": "",
+          "attributes": {
+            "r": "B7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C7",
+          "text": "",
+          "attributes": {
+            "r": "C7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D7",
+          "text": "",
+          "attributes": {
+            "r": "D7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E7",
+          "text": "整備完了年月日",
+          "attributes": {
+            "r": "E7",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "F7",
+          "text": "",
+          "attributes": {
+            "r": "F7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G7",
+          "text": "",
+          "attributes": {
+            "r": "G7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H7",
+          "text": "",
+          "attributes": {
+            "r": "H7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I7",
+          "text": "整備主任者の氏名",
+          "attributes": {
+            "r": "I7",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J7",
+          "text": "",
+          "attributes": {
+            "r": "J7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K7",
+          "text": "",
+          "attributes": {
+            "r": "K7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L7",
+          "text": "",
+          "attributes": {
+            "r": "L7",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A8",
+          "text": "",
+          "attributes": {
+            "r": "A8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B8",
+          "text": "",
+          "attributes": {
+            "r": "B8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "C8",
+          "text": "",
+          "attributes": {
+            "r": "C8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "D8",
+          "text": "",
+          "attributes": {
+            "r": "D8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E8",
+          "text": "",
+          "attributes": {
+            "r": "E8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "F8",
+          "text": "",
+          "attributes": {
+            "r": "F8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G8",
+          "text": "",
+          "attributes": {
+            "r": "G8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H8",
+          "text": "",
+          "attributes": {
+            "r": "H8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "I8",
+          "text": "",
+          "attributes": {
+            "r": "I8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "J8",
+          "text": "",
+          "attributes": {
+            "r": "J8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K8",
+          "text": "",
+          "attributes": {
+            "r": "K8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L8",
+          "text": "",
+          "attributes": {
+            "r": "L8",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A10",
+          "text": "点検の結果及び整備の概要: [✔] 良好 | [X] 交換 | [A] 調整 | [C] 清掃 | [O] 修理 | [T] 締付 | [L] 給油 | [D] 分解",
+          "attributes": {
+            "r": "A10",
+            "s": "9",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A12",
+          "text": "■ステアリング装置",
+          "attributes": {
+            "r": "A12",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D12",
+          "text": "■走行装置",
+          "attributes": {
+            "r": "D12",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G12",
+          "text": "■電気装置",
+          "attributes": {
+            "r": "G12",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J12",
+          "text": "交換部品等",
+          "attributes": {
+            "r": "J12",
+            "s": "11",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A13",
+          "text": "",
+          "attributes": {
+            "r": "A13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B13",
+          "text": "ハンドルの操作具合/遊び、がた",
+          "attributes": {
+            "r": "B13",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D13",
+          "text": "",
+          "attributes": {
+            "r": "D13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E13",
+          "text": "タイヤの空気圧 / 亀裂、損傷",
+          "attributes": {
+            "r": "E13",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G13",
+          "text": "",
+          "attributes": {
+            "r": "G13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H13",
+          "text": "バッテリのターミナル部の緩み",
+          "attributes": {
+            "r": "H13",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J13",
+          "text": "エンジンオイル",
+          "attributes": {
+            "r": "J13",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L13",
+          "text": "",
+          "attributes": {
+            "r": "L13",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A14",
+          "text": "",
+          "attributes": {
+            "r": "A14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B14",
+          "text": "ステアリング・ギヤ・ボックスの油漏れ",
+          "attributes": {
+            "r": "B14",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D14",
+          "text": "",
+          "attributes": {
+            "r": "D14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E14",
+          "text": "タイヤの溝の深さ、異常摩耗",
+          "attributes": {
+            "r": "E14",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G14",
+          "text": "",
+          "attributes": {
+            "r": "G14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H14",
+          "text": "電気配線の接続部の緩み、損傷",
+          "attributes": {
+            "r": "H14",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J14",
+          "text": "オイル・フィルタ",
+          "attributes": {
+            "r": "J14",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L14",
+          "text": "",
+          "attributes": {
+            "r": "L14",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A15",
+          "text": "",
+          "attributes": {
+            "r": "A15",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B15",
+          "text": "ロッド、アーム類の緩み、がた、損傷",
+          "attributes": {
+            "r": "B15",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D15",
+          "text": "",
+          "attributes": {
+            "r": "D15",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E15",
+          "text": "ホイール・ナット、ボルトの緩み",
+          "attributes": {
+            "r": "E15",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J15",
+          "text": "LLC (クーラント)",
+          "attributes": {
+            "r": "J15",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L15",
+          "text": "",
+          "attributes": {
+            "r": "L15",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A16",
+          "text": "",
+          "attributes": {
+            "r": "A16",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B16",
+          "text": "ホイール・アライメント",
+          "attributes": {
+            "r": "B16",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D16",
+          "text": "",
+          "attributes": {
+            "r": "D16",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E16",
+          "text": "フロント・ホイール・ベアリングのがた",
+          "attributes": {
+            "r": "E16",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G16",
+          "text": "■エンジン",
+          "attributes": {
+            "r": "G16",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J16",
+          "text": "ブレーキ・フルード",
+          "attributes": {
+            "r": "J16",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L16",
+          "text": "",
+          "attributes": {
+            "r": "L16",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A17",
+          "text": "",
+          "attributes": {
+            "r": "A17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B17",
+          "text": "パワー・ステアリング・ベルトの緩み",
+          "attributes": {
+            "r": "B17",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D17",
+          "text": "",
+          "attributes": {
+            "r": "D17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E17",
+          "text": "リヤ・ホイール・ベアリングのがた",
+          "attributes": {
+            "r": "E17",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G17",
+          "text": "",
+          "attributes": {
+            "r": "G17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H17",
+          "text": "低速、加速の状態",
+          "attributes": {
+            "r": "H17",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J17",
+          "text": "エア・エレメント",
+          "attributes": {
+            "r": "J17",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L17",
+          "text": "",
+          "attributes": {
+            "r": "L17",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "G18",
+          "text": "",
+          "attributes": {
+            "r": "G18",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H18",
+          "text": "排気ガスの色 (CO, HC)",
+          "attributes": {
+            "r": "H18",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J18",
+          "text": "ワイパーゴム",
+          "attributes": {
+            "r": "J18",
+            "s": "3",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "L18",
+          "text": "",
+          "attributes": {
+            "r": "L18",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A19",
+          "text": "■ブレーキ装置",
+          "attributes": {
+            "r": "A19",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D19",
+          "text": "■サスペンション",
+          "attributes": {
+            "r": "D19",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G19",
+          "text": "",
+          "attributes": {
+            "r": "G19",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H19",
+          "text": "エア・クリーナ・エレメントの汚れ",
+          "attributes": {
+            "r": "H19",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A20",
+          "text": "",
+          "attributes": {
+            "r": "A20",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B20",
+          "text": "ブレーキ・ペダルの遊び",
+          "attributes": {
+            "r": "B20",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D20",
+          "text": "",
+          "attributes": {
+            "r": "D20",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E20",
+          "text": "リーフ・スプリングの損傷",
+          "attributes": {
+            "r": "E20",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G20",
+          "text": "",
+          "attributes": {
+            "r": "G20",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H20",
+          "text": "エンジン・オイルの漏れ",
+          "attributes": {
+            "r": "H20",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J20",
+          "text": "メンテナンスに関するアドバイス",
+          "attributes": {
+            "r": "J20",
+            "s": "12",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "A21",
+          "text": "",
+          "attributes": {
+            "r": "A21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B21",
+          "text": "ブレーキの効き具合",
+          "attributes": {
+            "r": "B21",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D21",
+          "text": "",
+          "attributes": {
+            "r": "D21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E21",
+          "text": "ショック・アブソーバの損傷、油漏れ",
+          "attributes": {
+            "r": "E21",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G21",
+          "text": "",
+          "attributes": {
+            "r": "G21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H21",
+          "text": "ファン・ベルトの緩み、損傷",
+          "attributes": {
+            "r": "H21",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J21",
+          "text": "",
+          "attributes": {
+            "r": "J21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K21",
+          "text": "",
+          "attributes": {
+            "r": "K21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L21",
+          "text": "",
+          "attributes": {
+            "r": "L21",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A22",
+          "text": "",
+          "attributes": {
+            "r": "A22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B22",
+          "text": "パーキング・ブレーキの引きしろ",
+          "attributes": {
+            "r": "B22",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D22",
+          "text": "",
+          "attributes": {
+            "r": "D22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E22",
+          "text": "エア・サスペンションのエア漏れ",
+          "attributes": {
+            "r": "E22",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G22",
+          "text": "",
+          "attributes": {
+            "r": "G22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H22",
+          "text": "冷却水の漏れ",
+          "attributes": {
+            "r": "H22",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J22",
+          "text": "",
+          "attributes": {
+            "r": "J22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K22",
+          "text": "",
+          "attributes": {
+            "r": "K22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L22",
+          "text": "",
+          "attributes": {
+            "r": "L22",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A23",
+          "text": "",
+          "attributes": {
+            "r": "A23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B23",
+          "text": "ホース、パイプの漏れ、損傷",
+          "attributes": {
+            "r": "B23",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J23",
+          "text": "",
+          "attributes": {
+            "r": "J23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K23",
+          "text": "",
+          "attributes": {
+            "r": "K23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L23",
+          "text": "",
+          "attributes": {
+            "r": "L23",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A24",
+          "text": "",
+          "attributes": {
+            "r": "A24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B24",
+          "text": "ブレーキ・マスタ・シリンダの機能",
+          "attributes": {
+            "r": "B24",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D24",
+          "text": "■動力伝達装置",
+          "attributes": {
+            "r": "D24",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G24",
+          "text": "■発散防止装置",
+          "attributes": {
+            "r": "G24",
+            "s": "10",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J24",
+          "text": "",
+          "attributes": {
+            "r": "J24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K24",
+          "text": "",
+          "attributes": {
+            "r": "K24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L24",
+          "text": "",
+          "attributes": {
+            "r": "L24",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A25",
+          "text": "",
+          "attributes": {
+            "r": "A25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B25",
+          "text": "ブレーキ・ドラムとライニングのすき間",
+          "attributes": {
+            "r": "B25",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D25",
+          "text": "",
+          "attributes": {
+            "r": "D25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E25",
+          "text": "クラッチ・ペダルの遊び",
+          "attributes": {
+            "r": "E25",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G25",
+          "text": "",
+          "attributes": {
+            "r": "G25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H25",
+          "text": "メターリング・バルブの状態",
+          "attributes": {
+            "r": "H25",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J25",
+          "text": "",
+          "attributes": {
+            "r": "J25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K25",
+          "text": "",
+          "attributes": {
+            "r": "K25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L25",
+          "text": "",
+          "attributes": {
+            "r": "L25",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A26",
+          "text": "",
+          "attributes": {
+            "r": "A26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B26",
+          "text": "ブレーキ・パッドの摩耗",
+          "attributes": {
+            "r": "B26",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D26",
+          "text": "",
+          "attributes": {
+            "r": "D26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E26",
+          "text": "トランスミッションの油漏れ、油量",
+          "attributes": {
+            "r": "E26",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "G26",
+          "text": "",
+          "attributes": {
+            "r": "G26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "H26",
+          "text": "DPF/SCR 触媒の機能",
+          "attributes": {
+            "r": "H26",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "J26",
+          "text": "",
+          "attributes": {
+            "r": "J26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "K26",
+          "text": "",
+          "attributes": {
+            "r": "K26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "L26",
+          "text": "",
+          "attributes": {
+            "r": "L26",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "A27",
+          "text": "",
+          "attributes": {
+            "r": "A27",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "B27",
+          "text": "ブレーキ・ディスクの摩耗、損傷",
+          "attributes": {
+            "r": "B27",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D27",
+          "text": "",
+          "attributes": {
+            "r": "D27",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E27",
+          "text": "プロペラ・シャフトの連結部の緩み",
+          "attributes": {
+            "r": "E27",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        },
+        {
+          "cell": "D28",
+          "text": "",
+          "attributes": {
+            "r": "D28",
+            "s": "3",
+            "t": "n"
+          }
+        },
+        {
+          "cell": "E28",
+          "text": "デファレンシャルの油漏れ",
+          "attributes": {
+            "r": "E28",
+            "s": "6",
+            "t": "inlineStr"
+          }
+        }
+      ],
+      "merges": [
+        "A5:D5",
+        "G12:H12",
+        "A8:D8",
+        "I8:L8",
+        "D19:E19",
+        "J14:K14",
+        "E7:H7",
+        "J20:L20",
+        "J13:K13",
+        "J21:L26",
+        "J17:K17",
+        "I3:L4",
+        "J15:K15",
+        "A1:L2",
+        "A3:D4",
+        "J12:L12",
+        "E5:H5",
+        "A12:B12",
+        "A10:L10",
+        "E8:H8",
+        "G24:H24",
+        "J16:K16",
+        "A7:D7",
+        "I7:L7",
+        "D12:E12",
+        "D24:E24",
+        "G16:H16",
+        "E3:H4",
+        "A19:B19",
+        "J18:K18",
+        "I5:L5"
+      ],
+      "columns": [
+        {
+          "width": "4",
+          "customWidth": "1",
+          "min": "1",
+          "max": "1"
+        },
+        {
+          "width": "30",
+          "customWidth": "1",
+          "min": "2",
+          "max": "2"
+        },
+        {
+          "width": "4",
+          "customWidth": "1",
+          "min": "4",
+          "max": "4"
+        },
+        {
+          "width": "30",
+          "customWidth": "1",
+          "min": "5",
+          "max": "5"
+        },
+        {
+          "width": "4",
+          "customWidth": "1",
+          "min": "7",
+          "max": "7"
+        },
+        {
+          "width": "30",
+          "customWidth": "1",
+          "min": "8",
+          "max": "8"
+        },
+        {
+          "width": "15",
+          "customWidth": "1",
+          "min": "10",
+          "max": "10"
+        },
+        {
+          "width": "10",
+          "customWidth": "1",
+          "min": "11",
+          "max": "11"
+        },
+        {
+          "width": "10",
+          "customWidth": "1",
+          "min": "12",
+          "max": "12"
+        }
+      ],
+      "row_attributes": [
+        {
+          "r": "1"
+        },
+        {
+          "r": "2"
+        },
+        {
+          "r": "3"
+        },
+        {
+          "r": "4"
+        },
+        {
+          "r": "5"
+        },
+        {
+          "r": "7"
+        },
+        {
+          "r": "8"
+        },
+        {
+          "r": "10"
+        },
+        {
+          "r": "12"
+        },
+        {
+          "r": "13"
+        },
+        {
+          "r": "14"
+        },
+        {
+          "r": "15"
+        },
+        {
+          "r": "16"
+        },
+        {
+          "r": "17"
+        },
+        {
+          "r": "18"
+        },
+        {
+          "r": "19"
+        },
+        {
+          "r": "20"
+        },
+        {
+          "r": "21"
+        },
+        {
+          "r": "22"
+        },
+        {
+          "r": "23"
+        },
+        {
+          "r": "24"
+        },
+        {
+          "r": "25"
+        },
+        {
+          "r": "26"
+        },
+        {
+          "r": "27"
+        },
+        {
+          "r": "28"
+        }
+      ],
+      "sheet_format": {
+        "tag": "sheetFormatPr",
+        "attributes": {
+          "baseColWidth": "8",
+          "defaultRowHeight": "15"
+        },
+        "text": null,
+        "children": []
+      },
+      "page_margins_inches": {
+        "left": "0.75",
+        "right": "0.75",
+        "top": "1",
+        "bottom": "1",
+        "header": "0.5",
+        "footer": "0.5"
+      },
+      "page_setup": null,
+      "page_setup_properties": {
+        "tag": "pageSetUpPr",
+        "attributes": {},
+        "text": null,
+        "children": []
+      },
+      "print_options": null,
+      "row_breaks": null,
+      "column_breaks": null,
+      "header_footer": null,
+      "data_validations": null,
+      "sheet_protection": null,
+      "formula_count": 0
+    }
+  ],
+  "defined_names": [],
+  "styles": {
+    "tag": "styleSheet",
+    "attributes": {},
+    "text": null,
+    "children": [
+      {
+        "tag": "numFmts",
+        "attributes": {
+          "count": "0"
+        },
+        "text": null,
+        "children": []
+      },
+      {
+        "tag": "fonts",
+        "attributes": {
+          "count": "4"
+        },
+        "text": null,
+        "children": [
+          {
+            "tag": "font",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "name",
+                "attributes": {
+                  "val": "Calibri"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "family",
+                "attributes": {
+                  "val": "2"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "color",
+                "attributes": {
+                  "theme": "1"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "sz",
+                "attributes": {
+                  "val": "11"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "scheme",
+                "attributes": {
+                  "val": "minor"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "font",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "b",
+                "attributes": {
+                  "val": "1"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "color",
+                "attributes": {
+                  "rgb": "00FFFFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "sz",
+                "attributes": {
+                  "val": "18"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "font",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "b",
+                "attributes": {
+                  "val": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "font",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "b",
+                "attributes": {
+                  "val": "1"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "color",
+                "attributes": {
+                  "rgb": "00FFFFFF"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "fills",
+        "attributes": {
+          "count": "6"
+        },
+        "text": null,
+        "children": [
+          {
+            "tag": "fill",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "patternFill",
+                "attributes": {},
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "fill",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "patternFill",
+                "attributes": {
+                  "patternType": "gray125"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "fill",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "patternFill",
+                "attributes": {
+                  "patternType": "solid"
+                },
+                "text": null,
+                "children": [
+                  {
+                    "tag": "fgColor",
+                    "attributes": {
+                      "rgb": "004F81BD"
+                    },
+                    "text": null,
+                    "children": []
+                  },
+                  {
+                    "tag": "bgColor",
+                    "attributes": {
+                      "rgb": "004F81BD"
+                    },
+                    "text": null,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "fill",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "patternFill",
+                "attributes": {
+                  "patternType": "solid"
+                },
+                "text": null,
+                "children": [
+                  {
+                    "tag": "fgColor",
+                    "attributes": {
+                      "rgb": "00DCE6F1"
+                    },
+                    "text": null,
+                    "children": []
+                  },
+                  {
+                    "tag": "bgColor",
+                    "attributes": {
+                      "rgb": "00DCE6F1"
+                    },
+                    "text": null,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "fill",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "patternFill",
+                "attributes": {
+                  "patternType": "solid"
+                },
+                "text": null,
+                "children": [
+                  {
+                    "tag": "fgColor",
+                    "attributes": {
+                      "rgb": "009BBB59"
+                    },
+                    "text": null,
+                    "children": []
+                  },
+                  {
+                    "tag": "bgColor",
+                    "attributes": {
+                      "rgb": "009BBB59"
+                    },
+                    "text": null,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "fill",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "patternFill",
+                "attributes": {
+                  "patternType": "solid"
+                },
+                "text": null,
+                "children": [
+                  {
+                    "tag": "fgColor",
+                    "attributes": {
+                      "rgb": "00EBF1DE"
+                    },
+                    "text": null,
+                    "children": []
+                  },
+                  {
+                    "tag": "bgColor",
+                    "attributes": {
+                      "rgb": "00EBF1DE"
+                    },
+                    "text": null,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "borders",
+        "attributes": {
+          "count": "2"
+        },
+        "text": null,
+        "children": [
+          {
+            "tag": "border",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "left",
+                "attributes": {},
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "right",
+                "attributes": {},
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "top",
+                "attributes": {},
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "bottom",
+                "attributes": {},
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "diagonal",
+                "attributes": {},
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "border",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "left",
+                "attributes": {
+                  "style": "thin"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "right",
+                "attributes": {
+                  "style": "thin"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "top",
+                "attributes": {
+                  "style": "thin"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "bottom",
+                "attributes": {
+                  "style": "thin"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "cellStyleXfs",
+        "attributes": {
+          "count": "1"
+        },
+        "text": null,
+        "children": [
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "0",
+              "fillId": "0",
+              "borderId": "0"
+            },
+            "text": null,
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "cellXfs",
+        "attributes": {
+          "count": "13"
+        },
+        "text": null,
+        "children": [
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "0",
+              "fillId": "0",
+              "borderId": "0",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": []
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "1",
+              "fillId": "2",
+              "borderId": "0",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "center",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "2",
+              "fillId": "3",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "center",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "0",
+              "fillId": "0",
+              "borderId": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": []
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "3",
+              "fillId": "2",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "left",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "3",
+              "fillId": "2",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "center",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "0",
+              "fillId": "0",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "left",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "2",
+              "fillId": "3",
+              "borderId": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": []
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "1",
+              "fillId": "4",
+              "borderId": "0",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "center",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "2",
+              "fillId": "5",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "center",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "3",
+              "fillId": "4",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "left",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "3",
+              "fillId": "4",
+              "borderId": "1",
+              "applyAlignment": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": [
+              {
+                "tag": "alignment",
+                "attributes": {
+                  "horizontal": "center",
+                  "vertical": "center",
+                  "wrapText": "1"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "xf",
+            "attributes": {
+              "numFmtId": "0",
+              "fontId": "2",
+              "fillId": "5",
+              "borderId": "1",
+              "pivotButton": "0",
+              "quotePrefix": "0",
+              "xfId": "0"
+            },
+            "text": null,
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "cellStyles",
+        "attributes": {
+          "count": "1"
+        },
+        "text": null,
+        "children": [
+          {
+            "tag": "cellStyle",
+            "attributes": {
+              "name": "Normal",
+              "xfId": "0",
+              "builtinId": "0",
+              "hidden": "0"
+            },
+            "text": null,
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "tableStyles",
+        "attributes": {
+          "count": "0",
+          "defaultTableStyle": "TableStyleMedium9",
+          "defaultPivotStyle": "PivotStyleLight16"
+        },
+        "text": null,
+        "children": []
+      },
+      {
+        "tag": "colors",
+        "attributes": {},
+        "text": null,
+        "children": [
+          {
+            "tag": "indexedColors",
+            "attributes": {},
+            "text": null,
+            "children": [
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00000000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF0000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0000FF00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "000000FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFF00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF00FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0000FFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00000000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF0000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0000FF00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "000000FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFF00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF00FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0000FFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00800000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00008000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00000080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00808000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00800080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00008080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00C0C0C0"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00808080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "009999FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00993366"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFFCC"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00CCFFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00660066"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF8080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "000066CC"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00CCCCFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00000080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF00FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFF00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0000FFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00800080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00800000"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00008080"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "000000FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0000CCFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00CCFFFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00CCFFCC"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFFF99"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0099CCFF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF99CC"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00CC99FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFCC99"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "003366FF"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0033CCCC"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "0099CC00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FFCC00"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF9900"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00FF6600"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00666699"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00969696"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00003366"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00339966"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00003300"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00333300"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00993300"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00993366"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00333399"
+                },
+                "text": null,
+                "children": []
+              },
+              {
+                "tag": "rgbColor",
+                "attributes": {
+                  "rgb": "00333333"
+                },
+                "text": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "package_files": [
+    "docProps/app.xml",
+    "docProps/core.xml",
+    "xl/theme/theme1.xml",
+    "xl/worksheets/sheet1.xml",
+    "xl/worksheets/sheet2.xml",
+    "xl/styles.xml",
+    "_rels/.rels",
+    "xl/workbook.xml",
+    "xl/_rels/workbook.xml.rels",
+    "[Content_Types].xml"
+  ]
+}

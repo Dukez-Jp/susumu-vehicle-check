@@ -16,6 +16,9 @@ uploads
 logs
 mobile
 docs
+# The Tenken PDF catalogue is imported by admin-web sources, so the web image
+# needs this one file even though the rest of docs/ stays out of the context.
+!docs/source/tenken-20260910/catalogo_pdf_100_itens.json
 decisions
 **/*.key
 **/*.pem

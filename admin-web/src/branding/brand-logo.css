@@ -1,0 +1,45 @@
+.susumu-group-logo {
+  display: block;
+  width: 136px;
+  height: auto;
+  max-width: 100%;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #fdfefe;
+  border: 6px solid #fdfefe;
+  border-radius: 10px;
+}
+
+.susumu-group-logo--compact {
+  width: 64px;
+  border-width: 4px;
+  border-radius: 6px;
+}
+
+.susumu-group-logo--login {
+  width: 150px;
+}
+
+.susumu-brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0 8px 26px;
+}
+
+.susumu-brand-block > span {
+  font-size: 13px;
+  color: #d3e0ef;
+}
+
+.login-story .susumu-brand-block {
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .sidebar.open .susumu-brand-block {
+    padding-top: 36px;
+  }
+}

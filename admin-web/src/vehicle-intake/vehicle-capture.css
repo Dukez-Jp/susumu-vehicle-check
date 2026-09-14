@@ -1,0 +1,206 @@
+.vehicle-capture {
+  min-height: 100vh;
+  background: var(--surface-sunken, #f7f9fb);
+}
+.vehicle-capture[hidden] {
+  display: none;
+}
+.capture-header {
+  background: var(--navy-deep, #12223e);
+  padding: 18px max(24px, calc((100vw - 1080px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #fdfefe;
+}
+/* Direct child only: the language switch keeps its own light surface, and the
+   white header colour would leave its unselected name invisible on it. */
+.capture-header > button {
+  background: transparent;
+  color: #fdfefe;
+  border-color: #66768c;
+}
+/* The language control carries its own layout; only its placement is set here. */
+.capture-language {
+  margin-left: auto;
+}
+.capture-main {
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+}
+.capture-main h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.capture-scope {
+  border-left: 3px solid #8090a4;
+  padding: 6px 16px;
+}
+.capture-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 26px 0 16px;
+}
+.capture-methods button {
+  min-height: 78px;
+  justify-content: flex-start;
+  padding: 18px;
+}
+.capture-methods .selected {
+  background: #d2e6d8;
+  border: 2px solid #344257;
+  color: #253246;
+}
+.capture-instructions {
+  margin-bottom: 22px;
+}
+.capture-instructions p:last-child {
+  margin-bottom: 0;
+}
+.capture-instructions h2 {
+  margin-top: 16px;
+}
+.capture-instructions li {
+  margin: 8px 0;
+}
+.capture-instructions a {
+  color: #253246;
+  text-decoration: underline;
+}
+.capture-nfc-note {
+  margin-top: 18px;
+}
+.capture-upload {
+  max-width: 600px;
+}
+.capture-upload input {
+  background: #f1f4f8;
+  padding: 12px;
+}
+.capture-form,
+.capture-history,
+.capture-pending {
+  margin-top: 22px;
+}
+.capture-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.capture-fields small {
+  font-weight: 400;
+  color: #55647a;
+}
+.capture-fields input[aria-invalid="true"] {
+  border-color: #a32c24;
+}
+.capture-fields .capture-field-error {
+  color: #a32c24;
+}
+.capture-review {
+  flex-direction: row;
+  align-items: center;
+  margin: 28px 0 20px;
+  padding: 18px;
+  background: #e7f2ea;
+  border-radius: 12px;
+}
+.capture-review input {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  flex-shrink: 0;
+  accent-color: #344257;
+}
+.capture-save {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.capture-save span {
+  color: #7d5d16;
+}
+.capture-clear,
+.capture-warnings {
+  padding: 16px;
+  border: 1px solid #d8ae55;
+  border-radius: 12px;
+  background: #fbf2dc;
+  margin-bottom: 22px;
+}
+.capture-original {
+  margin: 24px 0;
+  overflow-wrap: anywhere;
+}
+.capture-original summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+}
+.capture-original dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.capture-original dt {
+  font-size: 12px;
+  color: #55647a;
+}
+.capture-original dd {
+  margin: 0;
+}
+.capture-table-wrap {
+  overflow-x: auto;
+}
+.capture-history table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.capture-history th,
+.capture-history td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #d2dbe6;
+  white-space: nowrap;
+}
+.capture-history th {
+  font-size: 12px;
+  color: #55647a;
+}
+.capture-history button {
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .capture-header {
+    padding: 14px;
+    flex-wrap: wrap;
+  }
+  .capture-language {
+    justify-content: flex-end;
+    flex: 1 1 100%;
+  }
+  .capture-main {
+    padding: 24px 14px;
+  }
+  .capture-methods {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .capture-methods button {
+    min-height: 56px;
+  }
+  .capture-fields,
+  .capture-original dl {
+    grid-template-columns: 1fr;
+  }
+}
+@media print {
+  .vehicle-capture {
+    display: none !important;
+  }
+}

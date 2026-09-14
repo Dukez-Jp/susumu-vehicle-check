@@ -3,6 +3,7 @@ import { ClipboardCheck, Eye, EyeOff, ShieldCheck, Truck } from "lucide-react";
 import { useSession } from "../auth";
 import { ErrorPanel, Notice } from "../components";
 import { copy } from "../i18n";
+import BrandLogo from "../branding/BrandLogo";
 
 export default function Login() {
   const { login, expired } = useSession();
@@ -27,14 +28,9 @@ export default function Login() {
   return (
     <main className="login-page">
       <section className="login-story" aria-labelledby="welcome-title">
-        <div className="brand">
-          <div className="brand-mark">
-            <WrenchMark />
-          </div>
-          <div>
-            <strong>{copy.brand}</strong>
-            <span>{copy.product}</span>
-          </div>
+        <div className="susumu-brand-block">
+          <BrandLogo className="susumu-group-logo--login" />
+          <span>{copy.product}</span>
         </div>
         <div className="login-message">
           <h1 id="welcome-title">{copy.auth.title}</h1>
@@ -110,12 +106,5 @@ export default function Login() {
         </form>
       </section>
     </main>
-  );
-}
-function WrenchMark() {
-  return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <path d="M8 7h17v6H14v6h11v6H7v-6h11v-6H8z" fill="currentColor" />
-    </svg>
   );
 }

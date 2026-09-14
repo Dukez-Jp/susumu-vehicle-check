@@ -1,5 +1,7 @@
 # SUSUMU VEHICLE CHECK
 
+**Fase atual — 10/09/2026:** Wagner autorizou uma **demonstração local do Tenken no Windows/Chrome**, com mouse, desenvolvida e revisada em conjunto com Claude Code. Abra `http://127.0.0.1:5174/demo.html` ou execute `ABRIR_DEMO_TENKEN.cmd`. Veja o [guia da demonstração](docs/DEMONSTRACAO_TENKEN.md). O [esboço do piloto de um tablet](docs/esboco/2026-09-10/ESBOCO_COMPLETO.md) e a [matriz de 91 subtestes planejados](docs/esboco/2026-09-10/TESTES_E_SUBTESTES.md) continuam como referência: esta demonstração não executa nem aprova essa matriz. A autorização nova cobre a demonstração, não desenvolvimento Android ou produção.
+
 Inspeções de veículos na oficina, com aplicativo Android que salva o trabalho no tablet e sincroniza com o servidor quando a conexão volta. O escritório acompanha a frota, administra checklists e consulta relatórios em um painel web.
 
 **V1 implementada para avaliação DEV.** O Galaxy Tab Active5 Pro Wi-Fi já foi comprado e ainda está a caminho. A compilação do APK e os testes automatizados não substituem a aceitação física de câmera, S Pen, reinício e rede intermitente. O código está no [repositório privado do projeto](https://github.com/Dukez-Jp/susumu-vehicle-check); nenhum servidor de produção foi implantado por esta tarefa.
@@ -19,10 +21,10 @@ Fotos originais permanecem separadas das cópias anotadas. Inspeções finalizad
 
 ## Abrir neste computador Windows
 
-O checkout de desenvolvimento fica em `C:\Dev\SusumuVehicleCheck`, fora do OneDrive. O toolchain portátil desta máquina está em `C:\Dev\tools`; ele não é uma dependência dos builds Linux/CI.
+O checkout de desenvolvimento fica em `C:\Servidor\susumu-vehicle-check` no PC do escritório (de outro computador: `\\hayashida2andar\Servidor\susumu-vehicle-check`), fora do OneDrive; migrado de `C:\Dev` em 14/09/2026. O toolchain portátil ficava em `C:\Dev\tools` no notebook e não é uma dependência dos builds Linux/CI [CONFIRMAR: novo local do toolchain portátil no servidor].
 
 ```powershell
-Set-Location C:\Dev\SusumuVehicleCheck
+Set-Location C:\Servidor\susumu-vehicle-check
 ./scripts/start-local.ps1
 ```
 

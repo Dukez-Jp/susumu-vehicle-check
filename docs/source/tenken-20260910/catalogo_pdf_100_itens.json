@@ -1,0 +1,2714 @@
+{
+  "source": {
+    "name": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+    "bytes": 267204,
+    "sha256": "a77e1779132759a4a787a217d99dec31929a95ced675a376d73955e974524232"
+  },
+  "pageSizePt": [
+    841.6799926757812,
+    595.2000122070312
+  ],
+  "countsByColumn": [
+    25,
+    25,
+    23,
+    27
+  ],
+  "itemCount": 100,
+  "note": "Transcrição de linhas e posição de resposta. Periodicidade transcrita do sombreado e legenda do PDF (cinza=3 meses; cinza+branco=12 meses). Não determina aplicabilidade das notas nem diagnóstico. Quebras visuais foram removidas em itemJa; sourceText as preserva.",
+  "items": [
+    {
+      "id": "pdf-001",
+      "page": 1,
+      "column": 1,
+      "tableRow": 3,
+      "componentJa": "ハンドル",
+      "itemJa": "操作具合",
+      "sourceText": "操作具合",
+      "responseBoxPt": [
+        201.1608176717953,
+        113.21000162760417,
+        222.49307441711426,
+        127.83000946044922
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-002",
+      "page": 1,
+      "column": 1,
+      "tableRow": 4,
+      "componentJa": "ギヤ・ボックス",
+      "itemJa": "油漏れ",
+      "sourceText": "油漏れ",
+      "responseBoxPt": [
+        201.1608176717953,
+        127.83000946044922,
+        222.49307441711426,
+        142.1300163269043
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-003",
+      "page": 1,
+      "column": 1,
+      "tableRow": 5,
+      "componentJa": "ギヤ・ボックス",
+      "itemJa": "取付けの緩み",
+      "sourceText": "取付けの緩み",
+      "responseBoxPt": [
+        201.1608176717953,
+        142.1300163269043,
+        222.49307441711426,
+        156.5171672276088
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-004",
+      "page": 1,
+      "column": 1,
+      "tableRow": 6,
+      "componentJa": "ロッド及びアーム類",
+      "itemJa": "緩み、がた及び損傷(※1)",
+      "sourceText": "緩み、がた及び損傷(※1)",
+      "responseBoxPt": [
+        201.1608176717953,
+        156.5171672276088,
+        222.49307441711426,
+        170.91715676443917
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-005",
+      "page": 1,
+      "column": 1,
+      "tableRow": 7,
+      "componentJa": "ロッド及びアーム類",
+      "itemJa": "ポール・ジョイントのダスト・ブーツの亀裂及び損傷",
+      "sourceText": "ポール・ジョイントのダスト・ブーツ\nの亀裂及び損傷",
+      "responseBoxPt": [
+        201.1608176717953,
+        170.91715676443917,
+        222.49307441711426,
+        185.31714521135603
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-006",
+      "page": 1,
+      "column": 1,
+      "tableRow": 8,
+      "componentJa": "ナックル",
+      "itemJa": "連結部のがた(※1)",
+      "sourceText": "連結部のがた(※1)",
+      "responseBoxPt": [
+        201.1608176717953,
+        185.31714521135603,
+        222.49307441711426,
+        199.55002212524414
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-007",
+      "page": 1,
+      "column": 1,
+      "tableRow": 9,
+      "componentJa": "かじ取り車輪",
+      "itemJa": "ホイール・アライメント",
+      "sourceText": "ホイール・アライメント",
+      "responseBoxPt": [
+        201.1608176717953,
+        199.55002212524414,
+        222.49307441711426,
+        214.241455078125
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-008",
+      "page": 1,
+      "column": 1,
+      "tableRow": 10,
+      "componentJa": "パワー・ステアリング装置",
+      "itemJa": "ベルトの緩み及び損傷",
+      "sourceText": "ベルトの緩み及び損傷",
+      "responseBoxPt": [
+        201.1608176717953,
+        214.241455078125,
+        222.49307441711426,
+        228.67728632146662
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-009",
+      "page": 1,
+      "column": 1,
+      "tableRow": 11,
+      "componentJa": "パワー・ステアリング装置",
+      "itemJa": "油漏れ及び油量(※1)",
+      "sourceText": "油漏れ及び油量(※1)",
+      "responseBoxPt": [
+        201.1608176717953,
+        228.67728632146662,
+        222.49307441711426,
+        242.76715305873327
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-010",
+      "page": 1,
+      "column": 1,
+      "tableRow": 12,
+      "componentJa": "パワー・ステアリング装置",
+      "itemJa": "取付けの緩み",
+      "sourceText": "取付けの緩み",
+      "responseBoxPt": [
+        201.1608176717953,
+        242.76715305873327,
+        222.49307441711426,
+        257.3900146484375
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-011",
+      "page": 1,
+      "column": 1,
+      "tableRow": 14,
+      "componentJa": "ブレーキ・ペダル",
+      "itemJa": "遊び及び踏み込んだときの床板とのすき間",
+      "sourceText": "遊び及び踏み込んだときの床板\nとのすき間",
+      "responseBoxPt": [
+        201.1608176717953,
+        271.79002380371094,
+        222.49307441711426,
+        285.906381780451
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-012",
+      "page": 1,
+      "column": 1,
+      "tableRow": 15,
+      "componentJa": "ブレーキ・ペダル",
+      "itemJa": "ブレーキの効き具合",
+      "sourceText": "ブレーキの効き具合",
+      "responseBoxPt": [
+        201.1608176717953,
+        285.906381780451,
+        222.49307441711426,
+        300.7863783402876
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-013",
+      "page": 1,
+      "column": 1,
+      "tableRow": 16,
+      "componentJa": "駐車ブレーキ機構",
+      "itemJa": "引きしろ",
+      "sourceText": "引きしろ",
+      "responseBoxPt": [
+        201.1608176717953,
+        300.7863783402876,
+        222.49307441711426,
+        314.9700063069661
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-014",
+      "page": 1,
+      "column": 1,
+      "tableRow": 17,
+      "componentJa": "駐車ブレーキ機構",
+      "itemJa": "ブレーキの効き具合",
+      "sourceText": "ブレーキの効き具合",
+      "responseBoxPt": [
+        201.1608176717953,
+        314.9700063069661,
+        222.49307441711426,
+        329.2420120239258
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-015",
+      "page": 1,
+      "column": 1,
+      "tableRow": 18,
+      "componentJa": "ホース及びパイプ",
+      "itemJa": "漏れ、損傷及び取付状態",
+      "sourceText": "漏れ、損傷及び取付状態",
+      "responseBoxPt": [
+        201.1608176717953,
+        329.2420120239258,
+        222.49307441711426,
+        343.945011138916
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-016",
+      "page": 1,
+      "column": 1,
+      "tableRow": 19,
+      "componentJa": "リザーバ・タンク",
+      "itemJa": "液量",
+      "sourceText": "液量",
+      "responseBoxPt": [
+        201.1608176717953,
+        343.945011138916,
+        222.49307441711426,
+        358.0150203704834
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-017",
+      "page": 1,
+      "column": 1,
+      "tableRow": 20,
+      "componentJa": "マスタ・シリンダ、ホイール・シリンダ及びディスク・キャリパ",
+      "itemJa": "機能、摩耗及び損傷",
+      "sourceText": "機能、摩耗及び損傷",
+      "responseBoxPt": [
+        201.1608176717953,
+        358.0150203704834,
+        222.49307441711426,
+        380.0260070800781
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-018",
+      "page": 1,
+      "column": 1,
+      "tableRow": 21,
+      "componentJa": "ブレーキ・チャンバ",
+      "itemJa": "ロッドのストローク",
+      "sourceText": "ロッドのストローク",
+      "responseBoxPt": [
+        201.1608176717953,
+        380.0260070800781,
+        222.49307441711426,
+        393.8980194091797
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-019",
+      "page": 1,
+      "column": 1,
+      "tableRow": 22,
+      "componentJa": "ブレーキ・チャンバ",
+      "itemJa": "機能",
+      "sourceText": "機能",
+      "responseBoxPt": [
+        201.1608176717953,
+        393.8980194091797,
+        222.49307441711426,
+        408.5700174967448
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-020",
+      "page": 1,
+      "column": 1,
+      "tableRow": 23,
+      "componentJa": "ﾌﾞﾚｰｷﾊﾞﾙﾌﾞ、ｸｲｯｸ･ﾚﾘｰｽﾞ･ﾊﾞﾙﾌﾞ及びﾘﾚｰ・ﾊﾞﾌﾞﾙ",
+      "itemJa": "機能",
+      "sourceText": "機能",
+      "responseBoxPt": [
+        201.1608176717953,
+        408.5700174967448,
+        222.49307441711426,
+        430.2100067138672
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-021",
+      "page": 1,
+      "column": 1,
+      "tableRow": 24,
+      "componentJa": "倍力装置",
+      "itemJa": "エア・クリーナの詰まり",
+      "sourceText": "エア・クリーナの詰まり",
+      "responseBoxPt": [
+        201.1608176717953,
+        430.2100067138672,
+        222.49307441711426,
+        444.49001185099286
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-022",
+      "page": 1,
+      "column": 1,
+      "tableRow": 25,
+      "componentJa": "倍力装置",
+      "itemJa": "機能",
+      "sourceText": "機能",
+      "responseBoxPt": [
+        201.1608176717953,
+        444.49001185099286,
+        222.49307441711426,
+        458.8900095621745
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-023",
+      "page": 1,
+      "column": 1,
+      "tableRow": 26,
+      "componentJa": "ブレーキ・カム",
+      "itemJa": "摩耗",
+      "sourceText": "摩耗",
+      "responseBoxPt": [
+        201.1608176717953,
+        458.8900095621745,
+        222.49307441711426,
+        473.5240173339844
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-024",
+      "page": 1,
+      "column": 1,
+      "tableRow": 27,
+      "componentJa": "ブレーキ・ドラム及びブレーキ・シュー",
+      "itemJa": "ドラムとライニングとのすき間",
+      "sourceText": "ドラムとライニングとのすき間",
+      "responseBoxPt": [
+        201.1608176717953,
+        473.5240173339844,
+        222.49307441711426,
+        487.6171548025949
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-025",
+      "page": 1,
+      "column": 1,
+      "tableRow": 28,
+      "componentJa": "ブレーキ・ドラム及びブレーキ・シュー",
+      "itemJa": "シューの摺動部分及びライニングの摩耗(※1)",
+      "sourceText": "シューの摺動部分及びライニング\nの摩耗(※1)",
+      "responseBoxPt": [
+        201.1608176717953,
+        487.6171548025949,
+        222.49307441711426,
+        502.56600799560545
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-026",
+      "page": 1,
+      "column": 2,
+      "tableRow": 2,
+      "componentJa": "ブレーキ・ドラム及びブレーキ・シュー",
+      "itemJa": "ドラムの摩耗及び損傷",
+      "sourceText": "ドラムの摩耗及び損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        98.6800168355306,
+        422.3277024489183,
+        113.21000162760417
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-027",
+      "page": 1,
+      "column": 2,
+      "tableRow": 3,
+      "componentJa": "バック・プレート",
+      "itemJa": "バック・プレートの状態",
+      "sourceText": "バック・プレートの状態",
+      "responseBoxPt": [
+        400.9907628572904,
+        113.21000162760417,
+        422.3277024489183,
+        127.83000946044922
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-028",
+      "page": 1,
+      "column": 2,
+      "tableRow": 4,
+      "componentJa": "ブレーキ・ディスク及びパッド",
+      "itemJa": "ディスクとパットとのすき間(※1)",
+      "sourceText": "ディスクとパットとのすき間(※1)",
+      "responseBoxPt": [
+        400.9907628572904,
+        127.83000946044922,
+        422.3277024489183,
+        142.1300163269043
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-029",
+      "page": 1,
+      "column": 2,
+      "tableRow": 5,
+      "componentJa": "ブレーキ・ディスク及びパッド",
+      "itemJa": "パッドの摩耗(※1)",
+      "sourceText": "パッドの摩耗(※1)",
+      "responseBoxPt": [
+        400.9907628572904,
+        142.1300163269043,
+        422.3277024489183,
+        156.5171672276088
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-030",
+      "page": 1,
+      "column": 2,
+      "tableRow": 6,
+      "componentJa": "ブレーキ・ディスク及びパッド",
+      "itemJa": "ディスク摩耗及び損傷",
+      "sourceText": "ディスク摩耗及び損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        156.5171672276088,
+        422.3277024489183,
+        170.91715676443917
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-031",
+      "page": 1,
+      "column": 2,
+      "tableRow": 7,
+      "componentJa": "センタ・ブレーキ・ドラム及びライニング",
+      "itemJa": "ドラムの取付けの緩み",
+      "sourceText": "ドラムの取付けの緩み",
+      "responseBoxPt": [
+        400.9907628572904,
+        170.91715676443917,
+        422.3277024489183,
+        185.31714521135603
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-032",
+      "page": 1,
+      "column": 2,
+      "tableRow": 8,
+      "componentJa": "センタ・ブレーキ・ドラム及びライニング",
+      "itemJa": "ドラムとライニングとのすき間",
+      "sourceText": "ドラムとライニングとのすき間",
+      "responseBoxPt": [
+        400.9907628572904,
+        185.31714521135603,
+        422.3277024489183,
+        199.55002212524414
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-033",
+      "page": 1,
+      "column": 2,
+      "tableRow": 9,
+      "componentJa": "センタ・ブレーキ・ドラム及びライニング",
+      "itemJa": "ライニングの摩耗",
+      "sourceText": "ライニングの摩耗",
+      "responseBoxPt": [
+        400.9907628572904,
+        199.55002212524414,
+        422.3277024489183,
+        214.241455078125
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-034",
+      "page": 1,
+      "column": 2,
+      "tableRow": 10,
+      "componentJa": "センタ・ブレーキ・ドラム及びライニング",
+      "itemJa": "ドラムの摩耗及び損傷",
+      "sourceText": "ドラムの摩耗及び損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        214.241455078125,
+        422.3277024489183,
+        228.67728632146662
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-035",
+      "page": 1,
+      "column": 2,
+      "tableRow": 11,
+      "componentJa": "二重安全ブレーキ機構",
+      "itemJa": "機能",
+      "sourceText": "機能",
+      "responseBoxPt": [
+        400.9907628572904,
+        228.67728632146662,
+        422.3277024489183,
+        242.76715305873327
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-036",
+      "page": 1,
+      "column": 2,
+      "tableRow": 13,
+      "componentJa": "ホイール",
+      "itemJa": "タイヤの状態(※1)",
+      "sourceText": "タイヤの状態(※1)",
+      "responseBoxPt": [
+        400.9907628572904,
+        257.3900146484375,
+        422.3277024489183,
+        271.79002380371094
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-037",
+      "page": 1,
+      "column": 2,
+      "tableRow": 14,
+      "componentJa": "ホイール",
+      "itemJa": "ホイール・ナット及びホイール・ボルトの緩み",
+      "sourceText": "ホイール・ナット及びホイール・\nボルトの緩み",
+      "responseBoxPt": [
+        400.9907628572904,
+        271.79002380371094,
+        422.3277024489183,
+        285.906381780451
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-038",
+      "page": 1,
+      "column": 2,
+      "tableRow": 15,
+      "componentJa": "ホイール",
+      "itemJa": "ホイール・ナット及びホイール・ボルトの損傷(※2)",
+      "sourceText": "ホイール・ナット及びホイール・\nボルトの損傷(※2)",
+      "responseBoxPt": [
+        400.9907628572904,
+        285.906381780451,
+        422.3277024489183,
+        300.7863783402876
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": [
+        "※2"
+      ]
+    },
+    {
+      "id": "pdf-039",
+      "page": 1,
+      "column": 2,
+      "tableRow": 16,
+      "componentJa": "ホイール",
+      "itemJa": "フロント・ホイール・ベアリングのがた(※1)",
+      "sourceText": "フロント・ホイール・ベアリング\nのがた(※1)",
+      "responseBoxPt": [
+        400.9907628572904,
+        300.7863783402876,
+        422.3277024489183,
+        314.9700063069661
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-040",
+      "page": 1,
+      "column": 2,
+      "tableRow": 17,
+      "componentJa": "ホイール",
+      "itemJa": "リム、サイド･リング及びディスク・ホイールの損傷",
+      "sourceText": "リム、サイド･リング及びディスク\n・ホイールの損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        314.9700063069661,
+        422.3277024489183,
+        329.2420120239258
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-041",
+      "page": 1,
+      "column": 2,
+      "tableRow": 18,
+      "componentJa": "ホイール",
+      "itemJa": "リヤ・ホイール・ベアリングのがた",
+      "sourceText": "リヤ・ホイール・ベアリングの\nがた",
+      "responseBoxPt": [
+        400.9907628572904,
+        329.2420120239258,
+        422.3277024489183,
+        343.945011138916
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-042",
+      "page": 1,
+      "column": 2,
+      "tableRow": 20,
+      "componentJa": "リーフ・サスペンション",
+      "itemJa": "スプリングの損傷",
+      "sourceText": "スプリングの損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        358.0150203704834,
+        422.3277024489183,
+        372.3871590750558
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-043",
+      "page": 1,
+      "column": 2,
+      "tableRow": 21,
+      "componentJa": "リーフ・サスペンション",
+      "itemJa": "取付部及び連結部の緩み､がた及び損傷",
+      "sourceText": "取付部及び連結部の緩み､がた\n及び損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        372.3871590750558,
+        422.3277024489183,
+        386.82334391276044
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-044",
+      "page": 1,
+      "column": 2,
+      "tableRow": 22,
+      "componentJa": "コイル・サスペンション",
+      "itemJa": "スプリングの損傷",
+      "sourceText": "スプリングの損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        386.82334391276044,
+        422.3277024489183,
+        401.5166727701823
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-045",
+      "page": 1,
+      "column": 2,
+      "tableRow": 23,
+      "componentJa": "コイル・サスペンション",
+      "itemJa": "取付部及び連結部の緩み、がた及び損傷",
+      "sourceText": "取付部及び連結部の緩み、がた\n及び損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        401.5166727701823,
+        422.3277024489183,
+        415.782187721946
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-046",
+      "page": 1,
+      "column": 2,
+      "tableRow": 24,
+      "componentJa": "エア・サスペンション",
+      "itemJa": "エア漏れ",
+      "sourceText": "エア漏れ",
+      "responseBoxPt": [
+        400.9907628572904,
+        415.782187721946,
+        422.3277024489183,
+        430.2100067138672
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-047",
+      "page": 1,
+      "column": 2,
+      "tableRow": 25,
+      "componentJa": "エア・サスペンション",
+      "itemJa": "ベローズの損傷(※1)",
+      "sourceText": "ベローズの損傷(※1)",
+      "responseBoxPt": [
+        400.9907628572904,
+        430.2100067138672,
+        422.3277024489183,
+        444.49001185099286
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-048",
+      "page": 1,
+      "column": 2,
+      "tableRow": 26,
+      "componentJa": "エア・サスペンション",
+      "itemJa": "取付部及び連結部の緩み及び損傷(※1)",
+      "sourceText": "取付部及び連結部の緩み及び\n損傷(※1)",
+      "responseBoxPt": [
+        400.9907628572904,
+        444.49001185099286,
+        422.3277024489183,
+        458.8900095621745
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-049",
+      "page": 1,
+      "column": 2,
+      "tableRow": 27,
+      "componentJa": "エア・サスペンション",
+      "itemJa": "レベリング・ﾊﾞﾙﾌﾞの機能",
+      "sourceText": "レベリング・ﾊﾞﾙﾌﾞの機能",
+      "responseBoxPt": [
+        400.9907628572904,
+        458.8900095621745,
+        422.3277024489183,
+        473.5240173339844
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-050",
+      "page": 1,
+      "column": 2,
+      "tableRow": 28,
+      "componentJa": "ショック・アブソーバ",
+      "itemJa": "油漏れ及び損傷",
+      "sourceText": "油漏れ及び損傷",
+      "responseBoxPt": [
+        400.9907628572904,
+        473.5240173339844,
+        422.3277024489183,
+        487.6171548025949
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-051",
+      "page": 1,
+      "column": 3,
+      "tableRow": 3,
+      "componentJa": "クラッチ",
+      "itemJa": "ペダルの遊び及び切れたときの床板とのすき間",
+      "sourceText": "ペダルの遊び及び切れたときの\n床板とのすき間",
+      "responseBoxPt": [
+        599.9006662676411,
+        113.21000162760417,
+        621.2294111251831,
+        127.83000946044922
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-052",
+      "page": 1,
+      "column": 3,
+      "tableRow": 4,
+      "componentJa": "クラッチ",
+      "itemJa": "作用",
+      "sourceText": "作用",
+      "responseBoxPt": [
+        599.9006662676411,
+        127.83000946044922,
+        621.2294111251831,
+        142.1300163269043
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-053",
+      "page": 1,
+      "column": 3,
+      "tableRow": 5,
+      "componentJa": "クラッチ",
+      "itemJa": "液量",
+      "sourceText": "液量",
+      "responseBoxPt": [
+        599.9006662676411,
+        142.1300163269043,
+        621.2294111251831,
+        156.5171672276088
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-054",
+      "page": 1,
+      "column": 3,
+      "tableRow": 6,
+      "componentJa": "トランスミッション及びトランスファ",
+      "itemJa": "油漏れ及び油量(※1)",
+      "sourceText": "油漏れ及び油量(※1)",
+      "responseBoxPt": [
+        599.9006662676411,
+        156.5171672276088,
+        621.2294111251831,
+        170.91715676443917
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-055",
+      "page": 1,
+      "column": 3,
+      "tableRow": 7,
+      "componentJa": "プロペラ・シャフト及びドライブ・シャフト",
+      "itemJa": "連結部の緩み(※1)",
+      "sourceText": "連結部の緩み(※1)",
+      "responseBoxPt": [
+        599.9006662676411,
+        170.91715676443917,
+        621.2294111251831,
+        185.31714521135603
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-056",
+      "page": 1,
+      "column": 3,
+      "tableRow": 8,
+      "componentJa": "プロペラ・シャフト及びドライブ・シャフト",
+      "itemJa": "自在継手部のダスト・ブーツの亀裂及び損傷",
+      "sourceText": "自在継手部のダスト・ブーツの\n亀裂及び損傷",
+      "responseBoxPt": [
+        599.9006662676411,
+        185.31714521135603,
+        621.2294111251831,
+        199.55002212524414
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-057",
+      "page": 1,
+      "column": 3,
+      "tableRow": 9,
+      "componentJa": "プロペラ・シャフト及びドライブ・シャフト",
+      "itemJa": "継手部のがた",
+      "sourceText": "継手部のがた",
+      "responseBoxPt": [
+        599.9006662676411,
+        199.55002212524414,
+        621.2294111251831,
+        214.241455078125
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-058",
+      "page": 1,
+      "column": 3,
+      "tableRow": 10,
+      "componentJa": "プロペラ・シャフト及びドライブ・シャフト",
+      "itemJa": "センタ・ベアリングのがた",
+      "sourceText": "センタ・ベアリングのがた",
+      "responseBoxPt": [
+        599.9006662676411,
+        214.241455078125,
+        621.2294111251831,
+        228.67728632146662
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-059",
+      "page": 1,
+      "column": 3,
+      "tableRow": 11,
+      "componentJa": "デファレンシャル",
+      "itemJa": "油漏れ及び油量(※1)",
+      "sourceText": "油漏れ及び油量(※1)",
+      "responseBoxPt": [
+        599.9006662676411,
+        228.67728632146662,
+        621.2294111251831,
+        242.76715305873327
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-060",
+      "page": 1,
+      "column": 3,
+      "tableRow": 13,
+      "componentJa": "点火装置",
+      "itemJa": "点火プラグの状態(※1) (白金ﾌﾟﾗｸﾞ及びｲﾘｼﾞｳﾑﾌﾟﾗｸﾞを除く）",
+      "sourceText": "点火プラグの状態(※1) (白金\nﾌﾟﾗｸﾞ及びｲﾘｼﾞｳﾑﾌﾟﾗｸﾞを除く）",
+      "responseBoxPt": [
+        599.9006662676411,
+        257.3900146484375,
+        621.2294111251831,
+        271.79002380371094
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-061",
+      "page": 1,
+      "column": 3,
+      "tableRow": 14,
+      "componentJa": "点火装置",
+      "itemJa": "点火時期",
+      "sourceText": "点火時期",
+      "responseBoxPt": [
+        599.9006662676411,
+        271.79002380371094,
+        621.2294111251831,
+        285.906381780451
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-062",
+      "page": 1,
+      "column": 3,
+      "tableRow": 15,
+      "componentJa": "点火装置",
+      "itemJa": "ディストリビュータのキャップの状態",
+      "sourceText": "ディストリビュータのキャップ\nの状態",
+      "responseBoxPt": [
+        599.9006662676411,
+        285.906381780451,
+        621.2294111251831,
+        300.7863783402876
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-063",
+      "page": 1,
+      "column": 3,
+      "tableRow": 16,
+      "componentJa": "バッテリ",
+      "itemJa": "ターミナル部の接続状態",
+      "sourceText": "ターミナル部の接続状態",
+      "responseBoxPt": [
+        599.9006662676411,
+        300.7863783402876,
+        621.2294111251831,
+        314.9700063069661
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-064",
+      "page": 1,
+      "column": 3,
+      "tableRow": 17,
+      "componentJa": "電気配線",
+      "itemJa": "接続部の緩み及び損傷",
+      "sourceText": "接続部の緩み及び損傷",
+      "responseBoxPt": [
+        599.9006662676411,
+        314.9700063069661,
+        621.2294111251831,
+        329.2420120239258
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-065",
+      "page": 1,
+      "column": 3,
+      "tableRow": 19,
+      "componentJa": "本体",
+      "itemJa": "エア・クリーナ・エレメントの状態(※1)",
+      "sourceText": "エア・クリーナ・エレメントの\n状態(※1)",
+      "responseBoxPt": [
+        599.9006662676411,
+        343.945011138916,
+        621.2294111251831,
+        358.0150203704834
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-066",
+      "page": 1,
+      "column": 3,
+      "tableRow": 20,
+      "componentJa": "本体",
+      "itemJa": "低速及び加速の状態",
+      "sourceText": "低速及び加速の状態",
+      "responseBoxPt": [
+        599.9006662676411,
+        358.0150203704834,
+        621.2294111251831,
+        372.3871590750558
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-067",
+      "page": 1,
+      "column": 3,
+      "tableRow": 21,
+      "componentJa": "本体",
+      "itemJa": "排気の状態",
+      "sourceText": "排気の状態",
+      "responseBoxPt": [
+        599.9006662676411,
+        372.3871590750558,
+        621.2294111251831,
+        386.82334391276044
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-068",
+      "page": 1,
+      "column": 3,
+      "tableRow": 22,
+      "componentJa": "本体",
+      "itemJa": "シリンダ・ヘッド及びマニホールド各部の締付状態",
+      "sourceText": "シリンダ・ヘッド及びマニホール\nド各部の締付状態",
+      "responseBoxPt": [
+        599.9006662676411,
+        386.82334391276044,
+        621.2294111251831,
+        401.5166727701823
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-069",
+      "page": 1,
+      "column": 3,
+      "tableRow": 23,
+      "componentJa": "潤滑装置",
+      "itemJa": "油漏れ",
+      "sourceText": "油漏れ",
+      "responseBoxPt": [
+        599.9006662676411,
+        401.5166727701823,
+        621.2294111251831,
+        415.782187721946
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-070",
+      "page": 1,
+      "column": 3,
+      "tableRow": 24,
+      "componentJa": "燃料装置",
+      "itemJa": "燃料漏れ",
+      "sourceText": "燃料漏れ",
+      "responseBoxPt": [
+        599.9006662676411,
+        415.782187721946,
+        621.2294111251831,
+        430.2100067138672
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-071",
+      "page": 1,
+      "column": 3,
+      "tableRow": 25,
+      "componentJa": "冷却装置",
+      "itemJa": "ファン・ベルトの緩み及び損傷",
+      "sourceText": "ファン・ベルトの緩み及び損傷",
+      "responseBoxPt": [
+        599.9006662676411,
+        430.2100067138672,
+        621.2294111251831,
+        444.49001185099286
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-072",
+      "page": 1,
+      "column": 3,
+      "tableRow": 26,
+      "componentJa": "冷却装置",
+      "itemJa": "水漏れ",
+      "sourceText": "水漏れ",
+      "responseBoxPt": [
+        599.9006662676411,
+        444.49001185099286,
+        621.2294111251831,
+        458.8900095621745
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-073",
+      "page": 1,
+      "column": 3,
+      "tableRow": 28,
+      "componentJa": "ブローバイ・ガス還元装置",
+      "itemJa": "メターリング・バルブの状態",
+      "sourceText": "メターリング・バルブの状態",
+      "responseBoxPt": [
+        599.9006662676411,
+        473.5240173339844,
+        621.2294111251831,
+        487.6171548025949
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-074",
+      "page": 1,
+      "column": 4,
+      "tableRow": 2,
+      "componentJa": "ブローバイ・ガス還元装置",
+      "itemJa": "配管の損傷",
+      "sourceText": "配管の損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        98.6800168355306,
+        820.1018163507634,
+        113.21000162760417
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-075",
+      "page": 1,
+      "column": 4,
+      "tableRow": 3,
+      "componentJa": "燃料蒸発ガス排出抑止装置",
+      "itemJa": "配管等の損傷",
+      "sourceText": "配管等の損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        113.21000162760417,
+        820.1018163507634,
+        127.83000946044922
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-076",
+      "page": 1,
+      "column": 4,
+      "tableRow": 4,
+      "componentJa": "燃料蒸発ガス排出抑止装置",
+      "itemJa": "チャコール・キャニスタの詰まり及び損傷",
+      "sourceText": "チャコール・キャニスタの\n詰まり及び損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        127.83000946044922,
+        820.1018163507634,
+        142.1300163269043
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-077",
+      "page": 1,
+      "column": 4,
+      "tableRow": 5,
+      "componentJa": "燃料蒸発ガス排出抑止装置",
+      "itemJa": "チェック・バルブの機能",
+      "sourceText": "チェック・バルブの機能",
+      "responseBoxPt": [
+        798.744005878155,
+        142.1300163269043,
+        820.1018163507634,
+        156.5171672276088
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-078",
+      "page": 1,
+      "column": 4,
+      "tableRow": 6,
+      "componentJa": "一酸化炭素等発散防止装置",
+      "itemJa": "触媒反応方式等排出ガス減少装置の取付けの緩み及び損傷",
+      "sourceText": "触媒反応方式等排出ガス減少\n装置の取付けの緩み及び損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        156.5171672276088,
+        820.1018163507634,
+        170.91715676443917
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-079",
+      "page": 1,
+      "column": 4,
+      "tableRow": 7,
+      "componentJa": "一酸化炭素等発散防止装置",
+      "itemJa": "二次空気供給装置の機能",
+      "sourceText": "二次空気供給装置の機能",
+      "responseBoxPt": [
+        798.744005878155,
+        170.91715676443917,
+        820.1018163507634,
+        185.31714521135603
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-080",
+      "page": 1,
+      "column": 4,
+      "tableRow": 8,
+      "componentJa": "一酸化炭素等発散防止装置",
+      "itemJa": "排気ガス再循環装置の機能",
+      "sourceText": "排気ガス再循環装置の機能",
+      "responseBoxPt": [
+        798.744005878155,
+        185.31714521135603,
+        820.1018163507634,
+        199.55002212524414
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-081",
+      "page": 1,
+      "column": 4,
+      "tableRow": 9,
+      "componentJa": "一酸化炭素等発散防止装置",
+      "itemJa": "減速時排気ガス減少装置の機能",
+      "sourceText": "減速時排気ガス減少装置の\n機能",
+      "responseBoxPt": [
+        798.744005878155,
+        199.55002212524414,
+        820.1018163507634,
+        214.241455078125
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-082",
+      "page": 1,
+      "column": 4,
+      "tableRow": 10,
+      "componentJa": "一酸化炭素等発散防止装置",
+      "itemJa": "配管の損傷及び取付状態",
+      "sourceText": "配管の損傷及び取付状態",
+      "responseBoxPt": [
+        798.744005878155,
+        214.241455078125,
+        820.1018163507634,
+        228.67728632146662
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-083",
+      "page": 1,
+      "column": 4,
+      "tableRow": 11,
+      "componentJa": "警音器、窓拭き器、洗浄液噴射装置、デフロスタ、施錠装置",
+      "itemJa": "作用",
+      "sourceText": "作用",
+      "responseBoxPt": [
+        798.744005878155,
+        228.67728632146662,
+        820.1018163507634,
+        250.4060302734375
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-084",
+      "page": 1,
+      "column": 4,
+      "tableRow": 12,
+      "componentJa": "エグゾースト・パイプ及びマフラ",
+      "itemJa": "取付けの緩み及び損傷(※1)",
+      "sourceText": "取付けの緩み及び損傷(※1)",
+      "responseBoxPt": [
+        798.744005878155,
+        250.4060302734375,
+        820.1018163507634,
+        264.27801208496095
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※1"
+      ]
+    },
+    {
+      "id": "pdf-085",
+      "page": 1,
+      "column": 4,
+      "tableRow": 13,
+      "componentJa": "エグゾースト・パイプ及びマフラ",
+      "itemJa": "マフラの機能",
+      "sourceText": "マフラの機能",
+      "responseBoxPt": [
+        798.744005878155,
+        264.27801208496095,
+        820.1018163507634,
+        279.2060119628906
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-086",
+      "page": 1,
+      "column": 4,
+      "tableRow": 14,
+      "componentJa": "エア・コンプレッサ",
+      "itemJa": "エア・タンクの凝水",
+      "sourceText": "エア・タンクの凝水",
+      "responseBoxPt": [
+        798.744005878155,
+        279.2060119628906,
+        820.1018163507634,
+        293.0780029296875
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-087",
+      "page": 1,
+      "column": 4,
+      "tableRow": 15,
+      "componentJa": "エア・コンプレッサ",
+      "itemJa": "コンプレッサ、プレッシャ・レギュレータ及びアンローダ・バルブの機能",
+      "sourceText": "コンプレッサ、プレッシャ・レギュ\nレータ及びアンローダ・バルブ\nの機能",
+      "responseBoxPt": [
+        798.744005878155,
+        293.0780029296875,
+        820.1018163507634,
+        314.9700063069661
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-088",
+      "page": 1,
+      "column": 4,
+      "tableRow": 16,
+      "componentJa": "高圧ｶﾞｽを燃料とする燃料装置等",
+      "itemJa": "導管及び継手部のガス漏れ及び損傷",
+      "sourceText": "導管及び継手部のガス漏れ\n及び損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        314.9700063069661,
+        820.1018163507634,
+        329.2420120239258
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-089",
+      "page": 1,
+      "column": 4,
+      "tableRow": 17,
+      "componentJa": "高圧ｶﾞｽを燃料とする燃料装置等",
+      "itemJa": "ガス容器取付部の緩み及び損傷",
+      "sourceText": "ガス容器取付部の緩み及び\n損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        329.2420120239258,
+        820.1018163507634,
+        343.945011138916
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-090",
+      "page": 1,
+      "column": 4,
+      "tableRow": 18,
+      "componentJa": "車枠及び車体",
+      "itemJa": "非常口の扉の機能",
+      "sourceText": "非常口の扉の機能",
+      "responseBoxPt": [
+        798.744005878155,
+        343.945011138916,
+        820.1018163507634,
+        358.0150203704834
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-091",
+      "page": 1,
+      "column": 4,
+      "tableRow": 19,
+      "componentJa": "車枠及び車体",
+      "itemJa": "緩み及び損傷",
+      "sourceText": "緩み及び損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        358.0150203704834,
+        820.1018163507634,
+        372.3871590750558
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-092",
+      "page": 1,
+      "column": 4,
+      "tableRow": 20,
+      "componentJa": "車枠及び車体",
+      "itemJa": "スペアタイヤ取付装置の緩み、がた及び損傷(※2)",
+      "sourceText": "スペアタイヤ取付装置の緩み、\nがた及び損傷(※2)",
+      "responseBoxPt": [
+        798.744005878155,
+        372.3871590750558,
+        820.1018163507634,
+        386.82334391276044
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        222,
+        222,
+        222
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※2"
+      ]
+    },
+    {
+      "id": "pdf-093",
+      "page": 1,
+      "column": 4,
+      "tableRow": 21,
+      "componentJa": "車枠及び車体",
+      "itemJa": "スペアタイヤの取付状態(※2)",
+      "sourceText": "スペアタイヤの取付状態(※2)",
+      "responseBoxPt": [
+        798.744005878155,
+        386.82334391276044,
+        820.1018163507634,
+        401.5166727701823
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※2"
+      ]
+    },
+    {
+      "id": "pdf-094",
+      "page": 1,
+      "column": 4,
+      "tableRow": 22,
+      "componentJa": "車枠及び車体",
+      "itemJa": "ツールボックスの取付部の緩み及び損傷(※2)",
+      "sourceText": "ツールボックスの取付部の緩み\n及び損傷(※2)",
+      "responseBoxPt": [
+        798.744005878155,
+        401.5166727701823,
+        820.1018163507634,
+        415.782187721946
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": [
+        "※2"
+      ]
+    },
+    {
+      "id": "pdf-095",
+      "page": 1,
+      "column": 4,
+      "tableRow": 23,
+      "componentJa": "連結装置",
+      "itemJa": "カプラの機能及び損傷",
+      "sourceText": "カプラの機能及び損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        415.782187721946,
+        820.1018163507634,
+        430.2100067138672
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-096",
+      "page": 1,
+      "column": 4,
+      "tableRow": 24,
+      "componentJa": "連結装置",
+      "itemJa": "ピントル・フックの摩耗、亀裂及び損傷",
+      "sourceText": "ピントル・フックの摩耗、亀裂\n及び損傷",
+      "responseBoxPt": [
+        798.744005878155,
+        430.2100067138672,
+        820.1018163507634,
+        444.49001185099286
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-097",
+      "page": 1,
+      "column": 4,
+      "tableRow": 25,
+      "componentJa": "座席",
+      "itemJa": "座席ベルトの状態(バス・乗用車のみ)",
+      "sourceText": "座席ベルトの状態\n(バス・乗用車のみ)",
+      "responseBoxPt": [
+        798.744005878155,
+        444.49001185099286,
+        820.1018163507634,
+        458.8900095621745
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-098",
+      "page": 1,
+      "column": 4,
+      "tableRow": 26,
+      "componentJa": "開扉発車防止装置",
+      "itemJa": "機能",
+      "sourceText": "機能",
+      "responseBoxPt": [
+        798.744005878155,
+        458.8900095621745,
+        820.1018163507634,
+        473.5240173339844
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-099",
+      "page": 1,
+      "column": 4,
+      "tableRow": 27,
+      "componentJa": "その他",
+      "itemJa": "シャシ各部の給油脂状態",
+      "sourceText": "シャシ各部の給油脂状態",
+      "responseBoxPt": [
+        798.744005878155,
+        473.5240173339844,
+        820.1018163507634,
+        487.6171548025949
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "gray",
+      "sampleRgb": [
+        223,
+        223,
+        223
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        3,
+        12
+      ],
+      "footnoteRefs": []
+    },
+    {
+      "id": "pdf-100",
+      "page": 1,
+      "column": 4,
+      "tableRow": 28,
+      "componentJa": "その他",
+      "itemJa": "車載式故障診断装置の診断結果(※3) (大型特殊車を除く)",
+      "sourceText": "車載式故障診断装置の診断\n結果(※3) (大型特殊車を除く)",
+      "responseBoxPt": [
+        798.744005878155,
+        487.6171548025949,
+        820.1018163507634,
+        502.56600799560545
+      ],
+      "source": "様式原本_全日本トラック協会_点検整備記録簿 (1).pdf",
+      "responseCellStyle": "white",
+      "sampleRgb": [
+        255,
+        255,
+        255
+      ],
+      "periodsMonthsFromPrintedLegend": [
+        12
+      ],
+      "footnoteRefs": [
+        "※3"
+      ]
+    }
+  ]
+}

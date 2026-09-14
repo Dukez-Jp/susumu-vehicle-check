@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useSession, useUser } from "./auth";
 import { copy } from "./i18n";
+import BrandLogo from "./branding/BrandLogo";
 
 export default function Layout() {
   const user = useUser();
@@ -161,14 +162,9 @@ export default function Layout() {
 }
 function LinkBrand() {
   return (
-    <div className="brand">
-      <div className="brand-mark">
-        <Truck size={25} />
-      </div>
-      <div>
-        <strong>{copy.brand}</strong>
-        <span>{copy.product}</span>
-      </div>
+    <div className="susumu-brand-block">
+      <BrandLogo />
+      <span>{copy.product}</span>
     </div>
   );
 }

@@ -1,0 +1,60 @@
+/* Two flags side by side, large enough for a gloved finger on the tablet. */
+.language-switch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #bcc8d6;
+  border-radius: 12px;
+  background: #f1f4f8;
+}
+
+.language-switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 7px 13px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #253246;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.language-switch button:hover {
+  background: #dfe6ee;
+}
+
+.language-switch button[aria-pressed="true"] {
+  border-color: #bcc8d6;
+  background: #fdfefe;
+  color: #1f4e30;
+  font-weight: 600;
+  box-shadow: 0 2px 3px #16304f10;
+}
+
+.language-switch button:focus-visible {
+  outline: 2px solid #276038;
+  outline-offset: 2px;
+}
+
+.language-flag {
+  display: block;
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  flex: none;
+}
+
+/* On a narrow screen the flags carry the meaning and the names step aside. */
+@media (max-width: 560px) {
+  .language-switch button span {
+    display: none;
+  }
+  .language-switch button {
+    padding: 7px 10px;
+  }
+}
