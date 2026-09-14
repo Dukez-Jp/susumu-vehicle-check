@@ -155,6 +155,24 @@ describe("Tenken browser demonstration", () => {
     fireEvent.click(screen.getByRole("button", { name: /Voltar à oficina/ }));
     expect(screen.getByText("Oficina 2 · transições")).toBeInTheDocument();
   });
+  it("runs the same inspection from Oficina 3 and walks the items", () => {
+    // A terceira oficina acrescenta movimento, nao comportamento: os 12 itens
+    // continuam sendo percorridos um a um pelo mecanico, e o sentido nunca
+    // fica preso no documento depois da troca.
+    render(<DemoApp />);
+    fireEvent.click(screen.getByRole("button", { name: /Minha oficina 3/ }));
+    expect(screen.getByText("Oficina 3 · movimento")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Inspecionar 208/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Iniciar Tenken" }));
+    expect(screen.getByText("Item 1 / 12")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Próximo item/ }));
+    expect(screen.getByText("Item 2 / 12")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Anterior/ }));
+    expect(screen.getByText("Item 1 / 12")).toBeInTheDocument();
+    expect(document.documentElement.dataset.sentido).toBeUndefined();
+    fireEvent.click(screen.getByRole("button", { name: /Voltar à oficina/ }));
+    expect(screen.getByText("Oficina 3 · movimento")).toBeInTheDocument();
+  });
   it("restores the draft after a page remount", () => {
     const view = render(<DemoApp />);
     fireEvent.click(screen.getByRole("button", { name: /Inspecionar 714/ }));

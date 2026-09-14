@@ -2035,3 +2035,134 @@ footer {
     transform: none;
   }
 }
+
+/* ---- Oficina 3: nada aparece do nada --------------------------------------
+   A regra unica desta versao: toda mudanca de estado e um percurso que da
+   para acompanhar com o olho. Quatro movimentos, todos nativos do navegador
+   — nenhuma biblioteca entrou no projeto por causa disto.
+
+   1. O painel se monta em cascata quando voce chega.
+   2. Os blocos de baixo se revelam conforme a pagina rola, sem uma linha de
+      JavaScript: a propria rolagem e a linha do tempo da animacao.
+   3. O marcador do trilho desliza de um item ao outro em vez de saltar.
+   4. A lista de itens anda para o lado do sentido escolhido.
+
+   Tudo isto vive atras de .cheio, entao a Oficina e a Oficina 2 continuam
+   exatamente como estao. E nada aqui entra em @media print. */
+
+/* 1. Cascata: cada bloco entra 30ms depois do anterior. Curto de proposito —
+      a tela inteira termina de se montar em menos de meio segundo. */
+@keyframes bento-entra {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+}
+.workspace.cheio .bento > .card {
+  animation: bento-entra 0.34s cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+}
+.workspace.cheio .bento > .card:nth-child(1) {
+  animation-delay: 0s;
+}
+.workspace.cheio .bento > .card:nth-child(2) {
+  animation-delay: 0.03s;
+}
+.workspace.cheio .bento > .card:nth-child(3) {
+  animation-delay: 0.06s;
+}
+.workspace.cheio .bento > .card:nth-child(4) {
+  animation-delay: 0.09s;
+}
+.workspace.cheio .bento > .card:nth-child(5) {
+  animation-delay: 0.12s;
+}
+.workspace.cheio .bento > .card:nth-child(6) {
+  animation-delay: 0.15s;
+}
+.workspace.cheio .bento > .card:nth-child(n + 7) {
+  animation-delay: 0.18s;
+}
+
+/* 2. Revelacao por rolagem. A linha do tempo e a propria posicao do bloco na
+      janela: sem observador, sem escuta de scroll, sem contas em JavaScript.
+      Onde o navegador nao tiver isto, os blocos so entram na cascata acima. */
+@supports (animation-timeline: view()) {
+  .workspace.cheio .bento .launcher,
+  .workspace.cheio .bento .welcome-panel {
+    animation: bento-entra 1s linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 26%;
+  }
+}
+
+/* 3. O marcador do trilho: dar o mesmo nome ao botao selecionado nas duas
+      telas faz o navegador entender que e o mesmo marcador mudando de lugar,
+      e ele desliza. So existe um selecionado por vez, que e o que a regra
+      exige. */
+.sidebar.cheio nav button.selected {
+  view-transition-name: trilho-ativo;
+}
+::view-transition-group(trilho-ativo) {
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* 4. O item aberto entra pelo lado para onde voce foi. Avancar traz o
+      proximo da direita; voltar traz o anterior da esquerda. E a diferenca
+      entre "mudou alguma coisa na tela" e "eu andei um passo". */
+.workspace.cheio .item-panel {
+  view-transition-name: item-aberto;
+}
+@keyframes item-entra-direita {
+  from {
+    opacity: 0;
+    transform: translateX(26px);
+  }
+}
+@keyframes item-sai-esquerda {
+  to {
+    opacity: 0;
+    transform: translateX(-26px);
+  }
+}
+@keyframes item-entra-esquerda {
+  from {
+    opacity: 0;
+    transform: translateX(-26px);
+  }
+}
+@keyframes item-sai-direita {
+  to {
+    opacity: 0;
+    transform: translateX(26px);
+  }
+}
+html[data-sentido] ::view-transition-old(item-aberto),
+html[data-sentido] ::view-transition-new(item-aberto) {
+  animation-duration: 0.24s;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+html[data-sentido="frente"]::view-transition-old(item-aberto) {
+  animation-name: item-sai-esquerda;
+}
+html[data-sentido="frente"]::view-transition-new(item-aberto) {
+  animation-name: item-entra-direita;
+}
+html[data-sentido="tras"]::view-transition-old(item-aberto) {
+  animation-name: item-sai-direita;
+}
+html[data-sentido="tras"]::view-transition-new(item-aberto) {
+  animation-name: item-entra-esquerda;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace.cheio .bento > .card,
+  .workspace.cheio .bento .launcher,
+  .workspace.cheio .bento .welcome-panel {
+    animation: none;
+  }
+  .sidebar.cheio nav button.selected,
+  .workspace.cheio .item-panel {
+    view-transition-name: none;
+  }
+}

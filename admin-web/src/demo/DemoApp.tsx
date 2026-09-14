@@ -18,6 +18,7 @@ import {
   Wifi,
   WifiOff,
   X,
+  Zap,
 } from "lucide-react";
 import {
   emptyState,
@@ -61,6 +62,7 @@ import usePointerGlow from "./pointerGlow";
 type Page =
   | "home"
   | "home2"
+  | "home3"
   | "setup"
   | "checklist"
   | "review"
@@ -161,17 +163,50 @@ export default function DemoApp() {
     document.documentElement.lang = language;
   }, [language]);
   usePointerGlow();
+  /* Na Oficina 3 a lista de itens anda para um lado ou para o outro conforme
+     a direcao escolhida: e o que diz, sem texto, se voce avancou ou voltou
+     dentro dos 12 pontos. O sentido vai no proprio documento porque quem le
+     ele e o CSS da transicao. */
+  function telaDeOrigem(): Page {
+    return movimento === "cheio"
+      ? "home3"
+      : movimento === "suave"
+        ? "home2"
+        : "home";
+  }
+  function irParaItem(proximo: number) {
+    if (movimento !== "cheio" || paradoOuSemApi()) {
+      setItemIndex(proximo);
+      return;
+    }
+    document.documentElement.dataset.sentido =
+      proximo > itemIndex ? "frente" : "tras";
+    const transicao = document.startViewTransition(() =>
+      flushSync(() => setItemIndex(proximo)),
+    );
+    transicao.finished.finally(() => {
+      delete document.documentElement.dataset.sentido;
+    });
+  }
   /* "Oficina 2" e a mesma tela inicial com as transicoes ligadas. O modo
      acompanha a inspecao depois que ela comeca, senao a volta para a lista
      sairia de um jeito e a ida de outro. */
-  const [fluxoSuave, setFluxoSuave] = useState(false);
-  function comTransicao(acao: () => void, numero?: HTMLElement | null) {
-    /* Onde a API nao existe, a tela troca seca, como sempre foi. Quem pediu
-       menos movimento ao sistema tambem cai aqui. */
-    const parado = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (!fluxoSuave || parado || !document.startViewTransition) {
+  const [movimento, setMovimento] = useState<"" | "suave" | "cheio">("");
+  const fluxoSuave = movimento !== "";
+  /* Onde a API nao existe, a tela troca seca, como sempre foi. Quem pediu
+     menos movimento ao sistema tambem cai aqui. */
+  function paradoOuSemApi() {
+    return (
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ||
+      !document.startViewTransition
+    );
+  }
+  function comTransicao(
+    acao: () => void,
+    numero?: HTMLElement | null,
+    ligado = fluxoSuave,
+  ) {
+    if (!ligado || paradoOuSemApi()) {
       acao();
       return;
     }
@@ -482,7 +517,7 @@ export default function DemoApp() {
         }
       >
         <aside
-          className="sidebar rail"
+          className={`sidebar rail${movimento ? ` ${movimento}` : ""}`}
           inert={Boolean(drawingSignature || annotation || preview)}
         >
           <a className="brand" href="/demo.html">
@@ -514,14 +549,17 @@ export default function DemoApp() {
               aria-label={t.navHome}
               className={
                 page === "home" ||
-                (!fluxoSuave && ["setup", "checklist", "review"].includes(page))
+                (movimento === "" &&
+                  ["setup", "checklist", "review"].includes(page))
                   ? "selected"
                   : ""
               }
-              onClick={() => {
-                setFluxoSuave(false);
-                setPage("home");
-              }}
+              onClick={() =>
+                comTransicao(() => {
+                  setMovimento("");
+                  setPage("home");
+                })
+              }
             >
               <Home size={22} />
               <span>{t.railHome}</span>
@@ -530,17 +568,47 @@ export default function DemoApp() {
               aria-label={t.navHome2}
               className={
                 page === "home2" ||
-                (fluxoSuave && ["setup", "checklist", "review"].includes(page))
+                (movimento === "suave" &&
+                  ["setup", "checklist", "review"].includes(page))
                   ? "selected"
                   : ""
               }
-              onClick={() => {
-                setFluxoSuave(true);
-                setPage("home2");
-              }}
+              onClick={() =>
+                comTransicao(
+                  () => {
+                    setMovimento("suave");
+                    setPage("home2");
+                  },
+                  null,
+                  movimento === "cheio",
+                )
+              }
             >
               <Sparkles size={22} />
               <span>{t.railHome2}</span>
+            </button>
+            <button
+              aria-label={t.navHome3}
+              className={
+                page === "home3" ||
+                (movimento === "cheio" &&
+                  ["setup", "checklist", "review"].includes(page))
+                  ? "selected"
+                  : ""
+              }
+              onClick={() =>
+                comTransicao(
+                  () => {
+                    setMovimento("cheio");
+                    setPage("home3");
+                  },
+                  null,
+                  movimento === "cheio",
+                )
+              }
+            >
+              <Zap size={22} />
+              <span>{t.railHome3}</span>
             </button>
             <button
               aria-label={t.navQueue}
@@ -569,7 +637,7 @@ export default function DemoApp() {
           </div>
         </aside>
         <div
-          className={`workspace${fluxoSuave ? " suave" : ""}`}
+          className={`workspace${movimento ? ` ${movimento}` : ""}`}
           inert={Boolean(drawingSignature || annotation || preview)}
         >
           <header className="topbar">
@@ -625,7 +693,7 @@ export default function DemoApp() {
                 </button>
               </div>
             )}
-            {(page === "home" || page === "home2") && (
+            {(page === "home" || page === "home2" || page === "home3") && (
               <>
                 <div className="page-heading">
                   <div>
@@ -633,7 +701,11 @@ export default function DemoApp() {
                     <p>{t.homeSubtitle}</p>
                   </div>
                   <span className="date-label">
-                    {page === "home2" ? t.home2Tag : t.pilotLabel}
+                    {page === "home2"
+                      ? t.home2Tag
+                      : page === "home3"
+                        ? t.home3Tag
+                        : t.pilotLabel}
                   </span>
                 </div>
                 {/* Painel bento: os números do dia, a lista de veículos e o
@@ -803,7 +875,7 @@ export default function DemoApp() {
                 <button
                   className="back"
                   onClick={() =>
-                    comTransicao(() => setPage(fluxoSuave ? "home2" : "home"))
+                    comTransicao(() => setPage(telaDeOrigem()))
                   }
                 >
                   <ArrowLeft size={17} />
@@ -875,9 +947,7 @@ export default function DemoApp() {
                     <button
                       className="back"
                       onClick={() =>
-                        comTransicao(() =>
-                          setPage(fluxoSuave ? "home2" : "home"),
-                        )
+                        comTransicao(() => setPage(telaDeOrigem()))
                       }
                     >
                       <ArrowLeft size={16} />
@@ -921,7 +991,7 @@ export default function DemoApp() {
                               <button
                                 key={it.id}
                                 className={index === itemIndex ? "active" : ""}
-                                onClick={() => setItemIndex(index)}
+                                onClick={() => irParaItem(index)}
                               >
                                 <span
                                   className={`item-dot ${active.answers[it.id]?.status ?? ""}`}
@@ -1094,7 +1164,7 @@ export default function DemoApp() {
                     <div className="item-footer">
                       <button
                         disabled={itemIndex === 0 || busy}
-                        onClick={() => setItemIndex(itemIndex - 1)}
+                        onClick={() => irParaItem(itemIndex - 1)}
                       >
                         <ArrowLeft size={17} />
                         {t.previous}
@@ -1103,7 +1173,7 @@ export default function DemoApp() {
                         <button
                           className="primary"
                           disabled={busy}
-                          onClick={() => setItemIndex(itemIndex + 1)}
+                          onClick={() => irParaItem(itemIndex + 1)}
                         >
                           {t.nextItem}
                           <ArrowRight size={17} />
