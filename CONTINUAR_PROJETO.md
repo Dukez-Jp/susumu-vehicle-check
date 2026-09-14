@@ -1,10 +1,12 @@
-# Continuar o projeto — onde trabalhar a partir de 10/09/2026
+# Continuar o projeto — onde trabalhar a partir de 14/09/2026
 
 ## Pasta ativa
 
 ```
-C:\Dev\susumu-vehicle-check
+C:\Servidor\susumu-vehicle-check
 ```
+
+No PC do escritório (`hayashida2andar`) o caminho é o acima; de outro computador, abrir `\hayashida2andar\Servidor\susumu-vehicle-check`. Em 14/09/2026 o clone saiu de `C:\Dev\susumu-vehicle-check` (notebook) para o servidor; a pasta do notebook e a cópia mais antiga `C:\Dev\SusumuVehicleCheck` (igual à `main`) deixam de ser usadas. As menções a `C:\Dev` abaixo são registro histórico.
 
 Esta é a **única** pasta de trabalho do SUSUMU Vehicle Check. É um clone completo
 do repositório privado <https://github.com/Dukez-Jp/susumu-vehicle-check>, com
@@ -52,7 +54,7 @@ de `.env.example`, ou copie manualmente só o arquivo necessário.
 ## Como retomar o trabalho
 
 ```powershell
-cd C:\Dev\susumu-vehicle-check
+cd C:\Servidor\susumu-vehicle-check
 git switch main
 git pull
 git switch -c feature/<assunto>-<AAAA-MM-DD>
@@ -61,7 +63,7 @@ git switch -c feature/<assunto>-<AAAA-MM-DD>
 Painel administrativo e demonstração:
 
 ```powershell
-cd C:\Dev\susumu-vehicle-check\admin-web
+cd C:\Servidor\susumu-vehicle-check\admin-web
 npm ci
 npm test          # esperado: 27 arquivos, 274 testes aprovados
 npm run lint      # esperado: sem alertas
