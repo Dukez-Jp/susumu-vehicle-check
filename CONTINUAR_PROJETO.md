@@ -6,7 +6,7 @@
 C:\Servidor\susumu-vehicle-check
 ```
 
-No PC do escritório (`hayashida2andar`) o caminho é o acima; de outro computador, abrir `\hayashida2andar\Servidor\susumu-vehicle-check`. Em 14/09/2026 o clone saiu de `C:\Dev\susumu-vehicle-check` (notebook) para o servidor; a pasta do notebook e a cópia mais antiga `C:\Dev\SusumuVehicleCheck` (igual à `main`) deixam de ser usadas. As menções a `C:\Dev` abaixo são registro histórico.
+No PC do escritório (`hayashida2andar`) o caminho é o acima; de outro computador, abrir `\\hayashida2andar\Servidor\susumu-vehicle-check`. Em 14/09/2026 o clone saiu de `C:\Dev\susumu-vehicle-check` (notebook) para o servidor; a pasta do notebook e a cópia mais antiga `C:\Dev\SusumuVehicleCheck` (igual à `main`) deixam de ser usadas. As menções a `C:\Dev` abaixo são registro histórico.
 
 Esta é a **única** pasta de trabalho do SUSUMU Vehicle Check. É um clone completo
 do repositório privado <https://github.com/Dukez-Jp/susumu-vehicle-check>, com

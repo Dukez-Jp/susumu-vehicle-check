@@ -21,10 +21,10 @@ Fotos originais permanecem separadas das cópias anotadas. Inspeções finalizad
 
 ## Abrir neste computador Windows
 
-O checkout de desenvolvimento fica em `C:\Dev\SusumuVehicleCheck`, fora do OneDrive. O toolchain portátil desta máquina está em `C:\Dev\tools`; ele não é uma dependência dos builds Linux/CI.
+O checkout de desenvolvimento fica em `C:\Servidor\susumu-vehicle-check` no PC do escritório (de outro computador: `\\hayashida2andar\Servidor\susumu-vehicle-check`), fora do OneDrive; migrado de `C:\Dev` em 14/09/2026. O toolchain portátil ficava em `C:\Dev\tools` no notebook e não é uma dependência dos builds Linux/CI [CONFIRMAR: novo local do toolchain portátil no servidor].
 
 ```powershell
-Set-Location C:\Dev\SusumuVehicleCheck
+Set-Location C:\Servidor\susumu-vehicle-check
 ./scripts/start-local.ps1
 ```
 

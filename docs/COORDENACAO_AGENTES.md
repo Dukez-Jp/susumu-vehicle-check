@@ -1,5 +1,9 @@
 # Coordenação atual — 10/09/2026
 
+## Pasta ativa do projeto — mudou em 14/09/2026
+
+**A raiz do código passou a ser `C:\Servidor\susumu-vehicle-check`** no PC do escritório (`hayashida2andar`); de outro computador, `\\hayashida2andar\Servidor\susumu-vehicle-check`. É o mesmo clone completo do repositório privado, agora centralizado no servidor junto com os demais projetos. A pasta `C:\Dev\susumu-vehicle-check` do notebook deixa de ser usada; a seção seguinte (10/09) e as menções a `C:\Dev` são registro histórico.
+
 ## Pasta ativa do projeto — mudou em 10/09/2026, fim da tarde
 
 **A raiz do código passou a ser `C:\Dev\susumu-vehicle-check`.** É um clone
