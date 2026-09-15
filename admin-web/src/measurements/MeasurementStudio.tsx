@@ -1,4 +1,11 @@
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import {
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import {
   ArrowLeft,
   Bluetooth,
@@ -160,11 +167,17 @@ function MeasurementStudio({
     loadLanguage(localStorage),
   );
   const language = languageProp ?? ownLanguage;
-  function setLanguage(next: Language) {
-    setOwnLanguage(next);
-    saveLanguage(localStorage, next);
-    onLanguageChange?.(next);
-  }
+  // Estáveis: o PdfPreview aberto a partir do histórico fica montado e é
+  // memoizado; com callbacks novos a cada render o memo não teria efeito.
+  const setLanguage = useCallback(
+    (next: Language) => {
+      setOwnLanguage(next);
+      saveLanguage(localStorage, next);
+      onLanguageChange?.(next);
+    },
+    [onLanguageChange],
+  );
+  const backToHistory = useCallback(() => setView("history"), []);
   const t = messages[language];
   const [view, setView] = useState<"entry" | "history" | "report" | "pdf">(
     "entry",
@@ -578,7 +591,7 @@ function MeasurementStudio({
           measurementSession={pdfSession}
           language={language}
           onLanguageChange={setLanguage}
-          onBack={() => setView("history")}
+          onBack={backToHistory}
         />
       )}
       <div className="measurement-screen" hidden={view === "pdf"}>
