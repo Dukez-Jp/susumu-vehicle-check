@@ -612,10 +612,14 @@ export function finalizeInspection(inspection: Inspection): Inspection {
   };
 }
 
+/**
+ * Grava o estado e devolve a string gravada, para que quem chama guarde a
+ * mesma cópia sem serializar de novo (o estado pode passar de 1 MB com fotos).
+ */
 export function saveState(
   storage: Pick<Storage, "setItem">,
   state: DemoState,
-): void {
+): string {
   let encoded: string;
   try {
     encoded = JSON.stringify(state);
@@ -633,6 +637,7 @@ export function saveState(
       { cause: error },
     );
   }
+  return encoded;
 }
 
 function reject(reason: string): never {

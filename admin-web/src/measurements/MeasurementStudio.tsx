@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
   Bluetooth,
@@ -87,7 +87,7 @@ function copyDownload(value: unknown) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-export default function MeasurementStudio({
+function MeasurementStudio({
   active,
   onBack,
   language: languageProp,
@@ -523,28 +523,41 @@ export default function MeasurementStudio({
     : "real";
   const entryStore = draftKind === "demo" ? demoStore : store;
   const visibleStore = historyKind === "demo" ? demoStore : store;
-  const ownHistory = entryStore.sessions
-    .filter((s) => s.vehicleKey === vehicleKey)
-    .sort(
-      (a, b) =>
-        b.inspectionDate.localeCompare(a.inspectionDate) ||
-        b.createdAt.localeCompare(a.createdAt),
-    );
-  const slotHistory = ownHistory.flatMap((session) => {
-    const reading = activeReadings(session).find(
-      (r) => slotKey(r.metric, r.position) === slot,
-    );
-    return reading ? [{ session, reading }] : [];
-  });
+  // O histórico pode chegar a 500 sessões com 250 leituras cada; sem memo,
+  // cada tecla digitada na placa ou no valor refazia filtro, ordenação e busca.
+  const ownHistory = useMemo(
+    () =>
+      entryStore.sessions
+        .filter((s) => s.vehicleKey === vehicleKey)
+        .sort(
+          (a, b) =>
+            b.inspectionDate.localeCompare(a.inspectionDate) ||
+            b.createdAt.localeCompare(a.createdAt),
+        ),
+    [entryStore, vehicleKey],
+  );
+  const slotHistory = useMemo(
+    () =>
+      ownHistory.flatMap((session) => {
+        const reading = activeReadings(session).find(
+          (r) => slotKey(r.metric, r.position) === slot,
+        );
+        return reading ? [{ session, reading }] : [];
+      }),
+    [ownHistory, slot],
+  );
   const selectedSession =
     visibleStore.sessions.find((s) => s.id === selectedId) ?? null;
-  const filteredHistory = [...visibleStore.sessions]
-    .filter((s) => s.vehicleKey.includes(normalizeVehicleKey(historyQuery)))
-    .sort(
-      (a, b) =>
-        b.inspectionDate.localeCompare(a.inspectionDate) ||
-        b.createdAt.localeCompare(a.createdAt),
-    );
+  const filteredHistory = useMemo(() => {
+    const needle = normalizeVehicleKey(historyQuery);
+    return [...visibleStore.sessions]
+      .filter((s) => s.vehicleKey.includes(needle))
+      .sort(
+        (a, b) =>
+          b.inspectionDate.localeCompare(a.inspectionDate) ||
+          b.createdAt.localeCompare(a.createdAt),
+      );
+  }, [visibleStore, historyQuery]);
   const activeSelected = selectedSession ? activeReadings(selectedSession) : [];
   const drawnHeight = 150 + draft.axleCount * 76;
   const bluetoothAvailability = getBluetoothAvailability();
@@ -1438,3 +1451,6 @@ export default function MeasurementStudio({
     </div>
   );
 }
+
+// Memoizado pelo mesmo motivo do PdfPreview: o shell renderiza a cada tecla.
+export default memo(MeasurementStudio);

@@ -19,6 +19,9 @@ export default defineConfig(({ mode }) => {
       environment: "jsdom",
       setupFiles: ["./src/test/setup.ts"],
       clearMocks: true,
+      // Um jsdom por worker em vez de um por arquivo: mantém o isolamento entre
+      // arquivos e corta a criação do ambiente, que era 77% do tempo da suíte.
+      pool: "vmThreads",
     },
   };
 });
