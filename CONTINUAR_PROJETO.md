@@ -78,6 +78,43 @@ O lançador usa caminho relativo, sobe o servidor local em
 A demonstração abre em **japonês** por padrão. As bandeiras do Japão e do Brasil
 no alto da primeira página trocam o idioma de todo o aplicativo de uma vez.
 
+## Rode os comandos com a pasta em disco local
+
+`npm ci`, os testes e os builds precisam que a pasta esteja em disco local da
+máquina que executa o comando. Pelo drive mapeado `S:` — ou pelo caminho UNC
+`\\hayashida2andar\Servidor` — cada arquivo pequeno custa uma ida e volta na rede.
+
+Medido em 15/09/2026, do notebook em Hamamatsu: o servidor responde em cerca de
+41 ms e gravar 100 arquivos de 512 bytes levou 13,7 s pela rede (137 ms por
+arquivo) contra 66 ms no disco local (0,66 ms por arquivo), ou seja 200 vezes
+mais lento. O `npm ci` grava por volta de 30 mil arquivos e antes apaga outros
+tantos: pela rede passa de uma hora e costuma ser interrompido no meio, deixando
+`admin-web/node_modules` sem a pasta `.bin`. É esse estado quebrado que faz
+`npm run lint` responder "eslint não é reconhecido".
+
+Não é falta de banda nem defeito do Wi-Fi: é latência por arquivo. Abrir, editar
+e ler arquivos pelo `S:` continua tranquilo; o que não funciona é qualquer
+operação com dezenas de milhares de arquivos pequenos.
+
+Execute `npm ci`, `npm test`, `npm run build` e `npm run build:demo` no PC do
+escritório, onde a pasta é `C:\Servidor\susumu-vehicle-check` em disco local, ou
+por acesso remoto a essa máquina.
+
+## Os scripts locais exigem Windows PowerShell 5.1
+
+`scripts/start-local.ps1`, `scripts/stop-local.ps1` e a parte de infraestrutura
+de `scripts/check.ps1` chamam `scripts/protect-private-paths.ps1`, que usa
+`GetAccessControl` e `SetAccessControl`. Esses métodos existem no .NET Framework,
+não no PowerShell 7: com `pwsh` o script para com
+"[System.IO.DirectoryInfo] does not contain a method named 'GetAccessControl'".
+Use `powershell.exe`, que é a versão 5.1 e é o que `ABRIR_DEMO_TENKEN.cmd` já
+chama.
+
+A proteção de ACL da pasta `.local` também só funciona em disco local. Pelo `S:`
+o `Get-Acl` devolve "tentativa de execução de uma operação não autorizada", e os
+dois testes de ACL de `check.ps1` não podem ser executados a partir do drive
+mapeado.
+
 ## Regras de publicação
 
 - Nunca commitar direto na `main`. Trabalhe sempre em branch e abra pull request.
