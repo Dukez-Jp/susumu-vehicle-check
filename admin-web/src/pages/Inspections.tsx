@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useIsFetching, useQuery } from "@tanstack/react-query";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import {
@@ -55,13 +55,19 @@ export default function Inspections() {
     else next.delete(key);
     setParams(next);
   }
-  const records = query.rows?.filter(
-    (i) =>
-      (!finding || i.items.some((item) => item.status === "Critical")) &&
-      (!photos || i.photoUploadState === "Pending") &&
-      (!from || new Date(i.startedAt) >= new Date(`${from}T00:00:00`)) &&
-      (!until || new Date(i.startedAt) <= new Date(`${until}T23:59:59.999`)),
-  );
+  const rows = query.rows;
+  const records = useMemo(() => {
+    // Limites calculados uma vez; antes eram quatro Date novos por linha.
+    const fromMs = from ? Date.parse(`${from}T00:00:00`) : Number.NaN;
+    const untilMs = until ? Date.parse(`${until}T23:59:59.999`) : Number.NaN;
+    return rows?.filter(
+      (i) =>
+        (!finding || i.items.some((item) => item.status === "Critical")) &&
+        (!photos || i.photoUploadState === "Pending") &&
+        (!from || Date.parse(i.startedAt) >= fromMs) &&
+        (!until || Date.parse(i.startedAt) <= untilMs),
+    );
+  }, [rows, finding, photos, from, until]);
   return (
     <>
       <PageHeader

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import {
   ArrowLeft,
@@ -156,10 +156,12 @@ export default function DemoApp() {
     loadLanguage(localStorage),
   );
   const t = demoMessages[language];
-  function changeLanguage(next: Language) {
+  // Estável entre renders: as três telas grandes recebem isto como prop e são
+  // memoizadas; uma função nova a cada render as faria renderizar de novo.
+  const changeLanguage = useCallback((next: Language) => {
     setLanguage(next);
     saveLanguage(localStorage, next);
-  }
+  }, []);
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
@@ -262,6 +264,22 @@ export default function DemoApp() {
     setPage("pdf-preview");
     window.history.replaceState(null, "", "#tenken-pdf");
   }
+  // A captura de veículo só é montada quando alguém a abre: antes disso ela
+  // lia e validava todos os registros guardados já na abertura da demonstração.
+  const [captureOpened, setCaptureOpened] = useState(false);
+  function openCapture() {
+    setCaptureOpened(true);
+    setPage("capture");
+  }
+  const backToHome = useCallback(() => {
+    setPage("home");
+    window.history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search,
+    );
+  }, []);
+  const backToHomeKeepingUrl = useCallback(() => setPage("home"), []);
   const [activeId, setActiveId] = useState("");
   const [vehicleId, setVehicleId] = useState(vehicles[0].id);
   const [odometer, setOdometer] = useState(String(vehicles[0].odometer));
@@ -325,8 +343,7 @@ export default function DemoApp() {
         setError(t.conflictError);
         return false;
       }
-      saveState(localStorage, next);
-      storedRef.current = JSON.stringify(next);
+      storedRef.current = saveState(localStorage, next);
       dataRef.current = next;
       setData(next);
       setUnsaved(false);
@@ -492,14 +509,7 @@ export default function DemoApp() {
           active={page === "measurements"}
           language={language}
           onLanguageChange={changeLanguage}
-          onBack={() => {
-            setPage("home");
-            window.history.replaceState(
-              null,
-              "",
-              window.location.pathname + window.location.search,
-            );
-          }}
+          onBack={backToHome}
         />
       )}
       {pdfOpened && (
@@ -507,22 +517,17 @@ export default function DemoApp() {
           active={page === "pdf-preview"}
           language={language}
           onLanguageChange={changeLanguage}
-          onBack={() => {
-            setPage("home");
-            window.history.replaceState(
-              null,
-              "",
-              window.location.pathname + window.location.search,
-            );
-          }}
+          onBack={backToHome}
         />
       )}
-      <VehicleCapture
-        active={page === "capture"}
-        language={language}
-        onLanguageChange={changeLanguage}
-        onBack={() => setPage("home")}
-      />
+      {captureOpened && (
+        <VehicleCapture
+          active={page === "capture"}
+          language={language}
+          onLanguageChange={changeLanguage}
+          onBack={backToHomeKeepingUrl}
+        />
+      )}
       <div
         className="demo-shell"
         lang={language}
@@ -558,7 +563,7 @@ export default function DemoApp() {
             </button>
             <button
               aria-label={t.navCapture}
-              onClick={() => setPage("capture")}
+              onClick={openCapture}
             >
               <Truck size={22} />
               <span>{t.railCapture}</span>
