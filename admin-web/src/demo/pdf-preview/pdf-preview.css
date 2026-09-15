@@ -563,26 +563,6 @@
   padding: 32px 15px;
   background: white;
 }
-.pdf-launcher {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #9fadbe;
-  border-left: 5px solid #1f4e30;
-  padding: 22px 26px;
-  background: #e7f2ea;
-  border-radius: 14px;
-  margin-bottom: 24px;
-}
-.pdf-launcher h2 {
-  font-size: 22px;
-  margin: 0 0 6px;
-}
-.pdf-launcher p {
-  margin: 0;
-  color: #2e5482;
-}
 @media (max-width: 1020px) {
   .pdf-workspace {
     grid-template-columns: 190px minmax(0, 1fr);
@@ -717,10 +697,6 @@
   }
   .pdf-notes {
     grid-template-columns: 1fr;
-  }
-  .pdf-launcher {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 @media (max-width: 400px) {
