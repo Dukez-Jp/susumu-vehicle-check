@@ -3,6 +3,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
   type ReactNode,
 } from "react";
@@ -78,8 +79,9 @@ export function SessionProvider({
     );
     return () => clearTimeout(timer);
   }, [session, logout]);
-  const login = async (username: string, password: string) => {
-    const data = await api.send<LoginSession>(
+  const login = useCallback(
+    async (username: string, password: string) => {
+      const data = await api.send<LoginSession>(
       "/auth/login",
       "POST",
       {
@@ -99,13 +101,21 @@ export function SessionProvider({
         "O servidor não confirmou uma sessão válida. Entre em contato com o administrador.",
         401,
       );
-    queryClient.clear();
-    api.setToken(data.accessToken);
-    setExpired(false);
-    setSession(data);
-  };
+      queryClient.clear();
+      api.setToken(data.accessToken);
+      setExpired(false);
+      setSession(data);
+    },
+    [api, queryClient],
+  );
+  // Valor do contexto estável: sem isto, todo consumidor de useSession()
+  // renderizava de novo a cada render do provedor, mesmo sem mudança.
+  const value = useMemo(
+    () => ({ api, session, expired, login, logout }),
+    [api, session, expired, login, logout],
+  );
   return (
-    <SessionContext.Provider value={{ api, session, expired, login, logout }}>
+    <SessionContext.Provider value={value}>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </SessionContext.Provider>
   );

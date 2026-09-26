@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useSession } from "./auth";
 import { ErrorPanel } from "./components";
@@ -26,10 +27,12 @@ export function usePaged<T extends { id: string }>(
       ),
     getNextPageParam: (page, _pages, offset) => nextOffset(page.length, offset),
   });
-  return {
-    ...query,
-    rows: query.data ? uniqueRows(query.data.pages) : undefined,
-  };
+  // Só refaz a deduplicação quando chega página nova, não a cada render.
+  const rows = useMemo(
+    () => (query.data ? uniqueRows(query.data.pages) : undefined),
+    [query.data],
+  );
+  return { ...query, rows };
 }
 export function LoadMore({
   query,

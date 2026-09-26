@@ -19,6 +19,11 @@ export default defineConfig(({ mode }) => {
       environment: "jsdom",
       setupFiles: ["./src/test/setup.ts"],
       clearMocks: true,
+      // vmThreads cria um contexto VM e um jsdom novos por arquivo, como o pool
+      // padrão (isolamento igual); o que é reaproveitado é a thread e o cache
+      // dos módulos externos. Medido em 16/09/2026, cache quente, alternando os
+      // pools: forks 6,9-7,4 s, threads 6,9 s, vmThreads 5,7 s.
+      pool: "vmThreads",
     },
   };
 });

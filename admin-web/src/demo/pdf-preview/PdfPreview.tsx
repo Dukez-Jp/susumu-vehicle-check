@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -29,7 +29,7 @@ import { loadLanguage, saveLanguage } from "../language";
 import type { Language } from "./messages";
 import OriginalForm from "./OriginalForm";
 import { preparePrint } from "./print";
-import type { MeasurementSession } from "../../measurements/model";
+import type { MeasurementSession, Reading } from "../../measurements/model";
 import { activeReadings } from "../../measurements/model";
 import {
   measurementBindingValid,
@@ -90,13 +90,24 @@ const examples: Partial<HeaderFields> = {
   workshopAddress: "東京都（見本）",
   inspector: "見本担当者",
 };
+// O catálogo é estático, então o agrupamento por grupo é feito uma vez no
+// carregamento do módulo. Antes, cada render filtrava os 100 itens por grupo.
+const itemsBySection = new Map<string, typeof source.items>();
+for (const item of source.items) {
+  const sectionId = itemTranslations[item.id].sectionId;
+  const bucket = itemsBySection.get(sectionId);
+  if (bucket) bucket.push(item);
+  else itemsBySection.set(sectionId, [item]);
+}
+const NO_READINGS: readonly Reading[] = [];
+
 function errorCode(error: unknown) {
   return error instanceof PreviewStorageError
     ? error.code
     : "STORAGE_WRITE_FAILED";
 }
 
-export default function PdfPreview({
+function PdfPreview({
   active,
   onBack,
   measurementSession,
@@ -155,9 +166,22 @@ export default function PdfPreview({
   const [formImageReady, setFormImageReady] = useState(false);
   const t = messages[language];
   const mt = measurementMessages[language];
-  const linkedReadings = measurementSession
-    ? activeReadings(measurementSession)
-    : [];
+  const linkedReadings = useMemo(
+    () => (measurementSession ? activeReadings(measurementSession) : []),
+    [measurementSession],
+  );
+  // Agrupadas uma vez por sessão de medição; antes cada um dos 100 artigos
+  // filtrava a lista inteira de leituras a cada render.
+  const readingsByItem = useMemo(() => {
+    const byItem = new Map<string, Reading[]>();
+    for (const reading of linkedReadings) {
+      const itemId = getMetricPdfItemId(reading.metric);
+      const bucket = byItem.get(itemId);
+      if (bucket) bucket.push(reading);
+      else byItem.set(itemId, [reading]);
+    }
+    return byItem;
+  }, [linkedReadings]);
   const localeKey = language === "ja" ? "ja" : "pt";
 
   useEffect(() => {
@@ -248,12 +272,28 @@ export default function PdfPreview({
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  const answers = Object.values(state.answers);
-  const answered = answers.filter((answer) => answer.result).length;
-  const attention = answers.filter(
-    (answer) => answer.result === "attention",
-  ).length;
-  const print = preparePrint(state);
+  // Contagens e preparação de impressão derivam só do estado: memoizadas para
+  // que digitar na busca ou trocar de grupo não refaça o ajuste de fonte dos
+  // campos (até nove passos por campo, com segmentação de texto).
+  const { answered, attention, doneBySection } = useMemo(() => {
+    let answeredCount = 0;
+    let attentionCount = 0;
+    const done = new Map<string, number>();
+    for (const item of source.items) {
+      const result = state.answers[item.id].result;
+      if (!result) continue;
+      answeredCount += 1;
+      if (result === "attention") attentionCount += 1;
+      const section = itemTranslations[item.id].sectionId;
+      done.set(section, (done.get(section) ?? 0) + 1);
+    }
+    return {
+      answered: answeredCount,
+      attention: attentionCount,
+      doneBySection: done,
+    };
+  }, [state.answers]);
+  const print = useMemo(() => preparePrint(state), [state]);
   const bindingValid =
     !measurementSession || measurementBindingValid(state, measurementSession);
   const measurementSummary = measurementSession
@@ -266,22 +306,30 @@ export default function PdfPreview({
     bindingValid &&
     !measurementSummary?.issue;
   const normalizedQuery = query.trim().toLocaleLowerCase(language);
-  const filtered = source.items.filter((item) => {
-    const translation = itemTranslations[item.id];
-    const text =
-      language === "ja"
-        ? `${item.componentJa} ${item.itemJa}`
-        : `${translation.component} ${translation.label}`;
-    return (
-      (sectionId === "all" || translation.sectionId === sectionId) &&
-      (period === "all" ||
-        item.periodsMonthsFromPrintedLegend.includes(Number(period))) &&
-      (!normalizedQuery ||
-        `${item.id.slice(4)} ${text}`
-          .toLocaleLowerCase(language)
-          .includes(normalizedQuery))
-    );
-  });
+  const filtered = useMemo(
+    () =>
+      source.items.filter((item) => {
+        const translation = itemTranslations[item.id];
+        const text =
+          language === "ja"
+            ? `${item.componentJa} ${item.itemJa}`
+            : `${translation.component} ${translation.label}`;
+        return (
+          (sectionId === "all" || translation.sectionId === sectionId) &&
+          (period === "all" ||
+            item.periodsMonthsFromPrintedLegend.includes(Number(period))) &&
+          (!normalizedQuery ||
+            `${item.id.slice(4)} ${text}`
+              .toLocaleLowerCase(language)
+              .includes(normalizedQuery))
+        );
+      }),
+    [language, sectionId, period, normalizedQuery],
+  );
+  const sectionTotal =
+    sectionId === "all"
+      ? source.items.length
+      : (itemsBySection.get(sectionId)?.length ?? 0);
   const sectionIndex = sections.findIndex(
     (section) => section.id === sectionId,
   );
@@ -477,13 +525,8 @@ export default function PdfPreview({
                     <span>100</span>
                   </button>
                   {sections.map((section) => {
-                    const groupItems = source.items.filter(
-                      (item) =>
-                        itemTranslations[item.id].sectionId === section.id,
-                    );
-                    const done = groupItems.filter(
-                      (item) => state.answers[item.id].result,
-                    ).length;
+                    const groupItems = itemsBySection.get(section.id) ?? [];
+                    const done = doneBySection.get(section.id) ?? 0;
                     return (
                       <button
                         type="button"
@@ -541,14 +584,7 @@ export default function PdfPreview({
                   <div className="pdf-section-heading">
                     <h2>{title}</h2>
                     <span>
-                      {filtered.length} /{" "}
-                      {
-                        source.items.filter(
-                          (item) =>
-                            sectionId === "all" ||
-                            itemTranslations[item.id].sectionId === sectionId,
-                        ).length
-                      }
+                      {filtered.length} / {sectionTotal}
                     </span>
                   </div>
                   {filtered.length === 0 && (
@@ -557,10 +593,8 @@ export default function PdfPreview({
                   {filtered.map((item) => {
                     const answer = state.answers[item.id];
                     const translation = itemTranslations[item.id];
-                    const itemMeasurements = linkedReadings.filter(
-                      (reading) =>
-                        getMetricPdfItemId(reading.metric) === item.id,
-                    );
+                    const itemMeasurements =
+                      readingsByItem.get(item.id) ?? NO_READINGS;
                     return (
                       <article
                         key={item.id}
@@ -745,6 +779,7 @@ export default function PdfPreview({
                 <div className="pdf-paper">
                   <OriginalForm
                     state={state}
+                    print={print}
                     measurementSession={measurementSession}
                   />
                 </div>
@@ -810,7 +845,11 @@ export default function PdfPreview({
       </div>
       <div className="pdf-print-surface" lang="ja">
         {printable ? (
-          <OriginalForm state={state} measurementSession={measurementSession} />
+          <OriginalForm
+            state={state}
+            print={print}
+            measurementSession={measurementSession}
+          />
         ) : (
           <p>
             見本・未確定 —
@@ -821,3 +860,8 @@ export default function PdfPreview({
     </div>
   );
 }
+
+// Memoizado: depois de aberta, esta tela fica montada e o shell da demonstração
+// renderiza a cada tecla digitada no checklist de 12 itens. Sem memo, cada tecla
+// refazia os 100 artigos e o formulário SVG de impressão.
+export default memo(PdfPreview);

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   FileUp,
@@ -69,7 +69,7 @@ function originalValues(
   };
 }
 
-export default function VehicleCapture({
+function VehicleCapture({
   active,
   onBack,
   language: languageProp,
@@ -530,3 +530,7 @@ export default function VehicleCapture({
     </div>
   );
 }
+
+// Memoizado: o shell da demonstração renderiza a cada tecla digitada em outra
+// tela, e esta só precisa acompanhar as suas próprias props.
+export default memo(VehicleCapture);

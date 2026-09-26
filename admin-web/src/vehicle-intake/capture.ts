@@ -1,5 +1,3 @@
-export type CaptureLanguage = "pt-BR" | "ja";
-
 export interface VehicleCaptureFields {
   plate: string;
   chassis: string;

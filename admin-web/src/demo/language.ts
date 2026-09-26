@@ -9,7 +9,6 @@
  */
 export type Language = "ja" | "pt-BR";
 
-export const LANGUAGES: readonly Language[] = ["ja", "pt-BR"];
 export const DEFAULT_LANGUAGE: Language = "ja";
 export const LANGUAGE_STORAGE_KEY = "susumu.tenken.language.v1";
 

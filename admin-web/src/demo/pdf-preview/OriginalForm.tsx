@@ -1,3 +1,4 @@
+import { memo } from "react";
 import source from "../../../../docs/source/tenken-20260910/catalogo_pdf_100_itens.json";
 import { estimatedTextWidth, preparePrint } from "./print";
 import { PAGE_HEIGHT, PAGE_WIDTH, sampleNoticeBox } from "./print-layout";
@@ -7,14 +8,21 @@ import { prepareMeasurementSummary } from "../../measurements/print";
 
 const FONT_FAMILY = 'Meiryo, "Yu Gothic", sans-serif';
 
-export default function OriginalForm({
+function OriginalForm({
   state,
+  print,
   measurementSession,
 }: {
   state: PreviewState;
+  /**
+   * Preparação de impressão já calculada por quem renderiza (o PdfPreview a
+   * memoiza e instancia este formulário duas vezes). Opcional para que a
+   * renderização isolada, como nos testes, continue funcionando.
+   */
+  print?: ReturnType<typeof preparePrint>;
   measurementSession?: MeasurementSession;
 }) {
-  const { fields } = preparePrint(state);
+  const { fields } = print ?? preparePrint(state);
   const measurement = measurementSession
     ? prepareMeasurementSummary(measurementSession)
     : null;
@@ -140,3 +148,7 @@ export default function OriginalForm({
     </svg>
   );
 }
+
+// Memoizado: o formulário de impressão fica montado atrás da lista e só muda
+// quando o estado (ou a preparação de impressão derivada dele) muda.
+export default memo(OriginalForm);
