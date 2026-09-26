@@ -11,6 +11,11 @@ Set-Location C:\Dev\SusumuVehicleCheck
 .\scripts\start-local.ps1
 ```
 
+Use `powershell.exe`, que é o Windows PowerShell 5.1. No PowerShell 7 (`pwsh`) os
+scripts locais param com erro em `GetAccessControl`, e a proteção da pasta `.local`
+exige que o projeto esteja em disco local, não em drive de rede mapeado. Os
+detalhes estão em `CONTINUAR_PROJETO.md`.
+
 Quando aparecer `DEV ready`, abra [o painel local](http://127.0.0.1:5173). Esse é o painel do escritório; o aplicativo da oficina é o APK Android.
 
 Abra as credenciais **apenas localmente**, no computador autorizado:
